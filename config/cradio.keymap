@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define DEF 0
-#define NMT 1 // No-mod-taps for if I regret setting mod-taps and can't access my code or can't update my firmware on the keyboard
+#define HRM 1 // No-mod-taps for if I regret setting mod-taps and can't access my code or can't update my firmware on the keyboard
 #define NUM 2
 #define NAV 3
 #define SYM 4
@@ -48,13 +48,13 @@
         sticky_sym_layer_for_one_handed_typing {
             key-positions = <32 33>;
             bindings = <&sl SYM>;
-            layers = <DEF NMT>;
+            layers = <DEF HRM>;
             require-prior-idle-ms = <200>;
         };
 
         toggle_mod_taps {
             key-positions = <14 15>;
-            bindings = <&tog NMT>;
+            bindings = <&tog HRM>;
             require-prior-idle-ms = <200>;
         };
 
@@ -67,21 +67,21 @@
         toggle_num_word {
             key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF NMT NUM>;
+            layers = <DEF HRM NUM>;
         };
             require-prior-idle-ms = <200>;
 
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
-            layers = <DEF NMT>;
+            layers = <DEF HRM>;
             require-prior-idle-ms = <200>;
         };
 
         toggle_aoe {
             key-positions = <20 21 22>;
             bindings = <&tog AOE>;
-            layers = <DEF NMT AOE>;
+            layers = <DEF HRM AOE>;
             require-prior-idle-ms = <200>;
         };
 
@@ -245,19 +245,19 @@
 
         DEF {
             bindings = <
+                &kp Q   &kp W   &kp E   &kp R   &kp T       &kp Y       &kp U        &kp I       &kp O   &kp P
+                &kp A   &kp S   &kp D   &kp F   &kp G       &kp H       &kp J        &kp K       &kp L   &kp SQT
+                &kp Z   &kp X   &kp C   &kp V   &kp B       &kp N       &kp M        &kp COMMA   &kp DOT &kp SEMI
+                                        &lc NAV &kp RSHFT   &kp SPACE   &lc SYM
+            >;
+        };
+
+        HRM {
+            bindings = <
                 &kp Q          &kp W         &kp E          &kp R         &kp T       &kp Y      &kp U        &kp I          &kp O         &kp P
                 &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &kp G       &kp H      &hrmr RGUI J &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
                 &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B       &kp N      &kp M        &kp COMMA      &kp DOT       &kp SEMI
                                                             &lc NAV       &kp RSHFT   &kp SPACE  &lc SYM
-            >;
-        };
-
-        NMT {
-            bindings = <
-                &kp Q           &kp W   &kp E   &kp R   &kp T   &kp Y      &kp U        &kp I       &kp O   &kp P
-                &kp A           &kp S   &kp D   &kp F   &kp G   &kp H      &kp J        &kp K       &kp L   &kp SQT
-                &hrml GLOBE Z   &kp X   &kp C   &kp V   &kp B   &kp N      &kp M        &kp COMMA   &kp DOT &kp SEMI
-                                              &lc NAV &kp RSHFT  &kp SPACE    &lc SYM
             >;
         };
 
@@ -272,10 +272,10 @@
 
         NAV {
             bindings = <
-                &kp TAB          &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)    &kp PG_UP               &kp HOME  &kp UP    &kp END    &kp BSPC
-                &sk LCTRL        &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)    &kp PG_DN               &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-                &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18         &sk LG(LS(LA(LCTRL)))   &playnp   &vb_dn    &vb_up     &kp DEL
-                                                             &trans       &mt RSHFT SPACE &mt RSHFT SPACE         &trans
+                &kp TAB     &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)   &kp PG_UP   &kp HOME  &kp UP    &kp END    &kp BSPC
+                &sk LCTRL   &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)   &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
+                &kp LG(Z)   &kp LG(X)  &kp LG(C)        &kp LG(V)    &sk GLOBE      &kp F18     &playnp   &vb_dn    &vb_up     &kp DEL
+                                                        &trans       &kp F18        &trans      &trans
             >;
         };
 
