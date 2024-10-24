@@ -9,9 +9,10 @@
 #define NAV 3
 #define SYM 4
 #define FUN 5
-#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 7
-#define ABS 8
+#define SYS 6
+#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 8
+#define ABS 9
 
 #define HYPER LG(LC(LA(LSHFT)))
 
@@ -85,38 +86,12 @@
             require-prior-idle-ms = <200>;
         };
 
-        sys_bootloader {
-            key-positions = <20 21>;
-            bindings = <&bootloader>;
+        sys_sticky_layer {
+            key-positions = <24 25>;
+            bindings = <&sl SYS>;
             layers = <FUN>;
             require-prior-idle-ms = <200>;
         };
-
-        sys_connect_to_bt0 {
-            key-positions = <3 4>;
-            bindings = <&bt BT_SEL 0>;
-            layers = <FUN>;
-        };
-
-        sys_connect_to_bt1 {
-            key-positions = <13 14>;
-            bindings = <&bt BT_SEL 1>;
-            layers = <FUN>;
-        };
-
-        sys_connect_to_bt2 {
-            key-positions = <23 24>;
-            bindings = <&bt BT_SEL 2>;
-            layers = <FUN>;
-        };
-
-        sys_clear_current_bluetooth_profile {
-            key-positions = <28 29>;
-            bindings = <&bt BT_CLR>;
-            layers = <FUN>;
-            require-prior-idle-ms = <200>;
-        };
-
         
     };
 
@@ -294,6 +269,15 @@
                 &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
                 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                                 &trans    &kp LG(LC(Q))    &kp CAPS  &trans
+            >;
+        };
+
+        SYS {
+            bindings = <
+                &bootloader &trans  &trans  &trans  &bt BT_SEL 0    &trans  &trans  &trans  &trans  &bootloader
+                &trans      &trans  &trans  &trans  &bt BT_SEL 1    &trans  &trans  &trans  &trans  &trans
+                &bt BT_CLR  &trans  &trans  &trans  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &bt BT_CLR
+                                            &trans  &trans          &trans  &trans
             >;
         };
 
