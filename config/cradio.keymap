@@ -64,7 +64,7 @@
         toggle_num_word {
             key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <0 2>;
+            layers = <DEF NMT NUM>;
         };
 
         toggle_caps_word {
@@ -151,7 +151,7 @@
 
         hrml: hrml {
             compatible = "zmk,behavior-hold-tap";
-            label = "NMTL";
+            label = "HRML";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -165,7 +165,7 @@
 
         hrmr: hrmr {
             compatible = "zmk,behavior-hold-tap";
-            label = "NMTR";
+            label = "HRMR";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -177,7 +177,7 @@
             require-prior-idle-ms = <175>;
         };
 
-        // Layer-tap variants for urob's hrm
+        // Layer-tap variants for urob's balanced hrm with a &lc instead of a &mo on hold
 
         ltl: ltl {
             compatible = "zmk,behavior-hold-tap";
