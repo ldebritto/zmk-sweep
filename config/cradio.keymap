@@ -1,7 +1,7 @@
-#include <behaviors/num_word.dtsi> // reqquires auto-layer module (https://github.com/urob/zmk-auto-layer)
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
 
 #define DEF 0
 #define NMT 1 // No-mod-taps for if I regret setting mod-taps and can't access my code or can't update my firmware on the keyboard
@@ -42,16 +42,16 @@
             require-prior-idle-ms = <200>;
         };
 
+        toggle_mod_taps {
+            key-positions = <14 15>;
+            bindings = <&tog NMT>;
+            require-prior-idle-ms = <200>;
+        };
+
         sticky_sym_layer_for_one_handed_typing {
             key-positions = <32 33>;
             bindings = <&sl SYM>;
             layers = <DEF>;
-            require-prior-idle-ms = <200>;
-        };
-
-        toggle_mod_taps {
-            key-positions = <14 15>;
-            bindings = <&tog NMT>;
             require-prior-idle-ms = <200>;
         };
 
@@ -259,10 +259,10 @@
 
         NUM {
             bindings = <
-  &kp TAB    &kp N7  &kp N8  &kp N9           &kp COLON    &none  &none  &none  &none  &none
-  &kp N0     &kp N4  &kp N5  &kp N6           &sl SYM      &none  &none  &none  &none  &none
-  &kp COMMA  &kp N1  &kp N2  &kp N3           &kp DOT      &none  &none  &none  &none  &none
-                             &mt NAV K_CANCEL &kp RET      &none  &mt SYM K_CANCEL
+  &kp TAB    &kp N7  &kp N8  &kp N9 &kp COLON   &none  &none  &none  &none  &none
+  &kp N0     &kp N4  &kp N5  &kp N6 &sl SYM     &none  &none  &none  &none  &none
+  &kp COMMA  &kp N1  &kp N2  &kp N3 &kp DOT     &none  &none  &none  &none  &none
+                             &trans &kp RET     &none  &trans
             >;
         };
 
@@ -292,15 +292,6 @@
                                   &trans    &kp LG(LC(Q))    &kp CAPS  &trans
             >;
         };
-
-//         MOU {
-//             bindings = <
-//   &kp ESC    &kp TAB    &kp LC(LS(TAB))  &kp LC(TAB)  &kp RBKT           &msc SCROLL_UP    &msc SCROLL_LEFT  &mmv MOVE_UP    &msc SCROLL_RIGHT  &kp BSPC
-//   &kp LCTRL  &kp LALT   &kp LSHFT        &kp LGUI     &kp LBKT           &msc SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &kp RET
-//   &kp LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp GLOBE          &kp F18           &mkp MB3          &mkp MB4        &mkp MB5           &kp DEL
-//                                          &tog MOU     &mt LSHFT SPACE    &mkp MB1          &mkp MB2
-//             >;
-//         };
 
         AOE {
             bindings = <
