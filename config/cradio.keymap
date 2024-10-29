@@ -259,10 +259,10 @@
 
         NUM {
             bindings = <
-  &kp TAB    &kp N7  &kp N8  &kp N9 &kp COLON   &none  &none  &none  &none  &none
-  &kp N0     &kp N4  &kp N5  &kp N6 &sl SYM     &none  &none  &none  &none  &none
-  &kp COMMA  &kp N1  &kp N2  &kp N3 &kp DOT     &none  &none  &none  &none  &none
-                             &trans &kp RET     &none  &trans
+  &kp TAB    &kp N7  &kp N8  &kp N9 &kp COLON   &tog NUM  &tog NUM  &tog NUM  &tog NUM  &tog NUM
+  &kp N0     &kp N4  &kp N5  &kp N6 &sl SYM     &tog NUM  &tog NUM  &tog NUM  &tog NUM  &tog NUM
+  &kp COMMA  &kp N1  &kp N2  &kp N3 &kp DOT     &tog NUM  &tog NUM  &tog NUM  &tog NUM  &tog NUM
+                             &trans &kp RET     &trans    &trans
             >;
         };
 
