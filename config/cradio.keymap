@@ -42,6 +42,12 @@
             require-prior-idle-ms = <200>;
         };
 
+        right_hand_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18>;
+            require-prior-idle-ms = <200>;
+        };
+
         toggle_mod_taps {
             key-positions = <14 15>;
             bindings = <&tog NMT>;
