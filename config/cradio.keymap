@@ -46,6 +46,7 @@
             bindings = <&kp ENTER>;
             key-positions = <16 17 18>;
             require-prior-idle-ms = <200>;
+            layers = <DEF NMT>;
         };
 
         toggle_mod_taps {
@@ -183,7 +184,7 @@
             require-prior-idle-ms = <175>;
         };
 
-        // Layer-tap variants for urob's balanced hrm with a &lc instead of a &mo on hold
+        // Layer-tap variants for urob's balanced hrm with a &lc instead of a regular &mo on hold
 
         ltl: ltl {
             compatible = "zmk,behavior-hold-tap";
