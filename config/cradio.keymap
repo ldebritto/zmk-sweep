@@ -148,13 +148,14 @@
             mods = <(MOD_LCTL)>;
         };
         
-        thumb_shift: thumb_shift { // Allows for shift+space for scrolling up with the left hand on the keyboard and the right one on the mouse
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RSHFT>, <&kp SPACE>;
-
-            mods = <(MOD_LSFT)>;
+        thumb_shift: thumb_shift { // Allows for space/shift+space for scrolling up with the left hand on the keyboard and the right one on the mouse
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_SHIFT";
+            bindings = <&kp>, <&kp>;
+            flavor = "hold-preferred";
+            hold-while-undecided
         };
+        #define THUMB_SHIFT &thumb_shift RSHFT SPACE
 
         swapper: swapper_for_apple_cmd_tab {
             compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
@@ -259,7 +260,7 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml GLOBE G   &hrmr GLOBE H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &thumb_shift    &kp SPACE       &lc SYM
+                                              &lc NAV       THUMB_SHIFT     &kp SPACE       &lc SYM
             >;
         };
 
@@ -268,7 +269,7 @@
   &kp Q  &kp W  &kp E  &kp R    &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P
   &kp A  &kp S  &kp D  &kp F    &kp G        &kp H      &kp J  &kp K      &kp L    &kp SQT
   &kp Z  &kp X  &kp C  &kp V    &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                       &lc NAV  &thumb_shift &kp SPACE  &lc SYM
+                       &lc NAV  THUMB_SHIFT  &kp SPACE  &lc SYM
             >;
         };
 
