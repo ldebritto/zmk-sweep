@@ -150,6 +150,7 @@
         
         thumb_shift: thumb_shift { // Allows for space/shift+space for scrolling up with the left hand on the keyboard and the right one on the mouse
             compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
             label = "THUMB_SHIFT";
             bindings = <&kp>, <&kp>;
             flavor = "hold-preferred";
