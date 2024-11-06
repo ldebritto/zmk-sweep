@@ -55,19 +55,6 @@
             require-prior-idle-ms = <200>;
         };
 
-        sticky_sym_layer_for_one_handed_typing {
-            key-positions = <32 33>;
-            bindings = <&sl SYM>;
-            layers = <DEF>;
-            require-prior-idle-ms = <200>;
-        };
-
-        toggle_nav_layer_for_extended_edits_or_mouse_usage {
-            key-positions = <24 30>;
-            bindings = <&tog NAV>;
-            require-prior-idle-ms = <200>;
-        };
-
         toggle_num_word {
             key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
@@ -307,8 +294,8 @@
             bindings = <
   &kp TAB    &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)  &kp PG_UP   &kp HOME  &kp UP    &kp END    &kp BSPC
   &sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)  &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-  &kp LG(Z)  &kp LG(X)  &kp LG(C)        &kp LG(V)    &sk GLOBE     &caps_word  &playnp   &vb_dn    &vb_up     &kp DEL
-                                         &trans       &kp F18       &trans      &trans
+  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)    &kp F18       &caps_word  &playnp   &vb_dn    &vb_up     &kp DEL
+                                         &trans       &trans        &trans      &trans
             >;
         };
 
