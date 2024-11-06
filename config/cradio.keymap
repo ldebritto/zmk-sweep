@@ -49,10 +49,18 @@
             layers = <DEF NMT>;
         };
 
-        toggle_mod_taps {
-            key-positions = <14 15>;
-            bindings = <&tog NMT>;
+        toggle_nav_for_extended_edits {
+            key-positions = <30 31>;
+            bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
+            layers = <DEF NMT NAV>;
+        };
+        
+        sticky_sym_layer_for_one_handed_activation {
+            key-positions = <30 31>;
+            bindings = <&sk SYM>; // usually just one symbol is used, so a &sk is better than &tog
+            require-prior-idle-ms = <200>;
+            layers = <DEF NMT NAV>;
         };
 
         toggle_num_word {
@@ -119,24 +127,6 @@
                 <&kp C_PREVIOUS>;
         };
         
-        lcnav: lc_nav {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings =
-                <&lc NAV>,
-                <&tog NAV>;
-        };
-        
-        lcsym: lc_sym {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings =
-                <&lc SYM>,
-                <&tog SYM>;
-        };
-
         vb_up: volume_brightness_up_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -268,7 +258,7 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml GLOBE G   &hrmr GLOBE H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lcnav        &tshift RSHFT SPACE &kp SPACE   &lcsym
+                                              &lc NAV       &tshift RSHFT SPACE &kp SPACE   &lc SYM
             >;
         };
 
@@ -283,10 +273,10 @@
 
         NUM {
             bindings = <
-  &kp TAB    &kp N7  &kp N8  &kp N9 &kp COLON   &tog NUM  &tog NUM  &tog NUM  &tog NUM  &tog NUM
-  &kp N0     &kp N4  &kp N5  &kp N6 &sl SYM     &tog NUM  &tog NUM  &tog NUM  &tog NUM  &tog NUM
-  &kp COMMA  &kp N1  &kp N2  &kp N3 &kp DOT     &tog NUM  &tog NUM  &tog NUM  &tog NUM  &tog NUM
-                             &trans &kp RET     &trans    &trans
+  &kp TAB    &kp N7  &kp N8  &kp N9 &kp COLON   &trans  &trans  &trans  &trans  &trans
+  &kp N0     &kp N4  &kp N5  &kp N6 &sl SYM     &trans  &trans  &trans  &trans  &trans
+  &kp COMMA  &kp N1  &kp N2  &kp N3 &kp DOT     &trans  &trans  &trans  &trans  &trans
+                             &trans &kp RET     &trans  &trans
             >;
         };
 
