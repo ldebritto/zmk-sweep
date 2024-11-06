@@ -131,6 +131,24 @@
                 <&kp C_NEXT>,
                 <&kp C_PREVIOUS>;
         };
+        
+        lcnav: lc_nav {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings =
+                <&lc NAV>,
+                <&tog NAV>;
+        };
+        
+        lcsym: lc_sym {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings =
+                <&lc SYM>,
+                <&tog SYM>;
+        };
 
         vb_up: volume_brightness_up_on_control {
             compatible = "zmk,behavior-mod-morph";
@@ -263,7 +281,7 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml GLOBE G   &hrmr GLOBE H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV   &tshift RSHFT SPACE &kp SPACE       &lc SYM
+                                              &lcnav        &tshift RSHFT SPACE &kp SPACE   &lcsym
             >;
         };
 
