@@ -24,8 +24,8 @@
   continue-list = <
     COLON DOT COMMA 
     SLASH MINUS PLUS ASTRK EQUAL
-    BSPC
-    TAB RETURN
+    BSPC DEL
+    TAB KP_ENTER
   >;
   ignore-modifiers;
 };
@@ -283,10 +283,10 @@
 
         NUM {
             bindings = <
-  &mt LSHFT TAB &kp N7  &kp N8  &kp N9      &kp COLON        &trans  &trans  &trans  &trans  &trans
-  &kp N0        &kp N4  &kp N5  &kp N6      &sl SYM          &trans  &trans  &trans  &trans  &trans
-  &kp COMMA     &kp N1  &kp N2  &kp N3      &kp DOT          &trans  &trans  &trans  &trans  &trans
-                                &lt NAV N0  &mt LSHFT RET    &trans  &trans
+  &mt LSHFT TAB &kp N7  &kp N8  &kp N9      &kp COLON             &trans  &trans  &trans  &trans  &trans
+  &kp N0        &kp N4  &kp N5  &kp N6      &sl SYM               &trans  &trans  &trans  &trans  &trans
+  &kp COMMA     &kp N1  &kp N2  &kp N3      &kp DOT               &trans  &trans  &trans  &trans  &trans
+                                &lt NAV N0  &mt LSHFT KP_ENTER    &trans  &trans
             >;
         };
 
