@@ -270,8 +270,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer_for_function_and_number_row_keys {
-            if-layers = <3 4>;
-            then-layer = <5>;
+            if-layers = <NAV SYM>;
+            then-layer = <FUN>;
         };
     };
 
