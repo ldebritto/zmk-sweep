@@ -57,33 +57,33 @@
             bindings = <&kp ENTER>;
             key-positions = <16 17 18>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NMT>;
+            layers = <DEF TMK NMT>;
         };
 
         toggle_nav_for_extended_edits {
             key-positions = <30 31>;
             bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NMT NAV>;
+            layers = <DEF TMK NMT NAV>;
         };
         
         sticky_sym_layer_for_one_handed_activation {
             key-positions = <30 31>;
             bindings = <&sk SYM>; // usually just one symbol is used, so a &sk is better than &tog
             require-prior-idle-ms = <200>;
-            layers = <DEF NMT NAV>;
+            layers = <DEF TMK NMT NAV>;
         };
 
         toggle_num_word {
             key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF NMT NUM>;
+            layers = <DEF TMK NMT NUM>;
         };
 
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
-            layers = <DEF>;
+            layers = <DEF TMK NMT>;
             require-prior-idle-ms = <200>;
         };
 
