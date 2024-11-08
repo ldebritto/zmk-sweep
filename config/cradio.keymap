@@ -4,14 +4,15 @@
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
 
 #define DEF 0
-#define NMT 1 // No-mod-taps for if I regret setting mod-taps and can't access my code or can't update my firmware on the keyboard
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 7
-#define ABS 8
+#define TMK 1 // TARMAK (https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/)
+#define NMT 2 // No-mod-taps for if I regret setting mod-taps and can't access my code or can't update my firmware on the keyboard
+#define NUM 3
+#define NAV 4
+#define SYM 5
+#define FUN 6
+#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 8
+#define ABS 9
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
@@ -83,6 +84,20 @@
             key-positions = <12 17>;
             bindings = <&caps_word>;
             layers = <DEF>;
+            require-prior-idle-ms = <200>;
+        };
+
+        toggle_no_mod_taps {
+            key-positions = <14 15>;
+            bindings = <&tog NMT>;
+            layers = <FUN>;
+            require-prior-idle-ms = <200>;
+        };
+        
+        toggle_aptmak {
+            key-positions = <4 5>;
+            bindings = <&tog TMK>;
+            layers = <FUN>;
             require-prior-idle-ms = <200>;
         };
 
@@ -268,6 +283,15 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml GLOBE G   &hrmr GLOBE H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
+                                              &lc NAV       &tshift RSHFT SPACE &kp SPACE   &lc SYM
+            >;
+        };
+
+        TMK {
+            bindings = <
+  &kp Q          &kp W         &kp J          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml GLOBE G   &hrmr GLOBE H   &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
+  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp K           &kp M         &kp COMMA      &kp DOT       &kp SEMI
                                               &lc NAV       &tshift RSHFT SPACE &kp SPACE   &lc SYM
             >;
         };
