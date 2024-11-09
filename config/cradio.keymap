@@ -37,13 +37,27 @@
 
         left_hand_esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 10>;
+            key-positions = <1 3>;
             require-prior-idle-ms = <200>;
+        };
+
+        left_hand_del {
+            bindings = <&hrml LG(LS(LALT)) BSPC>;
+            key-positions = <11 12 13>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF TMK NMT>;
+        };
+
+        left_hand_tab {
+            bindings = <&hrml LG(LALT) BSPC>;
+            key-positions = <11 13>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF TMK NMT>;
         };
 
         left_hand_enter {
             bindings = <&kp ENTER>;
-            key-positions = <3 13>;
+            key-positions = <1 2 3>;
             require-prior-idle-ms = <200>;
         };
 
@@ -54,12 +68,19 @@
         };
 
         right_hand_enter {
-            bindings = <&kp ENTER>;
+            bindings = <&hrmr LG(LALT) ENTER>;
+            key-positions = <16 18>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF TMK NMT>;
+        };
+        
+        right_hand_bspc {
+            bindings = <&hrmr LG(LS(LALT)) BSPC>;
             key-positions = <16 17 18>;
             require-prior-idle-ms = <200>;
             layers = <DEF TMK NMT>;
         };
-
+        
         toggle_nav_for_extended_edits {
             key-positions = <30 31>;
             bindings = <&tog NAV>;
