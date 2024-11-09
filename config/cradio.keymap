@@ -49,7 +49,7 @@
         };
 
         left_hand_tab {
-            bindings = <&hrml LG(LALT) BSPC>;
+            bindings = <&hrml LG(LALT) TAB>;
             key-positions = <11 13>;
             require-prior-idle-ms = <200>;
             layers = <DEF TMK NMT>;
@@ -61,11 +61,11 @@
             require-prior-idle-ms = <200>;
         };
 
-        left_hand_backspace {
-            bindings = <&kp BSPC>;
-            key-positions = <4 14>;
-            require-prior-idle-ms = <200>;
-        };
+        // left_hand_backspace {
+        //     bindings = <&kp BSPC>;
+        //     key-positions = <4 14>;
+        //     require-prior-idle-ms = <200>;
+        // };
 
         right_hand_enter {
             bindings = <&hrmr LG(LALT) ENTER>;
