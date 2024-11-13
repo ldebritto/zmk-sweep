@@ -37,50 +37,22 @@
 
         left_hand_esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <1 3>;
+            key-positions = <1 2 3>; //
             require-prior-idle-ms = <200>;
-        };
-
-        left_hand_del {
-            bindings = <&hrml LG(LS(LALT)) BSPC>;
-            key-positions = <11 12 13>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF TMK NMT>;
-        };
-
-        left_hand_tab {
-            bindings = <&hrml LG(LALT) TAB>;
-            key-positions = <11 13>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF TMK NMT>;
         };
 
         left_hand_enter {
             bindings = <&kp ENTER>;
-            key-positions = <1 2 3>;
+            key-positions = <11 12 13>;
             require-prior-idle-ms = <200>;
         };
 
-        // left_hand_backspace {
-        //     bindings = <&kp BSPC>;
-        //     key-positions = <4 14>;
-        //     require-prior-idle-ms = <200>;
-        // };
+        left_hand_backspace {
+            bindings = <&kp BSPC>;
+            key-positions = <11 13>; // SF
+            require-prior-idle-ms = <200>;
+        };
 
-        right_hand_enter {
-            bindings = <&hrmr LG(LALT) ENTER>;
-            key-positions = <16 18>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF TMK NMT>;
-        };
-        
-        right_hand_bspc {
-            bindings = <&hrmr LG(LS(LALT)) BSPC>;
-            key-positions = <16 17 18>;
-            require-prior-idle-ms = <200>;
-            layers = <DEF TMK NMT>;
-        };
-        
         toggle_nav_for_extended_edits {
             key-positions = <30 31>;
             bindings = <&tog NAV>;
@@ -89,7 +61,7 @@
         };
         
         sticky_sym_layer_for_one_handed_activation {
-            key-positions = <30 31>;
+            key-positions = <32 33>;
             bindings = <&sk SYM>; // usually just one symbol is used, so a &sk is better than &tog
             require-prior-idle-ms = <200>;
             layers = <DEF TMK NMT NAV>;
@@ -189,7 +161,7 @@
             mods = <(MOD_LCTL)>;
         };
         
-        tshift: thumb_shift { // Allows for space/shift+space for scrolling up with the left hand on the keyboard and the right one on the mouse
+        hp: hold_preferred_mod_tap { // Allows for space/shift+space for scrolling up with the left hand on the keyboard and the right one on the mouse
             compatible = "zmk,behavior-hold-tap";
             label = "THUMB_SHIFT";
             bindings = <&kp>, <&kp>;
@@ -237,9 +209,7 @@
             require-prior-idle-ms = <175>;
         };
 
-        // Layer-tap variants for urob's balanced hrm with a &lc instead of a regular &mo on hold
-
-        ltl: ltl {
+        ltl: ltl {  // Layer-tap variants for urob's balanced hrm with a &lc instead of a regular &mo on hold
             compatible = "zmk,behavior-hold-tap";
             label = "LC_TAP_L";
             bindings = <&lc>, <&kp>;
@@ -253,7 +223,7 @@
             require-prior-idle-ms = <175>;
         };
 
-        ltr: ltr {
+        ltr: ltr { // Layer-tap variants for urob's balanced hrm with a &lc instead of a regular &mo on hold
             compatible = "zmk,behavior-hold-tap";
             label = "LC_TAP_R";
             bindings = <&lc>, <&kp>;
@@ -337,10 +307,10 @@
 
         NAV {
             bindings = <
-  &kp TAB    &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)  &kp PG_UP   &kp HOME  &kp UP    &kp END    &kp BSPC
-  &sk LCTRL  &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)  &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-  &mt GLOBE LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)    &kp F18       &caps_word  &playnp   &vb_dn    &vb_up     &kp DEL
-                                         &trans       &trans        &trans      &trans
+  &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)  &kp PG_UP   &kp HOME  &kp UP    &kp END    &kp BSPC
+  &sk LCTRL         &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)  &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
+  &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18       &caps_word  &playnp   &vb_dn    &vb_up     &kp DEL
+                                                &trans       &trans        &trans      &trans
             >;
         };
 
