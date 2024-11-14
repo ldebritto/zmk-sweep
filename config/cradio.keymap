@@ -138,6 +138,12 @@
             bindings = <&bt BT_CLR>;
             layers = <FUN>;
         };
+        
+        sys_zmk_studio_unlock {
+            key-positions = <16 17 18>;
+            bindings = <&studio_unlock>;
+            layers = <FUN>;
+        };
 
     };
 
