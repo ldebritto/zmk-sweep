@@ -2,6 +2,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+#include <layouts/cuddlykeyboards/ferris.dtsi>
+
+// Assigning suitable kscan and matrix transforms
+&cuddlykeyboards_ferris_layout {
+    transform = <&default_transform>;
+    kscan = <&kscan0>;
+};
 
 #define DEF 0
 #define TMK 1 // TARMAK (https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/)
