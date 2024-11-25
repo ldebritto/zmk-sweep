@@ -312,7 +312,7 @@
 
         NUM {
             bindings = <
-  &kp TAB   &kp N7  &kp N8  &kp N9  &kp LA(N0)          &trans  &trans  &trans  &trans  &trans
+  &kp COLON &kp N7  &kp N8  &kp N9  &kp LA(N0)          &trans  &trans  &trans  &trans  &trans
   &kp N0    &kp N4  &kp N5  &kp N6  &sl SYM             &trans  &trans  &trans  &trans  &trans
   &kp COMMA &kp N1  &kp N2  &kp N3  &kp KP_DOT          &trans  &trans  &trans  &trans  &trans
                             &mo NAV &tog NUM            &trans  &trans
