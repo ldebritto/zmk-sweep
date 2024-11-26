@@ -45,7 +45,7 @@
 
         left_hand_esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <1 2 3>; //
+            key-positions = <1 2 3>;
             require-prior-idle-ms = <200>;
         };
 
@@ -57,7 +57,13 @@
 
         left_hand_backspace {
             bindings = <&kp BSPC>;
-            key-positions = <11 13>; // SF
+            key-positions = <11 13>;
+            require-prior-idle-ms = <200>;
+        };
+
+        alfred_universal_actions {
+            bindings = <&kp LC(LS(BACKSLASH))>;
+            key-positions = <6 7 8>;
             require-prior-idle-ms = <200>;
         };
 
