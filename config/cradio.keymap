@@ -339,7 +339,7 @@
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp AT     &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp PLUS   &kp MINUS  &kp ASTRK  &kp FSLH   &kp EQUAL        &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                   &trans     &mt RSHFT UNDER  &trans    &trans
+                                   &trans     &mt RSHFT UNDER  &kp UNDER    &trans
             >;
         };
 
