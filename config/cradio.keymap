@@ -4,7 +4,7 @@
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
 #include <layouts/cuddlykeyboards/ferris.dtsi>
 
-// Assigning suitable kscan and matrix transforms
+// Assigning suitable kscan and matrix transforms for ZMK Studio
 &cuddlykeyboards_ferris_layout {
     transform = <&default_transform>;
     kscan = <&kscan0>;
@@ -20,6 +20,8 @@
 #define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
 #define AGS 8
 #define ABS 9
+
+#define HYPER LG(LS(LC(LALT)))
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
@@ -292,7 +294,7 @@
         DEF {
             bindings = <
   &kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
-  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml GLOBE G   &hrmr GLOBE H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPER G   &hrmr HYPER H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
                                               &lc NAV       &hp RSHFT SPACE &kp SPACE       &lc SYM
             >;
@@ -301,7 +303,7 @@
         TMK {
             bindings = <
   &kp Q          &kp W         &kp J          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
-  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml GLOBE G   &hrmr GLOBE H   &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPER G   &hrmr HYPER H   &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp K           &kp M         &kp COMMA      &kp DOT       &kp SEMI
                                               &lc NAV       &hp RSHFT SPACE &kp SPACE       &lc SYM
             >;
