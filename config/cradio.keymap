@@ -20,7 +20,6 @@
 #define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
 #define AGS 8
 #define ABS 9
-
 #define HYPER LG(LS(LC(LALT)))
 
 &sk {
@@ -320,10 +319,10 @@
 
         NUM {
             bindings = <
-  &kp COLON &kp N7  &kp N8  &kp N9  &kp LA(N0)          &trans  &trans  &trans  &trans  &trans
-  &kp N0    &kp N4  &kp N5  &kp N6  &sl SYM             &trans  &trans  &trans  &trans  &trans
-  &kp COMMA &kp N1  &kp N2  &kp N3  &kp KP_DOT          &trans  &trans  &trans  &trans  &trans
-                            &mo NAV &tog NUM            &trans  &trans
+  &kp COLON &kp N7  &kp N8  &kp N9  &sl SYM          &trans  &trans  &trans  &trans  &trans
+  &kp N0    &kp N4  &kp N5  &kp N6  &kp KP_ENTER     &trans  &trans  &trans  &trans  &trans
+  &kp COMMA &kp N1  &kp N2  &kp N3  &kp KP_DOT       &trans  &trans  &trans  &trans  &trans
+                            &mo NAV &tog NUM         &trans  &trans
             >;
         };
 
