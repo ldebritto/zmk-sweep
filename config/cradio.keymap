@@ -69,26 +69,26 @@
             key-positions = <30 31>;
             bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
-            layers = <DEF TMK NMT NAV>;
+            layers = <DEF NMT NAV>;
         };
         
         sticky_sym_layer_for_one_handed_activation {
             key-positions = <32 33>;
             bindings = <&sk SYM>; // usually just one symbol is used, so a &sk is better than &tog
             require-prior-idle-ms = <200>;
-            layers = <DEF TMK NMT NAV>;
+            layers = <DEF NMT NAV>;
         };
 
         toggle_num_word {
             key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF TMK NMT NUM>;
+            layers = <DEF NMT NUM>;
         };
 
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
-            layers = <DEF TMK NMT>;
+            layers = <DEF NMT>;
             require-prior-idle-ms = <200>;
         };
 
@@ -99,13 +99,6 @@
             require-prior-idle-ms = <200>;
         };
         
-        toggle_aptmak {
-            key-positions = <4 5>;
-            bindings = <&tog TMK>;
-            layers = <FUN>;
-            require-prior-idle-ms = <200>;
-        };
-
         sys_bootloader {
             key-positions = <20 21>;
             bindings = <&bootloader>;
@@ -273,10 +266,10 @@
 
         NUM {
             bindings = <
-  &kp COLON &kp N7  &kp N8  &kp N9  &sl SYM          &trans  &trans  &trans  &trans  &trans
+  &kp COLON &kp N7  &kp N8  &kp N9  &kp BSPC         &trans  &trans  &trans  &trans  &trans
   &kp N0    &kp N4  &kp N5  &kp N6  &kp KP_ENTER     &trans  &trans  &trans  &trans  &trans
   &kp COMMA &kp N1  &kp N2  &kp N3  &kp KP_DOT       &trans  &trans  &trans  &trans  &trans
-                            &mo NAV &tog NUM         &trans  &trans
+                            &mo NAV &sl SYM          &trans  &trans
             >;
         };
 
@@ -293,8 +286,8 @@
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp PLUS   &kp AT     &kp ASTRK  &kp FSLH   &kp EQUAL        &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                   &trans     &mt RSHFT UNDER  &kp UNDER    &trans
+  &kp PLUS   &kp EQUAL  &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+                                   &trans     &mt RSHFT UNDER   &kp UNDER    &trans
             >;
         };
 
