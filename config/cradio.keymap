@@ -3,13 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
 
-// Assigning suitable kscan and matrix transforms for ZMK Studio
-#include <layouts/cuddlykeyboards/ferris.dtsi>
-&cuddlykeyboards_ferris_layout {
-    transform = <&default_transform>;
-    kscan = <&kscan0>;
-};
-
 #define DEF 0
 #define NMT 1 // No-mod-taps for if I regret setting mod-taps and can't access my code or can't update my firmware on the keyboard
 #define NUM 2
@@ -130,12 +123,6 @@
             layers = <FUN>;
         };
         
-        // sys_zmk_studio_unlock {
-        //     key-positions = <26 27 28>;
-        //     bindings = <&studio_unlock>;
-        //     layers = <FUN>;
-        // };
-
     };
 
     behaviors {
