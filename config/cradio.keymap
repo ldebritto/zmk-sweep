@@ -12,7 +12,7 @@
 
 #define HYPER LG(LS(LC(LALT)))
 
-// Mouse file and settings from urob's repo (https://github.com/urob/zmk-config)
+// Mouse file and settings from urob's repo (https://github.com/urob/zmk-config) that also use urob's ZMK fork on west.yml
 #include "mouse.dtsi"
 #define MOUSE 6
 
@@ -45,13 +45,13 @@
         };
 
         left_hand_enter {
-            bindings = <&kp ENTER>;
+            bindings = <&hrml LA(LS(LGUI)) ENTER>;
             key-positions = <11 12 13>;
             require-prior-idle-ms = <200>;
         };
 
         left_hand_backspace {
-            bindings = <&kp BSPC>;
+            bindings = <&hrml LA(LGUI) BSPC>;
             key-positions = <11 13>;
             require-prior-idle-ms = <200>;
         };
