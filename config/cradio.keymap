@@ -286,5 +286,5 @@
                                   &trans    &kp LG(LC(Q))    &kp CAPS  &trans
             >;
         };
-
+    };
 };
