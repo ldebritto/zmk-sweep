@@ -12,6 +12,10 @@
 
 #define HYPER LG(LS(LC(LALT)))
 
+// Mouse file and settings from urob's repo (https://github.com/urob/zmk-config)
+#include "mouse.dtsi"
+#define MOUSE 6
+
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
     release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -53,7 +57,7 @@
         };
 
         alfred_universal_actions {
-            bindings = <&kp LC(LS(BACKSLASH))>;
+            bindings = <&tog MOUSE>;
             key-positions = <6 7 8>;
             require-prior-idle-ms = <200>;
         };
@@ -286,5 +290,14 @@
                                   &trans    &kp LG(LC(Q))    &kp CAPS  &trans
             >;
         };
+
+        MOUSE {
+            bindings = <
+&kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &trans
+&kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &trans
+&hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &trans          &mkp MB4        &mkp MCLK       &mkp MB4        &trans
+                                              &trans       &trans       &mkp LCLK       &mkp RCLK            
+            >;          
+        }
     };
 };
