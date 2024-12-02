@@ -14,7 +14,7 @@
 
 // Mouse file and settings from urob's repo (https://github.com/urob/zmk-config) that also use urob's ZMK fork on west.yml
 #include "mouse.dtsi"
-#define MOUSE 6
+#define MOU 6
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
@@ -61,8 +61,8 @@
             require-prior-idle-ms = <200>;
         };
 
-        alfred_universal_actions {
-            bindings = <&tog MOUSE>;
+        toggle_mouse_emulation_layer {
+            bindings = <&tog MOU>;
             key-positions = <6 7 8>;
             require-prior-idle-ms = <200>;
         };
@@ -296,7 +296,7 @@
             >;
         };
 
-        MOUSE {
+        MOU {
             bindings = <
 &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
 &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
