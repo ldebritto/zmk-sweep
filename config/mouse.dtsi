@@ -1,4 +1,4 @@
-// file was copied from urob's repo
+// This file was copied from urob's repo
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
@@ -18,11 +18,29 @@
   delay-ms = <0>;                   // 0
 };
 
-#define U_MS_U &mmv MOVE_UP
-#define U_MS_D &mmv MOVE_DOWN
-#define U_MS_L &mmv MOVE_LEFT
-#define U_MS_R &mmv MOVE_RIGHT
-#define U_WH_U &msc SCRL_UP
-#define U_WH_D &msc SCRL_DOWN
-#define U_WH_L &msc SCRL_LEFT
-#define U_WH_R &msc SCRL_RIGHT
+// Add the bellow lines do cradio.keymap 
+
+// Include and layer definition
+
+// Mouse file and settings from urob's repo (https://github.com/urob/zmk-config) that also use urob's ZMK fork on west.yml
+// #include "mouse.dtsi"
+// #define MOU 6
+
+// Combo for activacion
+
+        // toggle_mouse_emulation_layer {
+        //     bindings = <&tog MOU>;
+        //     key-positions = <6 7 8>;
+        //     require-prior-idle-ms = <200>;
+        // };
+
+// My mouse layer mappings for mousing and editting
+
+//         MOU {
+//             bindings = <
+// &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
+// &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+// &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &kp LC(UP)      &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
+//                                               &tog MOU     &kp RSHFT    &mkp LCLK       &mkp RCLK            
+//             >;          
+//         };

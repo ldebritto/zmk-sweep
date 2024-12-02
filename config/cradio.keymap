@@ -12,10 +12,6 @@
 
 #define HYPER LG(LS(LC(LALT)))
 
-// Mouse file and settings from urob's repo (https://github.com/urob/zmk-config) that also use urob's ZMK fork on west.yml
-// #include "mouse.dtsi"
-// #define MOU 6
-
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
     release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -60,12 +56,6 @@
             key-positions = <11 13>;
             require-prior-idle-ms = <200>;
         };
-
-        // toggle_mouse_emulation_layer {
-        //     bindings = <&tog MOU>;
-        //     key-positions = <6 7 8>;
-        //     require-prior-idle-ms = <200>;
-        // };
 
         toggle_nav_for_extended_edits {
             key-positions = <30 31>;
@@ -296,13 +286,5 @@
             >;
         };
 
-//         MOU {
-//             bindings = <
-// &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
-// &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-// &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &kp LC(UP)      &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
-//                                               &tog MOU     &kp RSHFT    &mkp LCLK       &mkp RCLK            
-//             >;          
-//         };
     };
 };
