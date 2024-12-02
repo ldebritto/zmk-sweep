@@ -303,6 +303,6 @@
 &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &kp LC(UP)      &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
                                               &tog MOU     &kp RSHFT    &mkp LCLK       &mkp RCLK            
             >;          
-        }
+        };
     };
 };
