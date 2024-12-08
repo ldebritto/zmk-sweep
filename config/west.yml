@@ -11,6 +11,7 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+      snippet: studio-rpc-usb-uart # ZMK-Studio-snippet
     - name: zmk-tri-state
       remote: urob
       revision: main
