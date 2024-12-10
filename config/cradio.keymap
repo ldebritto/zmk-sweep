@@ -4,11 +4,10 @@
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
 
 #define DEF 0
-#define NMT 1 // No-mod-taps for if I regret setting mod-taps and can't access my code or can't update my firmware on the keyboard
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
 
 #define HYPER LG(LS(LC(LALT)))
 
@@ -58,33 +57,26 @@
             key-positions = <30 31>;
             bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NMT NAV>;
+            layers = <DEF NAV>;
         };
         
         sticky_sym_layer_for_one_handed_activation {
             key-positions = <32 33>;
             bindings = <&sk SYM>; // usually just one symbol is used, so a &sk is better than &tog
             require-prior-idle-ms = <200>;
-            layers = <DEF NMT NAV>;
+            layers = <DEF NAV>;
         };
 
         toggle_num_word {
-            key-positions = <21 22 23>;
+            key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF NMT NUM>;
+            layers = <DEF NUM>;
         };
 
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
-            layers = <DEF NMT>;
-            require-prior-idle-ms = <200>;
-        };
-
-        toggle_no_mod_taps {
-            key-positions = <14 15>;
-            bindings = <&tog NMT>;
-            layers = <FUN>;
+            layers = <DEF>;
             require-prior-idle-ms = <200>;
         };
         
@@ -158,6 +150,18 @@
             compatible = "zmk,behavior-hold-tap";
             label = "THUMB_SHIFT";
             bindings = <&kp>, <&kp>;
+            
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            quick-tap-ms = <175>;
+            hold-while-undecided;
+        };
+
+        hpl: hold_preferred_layer_tap { // Same as before, but with a &lc option
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_LC";
+            bindings = <&lc>, <&kp>;
             
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -241,27 +245,17 @@
   &kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPER G   &hrmr HYPER H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &kp RSHFT       &kp SPACE       &lc SYM
-            >;
-        };
-
-        NMT {
-            display-name = "DEF-NMT";
-            bindings = <
-  &kp Q          &kp W  &kp E  &kp R    &kp T     &kp Y      &kp U  &kp I      &kp O    &kp P
-  &kp A          &kp S  &kp D  &kp F    &kp G     &kp H      &kp J  &kp K      &kp L    &kp SQT
-  &hrml GLOBE Z  &kp X  &kp C  &kp V    &kp B     &kp N      &kp M  &kp COMMA  &kp DOT  &kp SEMI
-                               &lc NAV  &kp RSHFT &kp SPACE  &lc SYM
+                                              &lc NAV       &hp RSHFT SPACE &kp SPACE       &ls SYM
             >;
         };
 
         NUM {
             display-name = "NUM";
             bindings = <
-  &kp COLON &kp N7  &kp N8  &kp N9  &kp BSPC         &trans  &trans  &trans  &trans  &trans
-  &kp N0    &kp N4  &kp N5  &kp N6  &kp KP_ENTER     &trans  &trans  &trans  &trans  &trans
-  &kp COMMA &kp N1  &kp N2  &kp N3  &kp KP_DOT       &trans  &trans  &trans  &trans  &trans
-                            &mo NAV &sl SYM          &trans  &trans
+  &kp COLON &kp N7  &kp N8  &kp N9      &kp BSPC         &trans  &trans  &trans  &trans  &trans
+  &kp N0    &kp N4  &kp N5  &kp N6      &kp KP_ENTER     &trans  &trans  &trans  &trans  &trans
+  &kp COMMA &kp N1  &kp N2  &kp N3      &kp KP_DOT       &trans  &trans  &trans  &trans  &trans
+                            &hp NAV N0  &sl SYM          &trans  &trans
             >;
         };
 
@@ -293,18 +287,6 @@
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &kp LG(LC(Q))    &kp CAPS  &trans
             >;
-        };
-
-        extra1 {
-            status = "reserved";
-        };
-
-        extra2 {
-            status = "reserved";
-        };
-
-        extra3 {
-            status = "reserved";
         };
 
     };
