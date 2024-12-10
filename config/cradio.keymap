@@ -9,7 +9,7 @@
 #define SYM 3
 #define FUN 4
 
-#define HYPER LG(LS(LC(LALT)))
+#define HYPER LG(LS(LC(LALT))) // HYPER key for another shortcut layer
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
@@ -21,13 +21,7 @@
 &mt { flavor = "balanced"; };
 
 &num_word {
-  continue-list = <
-    COLON KP_DOT COMMA
-    PLUS MINUS ASTRK SLASH EQUAL
-    AT DOLLAR
-    BSPC DEL
-    TAB KP_ENTER
-  >;
+  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT>;
   ignore-modifiers;
 };
 
@@ -111,12 +105,6 @@
             layers = <FUN>;
         };
         
-        sys_zmk_studio_unlock {
-            key-positions = <26 27 28>;
-            bindings = <&studio_unlock>;
-            layers = <FUN>;
-        };
-        
     };
 
     behaviors {
@@ -150,18 +138,6 @@
             compatible = "zmk,behavior-hold-tap";
             label = "THUMB_SHIFT";
             bindings = <&kp>, <&kp>;
-            
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <175>;
-            hold-while-undecided;
-        };
-
-        hpl: hold_preferred_layer_tap { // Same as before, but with a &lc option
-            compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_LC";
-            bindings = <&lc>, <&kp>;
             
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -252,10 +228,10 @@
         NUM {
             display-name = "NUM";
             bindings = <
-  &kp COLON &kp N7  &kp N8  &kp N9      &kp BSPC         &trans  &trans  &trans  &trans  &trans
-  &kp N0    &kp N4  &kp N5  &kp N6      &kp KP_ENTER     &trans  &trans  &trans  &trans  &trans
-  &kp COMMA &kp N1  &kp N2  &kp N3      &kp KP_DOT       &trans  &trans  &trans  &trans  &trans
-                            &hp NAV N0  &sl SYM          &trans  &trans
+  &kp COLON &kp N7  &kp N8  &kp N9      &kp BSPC         &none      &none       &none       &none       &none
+  &kp N0    &kp N4  &kp N5  &kp N6      &kp KP_ENTER     &sk HYPER  &sk RCMD    &sk LSHFT   &sk RALT    &kp RCTRL
+  &kp COMMA &kp N1  &kp N2  &kp N3      &kp KP_DOT       &none      &none       &none       &none       &none
+                            &hp NAV N0  &sl SYM          &trans     &trans
             >;
         };
 
