@@ -86,7 +86,7 @@
         toggle_aoe {
             key-positions = <20 21 22>;
             bindings = <&tog AOE>;
-            layers = <FUN AOE>;
+            layers = <NAV AGS>;
             require-prior-idle-ms = <200>;
         };
         
