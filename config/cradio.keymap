@@ -8,6 +8,9 @@
 #define NAV 2
 #define SYM 3
 #define FUN 4
+#define AOE 5 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 6
+#define ABS 7
 
 #define HYPER LG(LS(LC(LALT))) // HYPER key for another shortcut layer
 
@@ -77,6 +80,13 @@
             key-positions = <12 17>;
             bindings = <&caps_word>;
             layers = <DEF>;
+            require-prior-idle-ms = <200>;
+        };
+
+        toggle_aoe {
+            key-positions = <20 21 22>;
+            bindings = <&tog AOE>;
+            layers = <FUN AOE>;
             require-prior-idle-ms = <200>;
         };
         
@@ -263,6 +273,33 @@
   &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11          &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5           &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &kp LG(LC(Q))    &kp CAPS  &trans
+            >;
+        };
+
+        AOE {
+            bindings = <
+  &kp Q        &kp W       &kp E        &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
+  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
+  &lt 2 Z      &kp X       &kp C        &kp V        &kp B        &trans  &trans  &trans  &trans  &trans
+                                        &lt AGS H    &lt ABS DOT  &trans  &trans
+            >;
+        };
+
+        AGS {
+            bindings = <
+  &kp N1        &kp N2       &kp N3        &kp N4        &kp N5     &trans  &trans  &trans  &trans  &kp BSPC
+  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp N0     &trans  &trans  &trans  &trans  &kp ENTER
+  &kp COMMA     &kp BSPC     &kp SPACE     &kp DOT       &kp H      &trans  &trans  &trans  &trans  &kp F3
+                                           &trans        &kp DEL    &trans  &trans
+            >;
+        };
+
+        ABS {
+            bindings = <
+  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+                                               &trans         &trans           &trans  &trans
             >;
         };
 
