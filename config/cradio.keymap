@@ -234,7 +234,6 @@
                 <&macro_press &lc NAV>,
                 <&macro_pause_for_release>,
                 <&macro_release &lc NAV>;
-                ;
         };
         
         mouseless: from_mou_to_def_with_mouseless {
