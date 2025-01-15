@@ -5,8 +5,6 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20  // 10
 
 #include <dt-bindings/zmk/pointing.h>
-#include <input/processors.dtsi>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 // Based on @caksoylar's config, defaults in comments
 &mmv {
@@ -22,10 +20,9 @@
 };
 
 // Add these lines to cradio.conf
-// # Mouse config, requires PR #778
+// # Mouse config
 // CONFIG_ZMK_MOUSE=y
-// CONFIG_ZMK_MOUSE_TICK_DURATION=8
-
+// CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
 
 // Add the bellow lines do cradio.keymap 
 
