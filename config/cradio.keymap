@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+#include "mouse.dtsi"
 
 #define DEF 0
 #define NUM 1
@@ -11,6 +12,7 @@
 #define AOE 5 // AOE 2 layers with easier access for default shortcuts on main layer
 #define AGS 6
 #define ABS 7
+#define MOU 9
 
 #define HYPER LG(LS(LC(LALT))) // HYPER key for another shortcut layer
 
@@ -74,6 +76,13 @@
             key-positions = <21 22 23>;
             bindings = <&tog NUM>;
             layers = <DEF NUM>;
+        };
+
+        toggle_mouse_emulation_layer {
+            bindings = <&tog MOU>;
+            key-positions = <6 7 8>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF MOU>;
         };
 
         toggle_caps_word {
@@ -276,6 +285,8 @@
             >;
         };
 
+
+
         AOE {
             bindings = <
   &kp Q        &kp W       &kp E        &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
@@ -301,6 +312,15 @@
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
                                                &trans         &trans           &trans  &trans
             >;
+        };
+
+        MOU {
+            bindings = <
+&kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
+&kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+&hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &kp LC(UP)      &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
+                                              &tog MOU     &kp RSHFT    &mkp LCLK       &mkp RCLK            
+            >;          
         };
 
     };

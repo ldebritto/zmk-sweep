@@ -18,6 +18,12 @@
   delay-ms = <0>;                   // 0
 };
 
+// Add these lines to cradio.conf
+// # Mouse config, requires PR #778
+// CONFIG_ZMK_MOUSE=y
+// CONFIG_ZMK_MOUSE_TICK_DURATION=8
+
+
 // Add the bellow lines do cradio.keymap 
 
 // Include and layer definition
