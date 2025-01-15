@@ -21,39 +21,6 @@
   delay-ms = <0>;                       // 0
 };
 
-&mmv_input_listener {
-  warp {
-    layers = <NAV>;
-    input-processors = <&zip_xy_scaler 3 1>;
-  };
-  precision {
-    layers = <FN>;
-    input-processors = <&zip_xy_scaler 1 2>;
-  };
-};
-
-/ {
-  zip_scroll_scaler: zip_scroll_scaler {
-    compatible = "zmk,input-processor-scaler";
-    #input-processor-cells = <2>;
-    type = <INPUT_EV_REL>;
-    codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
-    track-remainders;
-  };
-};
-
-&msc_input_listener {
-  warp {
-    layers = <NAV>;
-    input-processors = <&zip_scroll_scaler 2 1>;
-  };
-  precision {
-    layers = <FN>;
-    input-processors = <&zip_scroll_scaler 1 2>;
-  };
-};
-
-
 // Add these lines to cradio.conf
 // # Mouse config, requires PR #778
 // CONFIG_ZMK_MOUSE=y
