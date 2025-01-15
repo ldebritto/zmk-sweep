@@ -230,8 +230,19 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
+                = <&macro_tap &tog MOU>,
+                <&macro_press &lc NAV>,
+                <&macro_pause_for_release>,
+                <&macro_release &lc NAV>;
+                ;
+        };
+        
+        mouseless: from_mou_to_def_with_mouseless {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
                 = <&macro_tap &tog MOU>
-                , <&macro_press &lc NAV>
+                , <&macro_press &kp F19>
                 ;
         };
     };
@@ -261,7 +272,7 @@
             bindings = <
 &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
 &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-&hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &kp LC(F19)     &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
+&hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &mouseless      &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
                                               &mnav        &tog MOU     &mkp LCLK       &mkp RCLK            
             >;          
         };
