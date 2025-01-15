@@ -5,14 +5,14 @@
 #include "mouse.dtsi"
 
 #define DEF 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define AOE 5 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 6
-#define ABS 7
-#define MOU 8
+#define MOU 1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
+#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 7
+#define ABS 8
 
 #define HYPER LG(LS(LC(LALT))) // HYPER key for another shortcut layer
 
@@ -69,7 +69,7 @@
         toggle_num_word {
             key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF NUM>;
+            layers = <DEF MOU NUM>;
         };
         
         toggle_numpad { // For extended edits
@@ -257,6 +257,15 @@
             >;
         };
 
+        MOU {
+            bindings = <
+&kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
+&kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+&hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &num_word NUM   &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
+                                              &mnav        &tog MOU     &mkp LCLK       &mkp RCLK            
+            >;          
+        };
+
         NUM {
             bindings = <
   &kp COLON &kp N7  &kp N8  &kp N9  &kp BSPC         &none      &none       &none       &none       &none
@@ -320,15 +329,6 @@
   &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
                                                &trans         &trans           &trans  &trans
             >;
-        };
-
-        MOU {
-            bindings = <
-&kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
-&kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-&hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &kp LC(UP)      &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
-                                              &mnav        &tog MOU     &mkp LCLK       &mkp RCLK            
-            >;          
         };
 
     };
