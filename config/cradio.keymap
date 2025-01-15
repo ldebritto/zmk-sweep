@@ -225,6 +225,15 @@
                 <&macro_release>,
                 <&mo MACRO_PLACEHOLDER>;
         };
+  
+        mnav: from_mou_to_nav {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &tog MOU>
+                , <&macro_press &lc NAV>
+                ;
+        };
     };
 
     conditional_layers {
@@ -318,7 +327,7 @@
 &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
 &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
 &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &kp LC(UP)      &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
-                                              &none        &tog MOU     &mkp LCLK       &mkp RCLK            
+                                              &mnav        &tog MOU     &mkp LCLK       &mkp RCLK            
             >;          
         };
 
