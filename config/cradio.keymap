@@ -242,7 +242,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &tog MOU>
-                , <&macro_press &kp F19>
+                , <&macro_tap &kp F19>
                 ;
         };
     };
