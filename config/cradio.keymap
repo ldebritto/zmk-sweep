@@ -168,8 +168,8 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RSHIFT>, <&kp SPACE>; //useful for scrolling up with the left hand on the keyboard and the right one on the mouse
-            mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOF_LALT|)>;
-            keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOF_LALT|)>;
+            mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_LALT|)>;
+            keep-mods = <(MOD_LCTL|MOD_LGUI|MOD_LSFT|MOD_LALT|)>;
         };
         
         hp: hold_preferred_mod_tap { // Allows for space/shift+space for scrolling up with the left hand on the keyboard and the right one on the mouse
