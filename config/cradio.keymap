@@ -16,13 +16,13 @@
 #define AGS 7
 #define ABS 8
 
-#define HYPER LG(LS(LC(LALT))) // HYPER key for another shortcut layer
+#define HYPER LG(LS(LC(LALT))) // HYPER key
 
 // Customizing behaviors
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
-    release-after-ms = <86400000>;// Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
+    release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE SLASH MINUS>; }; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
@@ -196,8 +196,8 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <250>;
         };
 
         hrmr: hrmr { // urob's home row mods right
@@ -210,8 +210,8 @@
             tapping-term-ms = <280>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
             hold-trigger-on-release;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <250>;
         };
 
     };
