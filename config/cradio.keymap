@@ -30,7 +30,7 @@
 &mt { flavor = "balanced"; };
 
 &num_word { // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LSH>;
+  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT>;
   ignore-modifiers;
 };
 
