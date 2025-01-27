@@ -58,7 +58,7 @@
             require-prior-idle-ms = <200>;
         };
 
-        // Right hand sibblings for ENTER and BACKSPACE
+        // Right hand sibblings for ENTER and BACKSPACE to make them more usable with NUM and from DEF
 
         right_hand_enter { // Feels more natural to press ENTER with the right hand
             bindings = <&hrmr RA(LS(RGUI)) ENTER>;
@@ -300,10 +300,10 @@
 
         NUM { // keypad is almost mirrored to allow for use with and without a mouse
             bindings = <
-  &kp COLON &kp N7  &kp N8  &kp N9  &kp BSPC        &kp COLON       &kp N7  &kp N8  &kp N9  &kp BSPC
-  &kp N0    &kp N4  &kp N5  &kp N6  &kp KP_ENTER    &kp SLASH       &kp N4  &kp N5  &kp N6  &kp KP_ENTER
-  &kp COMMA &kp N1  &kp N2  &kp N3  &kp KP_DOT      &kp COMMA       &kp N1  &kp N2  &kp N3  &kp KP_DOT
-                            &mo NAV &lt SYM SPACE   &lt NAV SPACE   &lt SYM N0
+  &trans        &kp N7  &kp N8  &kp N9  &kp COLON           &trans          &kp N7  &kp N8  &kp N9  &kp COLON
+  &mt MINUS N0  &kp N4  &kp N5  &kp N6  &kp SLASH           &kp MINUS       &kp N4  &kp N5  &kp N6  &kp SLASH
+  &kp COMMA     &kp N1  &kp N2  &kp N3  &kp KP_DOT          &kp COMMA       &kp N1  &kp N2  &kp N3  &kp KP_DOT
+                                &lt NAV N0 &lt SYM SPACE    &lt NAV SPACE   &lt SYM N0
             >;
         };
 
