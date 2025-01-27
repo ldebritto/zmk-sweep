@@ -228,6 +228,22 @@
             require-prior-idle-ms = <250>;
         };
 
+        // Customized balanced layer-tap
+
+        hrll: hrll { // urob's config but for a layer-tap on left hand
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRML";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+        };
+
     };
 
     macros {
@@ -284,7 +300,7 @@
             bindings = <
   &kp Q          &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPER G   &hrmr HYPER H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
+  &hrml GLOBE Z  &kp X         &kp C          &hrll NUM V   &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
                                               &lc NAV       &kp RSHFT       &kp SPACE       &lc SYM
             >;
         };
