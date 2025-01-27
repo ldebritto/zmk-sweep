@@ -302,7 +302,7 @@
             bindings = <
   &trans        &kp N7  &kp N8  &kp N9  &kp COLON           &trans          &kp N7  &kp N8  &kp N9  &kp COLON
   &mt MINUS N0  &kp N4  &kp N5  &kp N6  &kp SLASH           &kp MINUS       &kp N4  &kp N5  &kp N6  &kp SLASH
-  &kp COMMA     &kp N1  &kp N2  &kp N3  &kp KP_DOT          &kp COMMA       &kp N1  &kp N2  &kp N3  &kp KP_DOT
+  &kp COMMA     &kp N1  &kp N2  &kp N3  &kp KP_DOT          &kp COMMA       &kp N1  &kp N2  &kp N3  &mt KP_DOT DOT
                                 &lt NAV N0 &lt SYM K_CANCEL &lt NAV SPACE   &lt SYM N0
             >;
         };
