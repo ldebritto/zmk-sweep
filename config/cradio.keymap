@@ -38,7 +38,7 @@
     combos {
         compatible = "zmk,combos";
 
-        // Making the keyboard more accessible for one-handed use
+        // Making the keyboard more accessible for one-handed use with a mouse
 
         left_hand_esc { // Left hand is great to allow mouse usage simultaneously
             bindings = <&kp ESCAPE>;
@@ -58,9 +58,17 @@
             require-prior-idle-ms = <200>;
         };
 
+        // Right hand sibblings for ENTER and BACKSPACE
+
         right_hand_enter { // Feels more natural to press ENTER with the right hand
             bindings = <&hrmr RA(LS(RGUI)) ENTER>;
             key-positions = <16 17 18>;
+            require-prior-idle-ms = <200>;
+        };
+
+        right_hand_backspace {
+            bindings = <&hrml RA(RGUI) BSPC>;
+            key-positions = <16 18>;
             require-prior-idle-ms = <200>;
         };
 
