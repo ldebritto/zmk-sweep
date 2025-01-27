@@ -86,6 +86,12 @@
             layers = <DEF MOU NUM>;
         };
         
+        toggle_right_num_word {
+            key-positions = <17 34>;
+            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            layers = <DEF MOU NUM>;
+        };
+        
         toggle_numpad { // For extended edits
             key-positions = <21 22 23>;
             bindings = <&tog NUM>;
