@@ -17,6 +17,7 @@
 #define ABS 8
 
 #define HYPER LG(LS(LC(LALT))) // HYPER key
+#define HP(k1) LG(LS(LC(LA(k1)))) // HYPER mod shorthand
 
 // Customizing behaviors
 
@@ -300,10 +301,10 @@
 
         MOU {
             bindings = <
-&kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-&kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-&hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up        &kp DEL
-                                              &mnav        &kp SPACE    &mkp LCLK       &mkp RCLK            
+&kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)       &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+&kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI          &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+&hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &mt HP(V) LG(V)   &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up        &kp DEL
+                                              &mnav             &kp SPACE    &mkp LCLK       &mkp RCLK            
             >;          
         };
 
