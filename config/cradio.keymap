@@ -73,6 +73,12 @@
             require-prior-idle-ms = <200>;
         };
 
+        left_hand_delete {
+            bindings = <&kp DEL>;
+            key-positions = <21 23>;
+            require-prior-idle-ms = <200>;
+        };
+
         // Layer toggles and other gimmickry
 
         toggle_nav_for_extended_edits {
@@ -322,7 +328,7 @@
   &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT)  &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
   &sk LCTRL         &sk LALT   &sk LSHFT        &sk LGUI     &kp LG(LBKT)  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
   &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18       &playnp    &kp F19   &vb_dn    &vb_up     &kp DEL
-                                                &trans       &trans        &trans     &trans   
+                                                &trans       &kp SPACE     &trans     &trans   
             >;
         };
 
