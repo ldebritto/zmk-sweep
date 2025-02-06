@@ -81,6 +81,13 @@
             layers = <DEF NAV>;
         };
         
+        toggle_mou_for_extended_edits {
+            key-positions = <21 22 23>;
+            bindings = <&tog MOU>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF MOU>;
+        };
+        
         sticky_sym_layer_for_one_handed_activation {
             key-positions = <32 33>;
             bindings = <&sl SYM>; // usually just one symbol is used, so a &sl is better than &tog
@@ -95,7 +102,7 @@
         };
         
         toggle_numpad { // For extended edits
-            key-positions = <21 22 23>;
+            key-positions = <26 27 28>;
             bindings = <&tog NUM>;
             layers = <DEF NUM>;
         };
@@ -268,14 +275,6 @@
                 <&macro_release &lc NAV>;
         };
         
-        mouseless: from_mou_to_def_with_mouseless {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &tog MOU>
-                , <&macro_tap &kp F19>
-                ;
-        };
     };
 
     conditional_layers {
