@@ -283,11 +283,11 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
   
-        mnav: from_mou_to_nav {
+        mnav: from_layer_to_nav_through_def { // Disables any toggled layer and goes to NAV on hold
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &tog MOU>,
+                = <&macro_tap &to DEF>,
                 <&macro_press &lc NAV>,
                 <&macro_pause_for_release>,
                 <&macro_release &lc NAV>;
