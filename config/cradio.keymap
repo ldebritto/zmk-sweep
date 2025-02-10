@@ -69,6 +69,12 @@
 
         // Right hand sibblings for ENTER and BACKSPACE to make them more usable with NUM and from DEF
 
+        right_hand_tab {
+            bindings = <&kp TAB>;
+            key-positions = <6 8>;
+            require-prior-idle-ms = <200>;
+        };
+
         right_hand_enter { // Feels more natural to press ENTER with the right hand
             bindings = <&hrmr RA(LS(RGUI)) ENTER>;
             key-positions = <16 17 18>;
