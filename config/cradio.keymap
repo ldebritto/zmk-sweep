@@ -26,13 +26,15 @@
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
-&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE SLASH MINUS>; }; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
+&caps_word { 
+    /delete-property/ ignore-modifiers; // This voids pressing command+shift+s instead of a simple command+s
+    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT LALT RALT SQT CARET TILDE GRAVE SLASH MINUS>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on '^`~" keys, ALT is needed to enter alt characters
+    }; 
 
 &mt { flavor = "balanced"; };
 
 &num_word { // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR BSPC DEL TAB ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT>;
-  ignore-modifiers;
+  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LCTRL LALT LSHFT LGUI>;
 };
 
 / {
