@@ -16,8 +16,8 @@
 #define AGS 7
 #define ABS 8
 
-#define HYPER LG(LS(LC(LALT))) // HYPER key
-#define HP(k1) LG(LS(LC(LA(k1)))) // HYPER mod shorthand
+#define HYPR LG(LS(LC(LALT))) // HYPR key
+#define HP(k1) LG(LS(LC(LA(k1)))) // HYPR mod shorthand
 
 // Customizing behaviors
 
@@ -34,7 +34,7 @@
 &mt { flavor = "balanced"; };
 
 &num_word { // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LCTRL LALT LSHFT LGUI>;
+  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR PRCNT BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LCTRL LALT LSHFT LGUI>;
 };
 
 / {
@@ -61,6 +61,12 @@
             require-prior-idle-ms = <200>;
         };
 
+        left_hand_delete {
+            bindings = <&kp DEL>;
+            key-positions = <21 23>;
+            require-prior-idle-ms = <200>;
+        };
+
         // Right hand sibblings for ENTER and BACKSPACE to make them more usable with NUM and from DEF
 
         right_hand_enter { // Feels more natural to press ENTER with the right hand
@@ -75,16 +81,10 @@
             require-prior-idle-ms = <200>;
         };
 
-        left_hand_delete {
-            bindings = <&kp DEL>;
-            key-positions = <21 23>;
-            require-prior-idle-ms = <200>;
-        };
-
         // Layer toggles and other gimmickry
 
         toggle_nav_for_extended_edits {
-            key-positions = <30 31>;
+            key-positions = <12 30>;
             bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
             layers = <DEF NAV>;
@@ -97,7 +97,7 @@
             layers = <DEF MOU>;
         };
         
-        sticky_sym_layer_for_one_handed_activation {
+        sticky_sym_layer_for_one_handed_operation {
             key-positions = <32 33>;
             bindings = <&sl SYM>; // usually just one symbol is used, so a &sl is better than &tog
             require-prior-idle-ms = <200>;
@@ -182,6 +182,15 @@
                 <&kp C_PREVIOUS>;
         };
         
+        sdqt: single_and_double_quotes {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings =
+                <&hrmr RCTRL SQT>,
+                <&kp DQT>;
+        };
+        
         vb_up: volume_brightness_up_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -243,7 +252,7 @@
         ltl: layer_tap_left { // urob's logic but for a layer-tap on left hand
             compatible = "zmk,behavior-hold-tap";
             label = "LTL";
-            bindings = <&mo>, <&kp>;
+            bindings = <&lc>, <&kp>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
@@ -301,7 +310,7 @@
         DEF {
             bindings = <
   &ltl MOU Q     &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
-  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPER G   &hrmr HYPER H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G   &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &sdqt
   &hrml GLOBE Z  &kp X         &kp C          &ltl NUM V    &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
                                               &lc NAV       &kp RSHFT       &kp SPACE       &lc SYM
             >;
@@ -312,16 +321,16 @@
   &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI    &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
   &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up          &kp DEL
-                                                &trans      &kp SPACE    &mkp LCLK       &mkp RCLK            
+                                                &mnav       &kp SPACE    &mkp LCLK       &mkp RCLK            
             >;          
         };
 
         NUM { // keypad is almost mirrored to allow for use with and without a mouse
             bindings = <
-  &trans &trans &trans &trans  &trans  &kp PLUS           &kp N7          &kp N8          &kp N9         &kp ASTRK
-  &trans &trans &trans &trans  &trans  &hrmr HYPER MINUS  &hrmr RGUI N4   &hrmr RSHFT N5  &hrmr RALT N6  &hrmr RCTRL SLASH
-  &trans &trans &trans &trans  &trans  &kp COMMA          &kp N1          &kp N2          &kp N3         &kp KP_DOT
-                       &lc NAV &trans  &lt NAV SPACE      &lt SYM N0
+  &trans &trans &trans &trans  &trans  &kp PLUS         &kp N7          &kp N8          &kp N9         &kp ASTRK
+  &trans &trans &trans &trans  &trans  &hrmr HYPR MINUS &hrmr RGUI N4   &hrmr RSHFT N5  &hrmr RALT N6  &hrmr RCTRL SLASH
+  &trans &trans &trans &trans  &trans  &kp COMMA        &kp N1          &kp N2          &kp N3         &kp KP_DOT
+                       &mnav   &trans  &lt NAV SPACE    &lt SYM N0
             >;
         };
 
@@ -365,7 +374,7 @@
             bindings = <
   &kp N1        &kp N2       &kp N3        &kp N4        &kp DEL    &trans  &trans  &trans  &trans  &kp BSPC
   &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp HOME   &trans  &trans  &trans  &trans  &kp ENTER
-  &kp COMMA     &kp DOT      &kp BSPC      &kp HOME      &mo ABS     &trans  &trans  &trans  &trans  &kp F3
+  &kp COMMA     &kp DOT      &kp BSPC      &kp HOME      &mo ABS    &trans  &trans  &trans  &trans  &kp F3
                                            &trans        &kp SPACE  &trans  &trans
             >;
         };
