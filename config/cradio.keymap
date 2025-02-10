@@ -188,15 +188,6 @@
                 <&kp C_PREVIOUS>;
         };
         
-        sdqt: single_and_double_quotes {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings =
-                <&hrmr RCTRL SQT>,
-                <&kp DQT>;
-        };
-        
         vb_up: volume_brightness_up_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -316,7 +307,7 @@
         DEF {
             bindings = <
   &ltl MOU Q     &kp W         &kp E          &kp R         &kp T           &kp Y           &kp U         &kp I          &kp O         &kp P
-  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G   &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &sdqt
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H    &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &kp C          &ltl NUM V    &kp B           &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI
                                               &lc NAV       &kp RSHFT       &kp SPACE       &lc SYM
             >;
