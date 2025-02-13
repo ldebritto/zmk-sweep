@@ -3,18 +3,20 @@
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
 #include "mouse.dtsi"
+#include <dt-bindings/zmk/mouse.h>
 
 // Layer defines
 
 #define DEF 0
 #define MOU 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 7
-#define ABS 8
+#define MDM 2
+#define NUM 3
+#define NAV 4
+#define SYM 5
+#define FUN 6
+#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 8
+#define ABS 9
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 #define HP(k1) LG(LS(LC(LA(k1)))) // HYPR mod shorthand
@@ -141,6 +143,24 @@
             layers = <NAV AGS>;
             require-prior-idle-ms = <200>;
         };
+
+        // Mouse dragging combos (see macros bellow)
+
+        initiate_drag_with_left_click {
+            key-positions = <32 33>;
+            bindings = <&initdrag>;
+            require-prior-idle-ms = <200>;
+            layers = <MOU>;
+        };
+        
+        terminate_drag_with_left_click {
+            key-positions = <32 33>;
+            bindings = <&enddrag>;
+            require-prior-idle-ms = <200>;
+            layers = <MDM>;
+        };
+        
+
 
         // SYS combos to replace a dedicated SYS layer
         
@@ -280,6 +300,24 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
   
+        initdrag: initiate_drag_for_mouse_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &to DEF>,
+                <&macro_press &mkp LCLK>,
+                <&macro_tap &tog MDM>;
+        };
+
+        enddrag: finish_drag_for_mouse_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &to DEF>,
+                <&macro_release &mkp LCLK>,
+                <&macro_tap &tog MDM>;
+        };
+        
         mnav: from_layer_to_nav_through_def { // Disables any toggled layer and goes to NAV on hold
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -314,6 +352,15 @@
         };
 
         MOU {
+            bindings = <
+  &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI    &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up          &kp DEL
+                                                &mnav       &kp SPACE    &mkp LCLK       &mkp RCLK            
+            >;          
+        };
+
+        MDM {
             bindings = <
   &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI    &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
