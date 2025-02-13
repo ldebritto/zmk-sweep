@@ -159,8 +159,6 @@
             require-prior-idle-ms = <200>;
             layers = <MDM>;
         };
-        
-
 
         // SYS combos to replace a dedicated SYS layer
         
@@ -299,25 +297,7 @@
                 <&macro_release>,
                 <&mo MACRO_PLACEHOLDER>;
         };
-  
-        initdrag: initiate_drag_for_mouse_click {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &to DEF>,
-                <&macro_press &mkp LCLK>,
-                <&macro_tap &tog MDM>;
-        };
 
-        enddrag: finish_drag_for_mouse_click {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &to DEF>,
-                <&macro_release &mkp LCLK>,
-                <&macro_tap &tog MDM>;
-        };
-        
         mnav: from_layer_to_nav_through_def { // Disables any toggled layer and goes to NAV on hold
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -327,6 +307,25 @@
                 <&macro_pause_for_release>,
                 <&macro_release &lc NAV>;
         };
+
+        // Mouse dragging macros (see combos above)
+  
+        initdrag: initiate_drag_for_mouse_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mkp LCLK>,
+                <&macro_tap &tog MDM>;
+        };
+
+        enddrag: finish_drag_for_mouse_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_release &mkp LCLK>,
+                <&macro_tap &tog MDM>;
+        };
+
         
     };
 
