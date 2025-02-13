@@ -1,6 +1,6 @@
 // This file was copied from urob's repo
 
-// Settings tuned for 3840 x 2160 display resolution
+// Settings tuned up for 3840 x 2160 display resolution
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 800 // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20  // 10
 
