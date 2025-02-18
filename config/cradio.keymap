@@ -284,16 +284,6 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
 
-        mnav: from_layer_to_nav_through_def { // Disables any toggled layer and goes to NAV on hold
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &to DEF>,
-                <&macro_press &lc NAV>,
-                <&macro_pause_for_release>,
-                <&macro_release &lc NAV>;
-        };
-
     };
 
     conditional_layers {
@@ -322,7 +312,7 @@
   &trans &trans &trans &trans  &trans  &kp PLUS         &kp N7          &kp N8          &kp N9         &kp ASTRK
   &trans &trans &trans &trans  &trans  &hrmr HYPR MINUS &hrmr RGUI N4   &hrmr RSHFT N5  &hrmr RALT N6  &hrmr RCTRL SLASH
   &trans &trans &trans &trans  &trans  &kp COMMA        &kp N1          &kp N2          &kp N3         &kp KP_DOT
-                       &mnav   &trans  &lt NAV SPACE    &lt SYM N0
+                       &trans  &trans  &lt NAV SPACE    &lt SYM N0
             >;
         };
 
