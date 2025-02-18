@@ -146,22 +146,6 @@
             require-prior-idle-ms = <200>;
         };
 
-        // Mouse dragging combos (see macros bellow)
-
-        initiate_drag_with_left_click {
-            key-positions = <32 33>;
-            bindings = <&initdrag>;
-            require-prior-idle-ms = <200>;
-            layers = <MOU>;
-        };
-        
-        terminate_drag_with_left_click {
-            key-positions = <32 33>;
-            bindings = <&enddrag>;
-            require-prior-idle-ms = <200>;
-            layers = <MDM>;
-        };
-
         // SYS combos to replace a dedicated SYS layer
         
         sys_bootloader {
