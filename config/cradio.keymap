@@ -2,21 +2,21 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-#include "mouse.dtsi"
 #include <dt-bindings/zmk/mouse.h>
 
 // Layer defines
 
 #define DEF 0
-#define MOU 1
-#define MDM 2
-#define NUM 3
-#define NAV 4
-#define SYM 5
-#define FUN 6
-#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 8
-#define ABS 9
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define MOU 5
+#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 7
+#define ABS 8
+
+#include "mouse.dtsi" // Needts to be bellow the layer defines to work
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 #define HP(k1) LG(LS(LC(LA(k1)))) // HYPR mod shorthand
@@ -310,25 +310,6 @@
                 <&macro_release &lc NAV>;
         };
 
-        // Mouse dragging macros (see combos above)
-  
-        initdrag: initiate_drag_for_mouse_click {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &mkp LCLK>,
-                <&macro_tap &tog MDM>;
-        };
-
-        enddrag: finish_drag_for_mouse_click {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_release &mkp LCLK>,
-                <&macro_tap &tog MDM>;
-        };
-
-        
     };
 
     conditional_layers {
@@ -347,27 +328,9 @@
             bindings = <
   &ltl MOU Q     &kp W         &kp E          &kp R         &kp T           &kp Y          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &ltl NUM V    &kp B           &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
+  &hrml GLOBE Z  &kp X         &ltl MOU C          &ltl NUM V    &kp B           &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
                                               &lc NAV       &kp RSHFT       &kp SPACE      &lc SYM
             >;
-        };
-
-        MOU {
-            bindings = <
-  &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI    &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up          &kp DEL
-                                                &mnav       &kp SPACE    &mkp LCLK       &mkp RCLK            
-            >;          
-        };
-
-        MDM {
-            bindings = <
-  &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI    &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up          &kp DEL
-                                                &mnav       &kp SPACE    &mkp LCLK       &mkp RCLK            
-            >;          
         };
 
         NUM { // keypad is almost mirrored to allow for use with and without a mouse
@@ -404,6 +367,15 @@
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5      &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &kp C_POWER &kp CAPS  &trans
             >;
+        };
+
+        MOU {
+            bindings = <
+  &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI    &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up          &kp DEL
+                                                &mnav       &kp SPACE    &mkp LCLK       &mkp RCLK            
+            >;          
         };
 
         AOE {

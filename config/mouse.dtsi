@@ -1,7 +1,7 @@
 // This file was copied from urob's repo
 
 // Settings tuned up for 3840 x 2160 display resolution
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 900 // 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500 // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20  // 10
 
 #include <dt-bindings/zmk/pointing.h>
@@ -18,6 +18,20 @@
   acceleration-exponent = <0>;          // 0
   time-to-max-speed-ms = <300>;         // 300
   delay-ms = <0>;                       // 0
+};
+
+&mmv_input_listener {
+    precision {
+        layers = <NAV>;
+        input-processors = <&zip_xy_scaler 1 4>;
+    };
+};
+
+&msc_input_listener {
+    turbo {
+        layers = <NAV>;
+        input-processors = <&zip_scroll_scaler 3 1>;
+    };
 };
 
 // Add these lines to cradio.conf
