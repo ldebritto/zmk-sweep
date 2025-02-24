@@ -132,6 +132,12 @@
             layers = <DEF MOU>;
         };
 
+        toggle_mouse_emulation_layer_from_left_hand {
+            key-positions = <21 22 23>;
+            bindings = <&tog MOU>;
+            layers = <DEF MOU>;
+        };
+
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
