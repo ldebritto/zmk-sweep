@@ -374,7 +374,7 @@
 
         MOU {
             bindings = <
-  &kp LC(DOWN)    &kp LC(UP)  &mt LC(LEFT) LC(LS(MINUS)) &mt LC(RIGHT) LC(LS(EQUAL)) &mkp MB5    &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp LC(DOWN)    &kp LC(UP)  &mt LC(LA(MINUS)) LC(LEFT) &mt LC(LA(EQUAL)) LC(RIGHT) &mkp MB5    &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL       &kp LALT    &kp LSHFT                  &kp LGUI                    &mkp MB4    &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
   &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)                  &kp LG(V)                   &kp F18     &playnp        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
                                                          MNAV                        &kp SPACE   &mkp LCLK      &mkp RCLK            
