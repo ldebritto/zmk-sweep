@@ -1,4 +1,15 @@
-// This file was copied from urob's repo
+// This file was adapted from caksoylar's and urob's repos on GitHub
+
+// Add these lines to your .conf file
+// # Mouse config
+// CONFIG_ZMK_MOUSE=y
+// CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
+
+// Add the bellow lines to your .keymap file
+//
+// Include and layer definition
+// #define MOU 5
+// #include "mouse.dtsi"
 
 // Settings tuned up for 3840 x 2160 display resolution
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500 // 600
@@ -24,7 +35,7 @@
 &mmv_input_listener {
     precision {
         layers = <NAV>;
-        input-processors = <&zip_xy_scaler 1 4>;
+        input-processors = <&zip_xy_scaler 1 3>;
     };
 };
 
@@ -34,35 +45,3 @@
         input-processors = <&zip_scroll_scaler 3 1>;
     };
 };
-
-// Add these lines to cradio.conf
-// # Mouse config
-// CONFIG_ZMK_MOUSE=y
-// CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
-
-// Add the bellow lines do cradio.keymap 
-
-// Include and layer definition
-
-// Mouse file and settings from urob's repo (https://github.com/urob/zmk-config) that also use urob's ZMK fork on west.yml
-// #include "mouse.dtsi"
-// #define MOU 6
-
-// Combo for activacion
-
-        // toggle_mouse_emulation_layer {
-        //     bindings = <&tog MOU>;
-        //     key-positions = <6 7 8>;
-        //     require-prior-idle-ms = <200>;
-        // };
-
-// My mouse layer mappings for mousing and editting
-
-//         MOU {
-//             bindings = <
-// &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
-// &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-// &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)    &kp F18      &kp LC(UP)      &mkp MB4        &mkp MCLK       &mkp MB4        &kp DEL
-//                                               &tog MOU     &kp RSHFT    &mkp LCLK       &mkp RCLK            
-//             >;          
-//         };
