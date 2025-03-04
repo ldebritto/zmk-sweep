@@ -18,7 +18,6 @@
 #include "mouse.dtsi" // Needts to be bellow the layer defines to work
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
-#define HP(k1) LG(LS(LC(LA(k1)))) // HYPR mod shorthand
 
 // Customizing behaviors
 
@@ -28,7 +27,7 @@
 };
 
 &caps_word { 
-    /delete-property/ ignore-modifiers; // This voids pressing command+shift+s instead of a simple command+s
+    /delete-property/ ignore-modifiers; // This voids pressing command+shift+s instead of a simple command+s - sadly not working at the moment…
     continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT LALT RALT SQT CARET TILDE GRAVE SLASH MINUS>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on '^`~" keys, ALT is needed to enter alt characters
     }; 
 
@@ -93,14 +92,14 @@
         // Layer toggles and other gimmickry
 
         toggle_nav_for_extended_edits {
-            key-positions = <12 30>;
+            key-positions = <21 22 23>;
             bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
             layers = <DEF NAV>;
         };
         
         toggle_mou_for_extended_edits {
-            key-positions = <21 22 23>;
+            key-positions = <20 21 22>;
             bindings = <&tog MOU>;
             require-prior-idle-ms = <200>;
             layers = <DEF MOU>;
@@ -115,6 +114,12 @@
         
         toggle_num_word {
             key-positions = <17 33>;
+            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            layers = <DEF MOU NUM>;
+        };
+        
+        left_toggle_num_word {
+            key-positions = <12 30>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
             layers = <DEF MOU NUM>;
         };
@@ -269,15 +274,15 @@
             require-prior-idle-ms = <175>;
         };
   
-        // Layer-tap do escape from MOU to DEF on tap
+        // Layer-tap do escape from MOU to DEF on tap but still be able to use the NAV layer trigger as a input processor
 
         mlt: mouse_layer_tap_cancel {
             compatible = "zmk,behavior-hold-tap";
             label = "MTL";
             bindings = <&mo>, <&to>;
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
+            flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
+            tapping-term-ms = <150>; // Needs to be low to avoid accidentally leaving mouse layer on short adjustments
         };
         
         #define MNAV &mlt NAV DEF
@@ -327,10 +332,10 @@
 
         NUM { // keypad is almost mirrored to allow for use with and without a mouse
             bindings = <
-  &trans &trans &trans &trans  &trans  &kp PLUS         &kp N7          &kp N8          &kp N9         &kp ASTRK
-  &trans &trans &trans &trans  &trans  &hrmr HYPR MINUS &hrmr RGUI N4   &hrmr RSHFT N5  &hrmr RALT N6  &hrmr RCTRL SLASH
-  &trans &trans &trans &trans  &trans  &kp COMMA        &kp N1          &kp N2          &kp N3         &kp KP_DOT
-                       &trans  &trans  &lt NAV SPACE    &lt SYM N0
+  &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &kp MINUS        &kp N7        &kp N8         kp N9         &kp SLASH
+  &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 hrmr RALT N6  &hrmr RCTRL DOT
+  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &kp PLUS         &kp N1        &kp N2         kp N3         &kp ASTRK
+                                                 &lt NAV N0     &lt SYM K_CANCEL &lt NAV SPACE    &lt SYM N0
             >;
         };
 
