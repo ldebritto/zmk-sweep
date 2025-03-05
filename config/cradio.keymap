@@ -7,13 +7,14 @@
 
 #define DEF 0
 #define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define MOU 5
-#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 7
-#define ABS 8
+#define NUM_L 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
+#define MOU 6
+#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 8
+#define ABS 9
 
 #include "mouse.dtsi" // Needts to be bellow the layer defines to work
 
@@ -120,8 +121,8 @@
         
         left_toggle_num_word {
             key-positions = <12 30>;
-            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF MOU NUM>;
+            bindings = <&num_word NUM_L>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            layers = <DEF MOU NUM_L>;
         };
         
         toggle_numpad { // For extended edits
@@ -330,12 +331,21 @@
             >;
         };
 
-        NUM { // keypad is almost mirrored to allow for use with and without a mouse
+        NUM { // keypad on the right feels more fluid when typing and not holding a mouse
             bindings = <
-  &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &kp MINUS        &kp N7        &kp N8         &kp N9         &kp SLASH
-  &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 &hrmr RALT N6  &hrmr RCTRL DOT
-  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &kp PLUS         &kp N1        &kp N2         &kp N3         &kp ASTRK
-                                                 &lt NAV N0     &lt SYM K_CANCEL &lt NAV SPACE    &lt SYM N0
+  &trans &trans &trans &trans &trans  &kp MINUS        &kp N7        &kp N8         &kp N9         &kp SLASH
+  &trans &trans &trans &trans &trans  &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 &hrmr RALT N6  &hrmr RCTRL DOT
+  &trans &trans &trans &trans &trans  &kp PLUS         &kp N1        &kp N2         &kp N3         &kp ASTRK
+                       &trans &trans  &lt NAV SPACE    &lt SYM N0
+            >;
+        };
+
+        NUM_L { // left keypad for using with mouse
+            bindings = <
+  &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &trans &trans &trans &trans &trans 
+  &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &trans &trans &trans &trans &trans 
+  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &trans &trans &trans &trans &trans 
+                                                 &lt MOU N0     &lt SYM N0       &trans &trans
             >;
         };
 
