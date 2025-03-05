@@ -7,11 +7,11 @@
 
 #define DEF 0
 #define NUM 1
-#define NUM_L 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define MOU 6
+#define NAV 2 // must be bellow MOU for input_processor to work
+#define MOU 3 // must be bellow NUM_L for &num_word NUM_L to work
+#define NUM_L 4
+#define SYM 5
+#define FUN 6
 #define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
 #define AGS 8
 #define ABS 9
@@ -189,7 +189,6 @@
             bindings = <&bt BT_CLR>;
             layers = <FUN>;
         };
-        
     };
 
     behaviors {
@@ -340,21 +339,30 @@
             >;
         };
 
-        NUM_L { // left keypad for using with mouse
-            bindings = <
-  &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &trans &trans &trans &trans &trans 
-  &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &trans &trans &trans &trans &trans 
-  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &trans &trans &trans &trans &trans 
-                                                 &lt MOU N0     &lt SYM N0       &trans &trans
-            >;
-        };
-
         NAV {
             bindings = <
   &kp TAB           &swapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(RBKT)  &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
   &sk LCTRL         &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
   &hrml GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18       &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
                                               &trans      &kp SPACE     &trans    &trans   
+            >;
+        };
+
+        MOU {
+            bindings = <
+  &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &kp LG(V)             &kp F18      &playnp        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
+                                                                               MNAV                  &kp SPACE    &mkp LCLK      &mkp RCLK            
+            >;          
+        };
+
+        NUM_L { // left keypad for using with mouse
+            bindings = <
+  &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &trans &trans &trans &trans &trans 
+  &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &trans &trans &trans &trans &trans 
+  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &trans &trans &trans &trans &trans 
+                                                 &kp N0         &lt SYM N0       &trans &trans
             >;
         };
 
@@ -374,15 +382,6 @@
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5      &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &kp C_POWER &kp CAPS  &trans
             >;
-        };
-
-        MOU {
-            bindings = <
-  &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &kp LG(V)             &kp F18      &playnp        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
-                                                                               MNAV                  &kp SPACE    &mkp LCLK      &mkp RCLK            
-            >;          
         };
 
         AOE {
