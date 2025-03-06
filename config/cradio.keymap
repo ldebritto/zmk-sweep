@@ -362,7 +362,7 @@
   &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &trans &trans &trans &trans &trans 
   &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &trans &trans &trans &trans &trans 
   &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &trans &trans &trans &trans &trans 
-                                                 &kp N0         &lt SYM N0       &trans &trans
+                                                 &lt SYM N0     &lt SYM N0       &trans &trans
             >;
         };
 
