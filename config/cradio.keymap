@@ -94,14 +94,14 @@
 
         toggle_nav_for_extended_edits {
             key-positions = <21 22 23>;
-            bindings = <&tog NAV>;
+            bindings = <&tc NAV>;
             require-prior-idle-ms = <200>;
             layers = <DEF NAV>;
         };
         
         toggle_mou_for_extended_edits {
             key-positions = <20 21 22>;
-            bindings = <&tog MOU>;
+            bindings = <&tc MOU>;
             require-prior-idle-ms = <200>;
             layers = <DEF MOU>;
         };
@@ -127,19 +127,19 @@
         
         toggle_numpad { // For really extended edits
             key-positions = <26 27 28>;
-            bindings = <&tog NUM>;
+            bindings = <&tc NUM>;
             layers = <DEF NUM>;
         };
 
         toggle_mouse_emulation_layer {
             key-positions = <6 7 8>;
-            bindings = <&tog MOU>;
+            bindings = <&tc MOU>;
             layers = <DEF MOU NUM_L>;
         };
 
         toggle_mouse_emulation_layer_from_left_hand {
             key-positions = <21 22 23>;
-            bindings = <&tog MOU>;
+            bindings = <&tc MOU>;
             layers = <DEF MOU NUM_L>;
         };
 
@@ -152,7 +152,7 @@
 
         toggle_aoe_gaming_layer {
             key-positions = <20 21 22>;
-            bindings = <&tog AOE>;
+            bindings = <&tc AOE>;
             layers = <NAV AGS>;
             require-prior-idle-ms = <200>;
         };
@@ -305,6 +305,19 @@
                 <&macro_param_1to1>,
                 <&macro_release>,
                 <&mo MACRO_PLACEHOLDER>;
+        };
+        
+        tc: toggle_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mods_on_layer_activation {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "mo_layer/cancel";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap>,
+                <&kp K_CANCEL &macro_param_1to1>,
+                <&macro_press>,
+                <&tog MACRO_PLACEHOLDER>;
         };
 
     };
