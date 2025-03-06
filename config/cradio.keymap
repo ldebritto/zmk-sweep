@@ -309,7 +309,7 @@
         
         tc: toggle_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mods_on_layer_activation {
             compatible = "zmk,behavior-macro-one-param";
-            label = "mo_layer/cancel";
+            label = "tog_layer/cancel";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <1>;
