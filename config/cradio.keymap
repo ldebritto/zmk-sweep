@@ -89,10 +89,16 @@
             layers = <DEF NAV>;
         };
         
-        toggle_mou_for_extended_edits {
-            key-positions = <20 21 22>;
+        toggle_mou_for_extended_edits_with_mouse_on_the_right_hand {
+            key-positions = <1 2 3>;
             bindings = <&tc MOU>;
             require-prior-idle-ms = <200>;
+            layers = <DEF MOU>;
+        };
+
+        toggle_mouse_emulation_layer_from_right_hand {
+            key-positions = <6 7 8>;
+            bindings = <&tc MOU>;
             layers = <DEF MOU>;
         };
         
@@ -113,18 +119,6 @@
             key-positions = <26 27 28>;
             bindings = <&tc NUM>;
             layers = <DEF NUM>;
-        };
-
-        toggle_mouse_emulation_layer {
-            key-positions = <6 7 8>;
-            bindings = <&tc MOU>;
-            layers = <DEF MOU>;
-        };
-
-        toggle_mouse_emulation_layer_from_left_hand { // for edits with the mouse on the right hand
-            key-positions = <1 2 3>;
-            bindings = <&tc MOU>;
-            layers = <DEF MOU>;
         };
 
         toggle_caps_word {
