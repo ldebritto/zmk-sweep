@@ -8,13 +8,9 @@
 #define DEF 0
 #define NUM 1
 #define NAV 2 // must be bellow MOU for input_processor to work
-#define MOU 3 // must be bellow NUM_L for &num_word NUM_L to work
-#define NUM_L 4
-#define SYM 5
-#define FUN 6
-#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 8
-#define ABS 9
+#define MOU 3
+#define SYM 4
+#define FUN 5
 
 #include "mouse.dtsi" // Needts to be bellow the layer defines to work
 
@@ -119,12 +115,6 @@
             layers = <DEF MOU NUM>;
         };
         
-        left_toggle_num_word {
-            key-positions = <12 30>;
-            bindings = <&num_word NUM_L>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF MOU NUM_L>;
-        };
-        
         toggle_numpad { // For really extended edits
             key-positions = <26 27 28>;
             bindings = <&tc NUM>;
@@ -134,26 +124,19 @@
         toggle_mouse_emulation_layer {
             key-positions = <6 7 8>;
             bindings = <&tc MOU>;
-            layers = <DEF MOU NUM_L>;
+            layers = <DEF MOU>;
         };
 
-        toggle_mouse_emulation_layer_from_left_hand {
+        toggle_mouse_emulation_layer_from_left_hand { // for edits with the mouse on the right hand
             key-positions = <21 22 23>;
             bindings = <&tc MOU>;
-            layers = <DEF MOU NUM_L>;
+            layers = <DEF MOU>;
         };
 
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
             layers = <DEF>;
-            require-prior-idle-ms = <200>;
-        };
-
-        toggle_aoe_gaming_layer {
-            key-positions = <20 21 22>;
-            bindings = <&tc AOE>;
-            layers = <NAV AGS>;
             require-prior-idle-ms = <200>;
         };
 
@@ -370,15 +353,6 @@
             >;          
         };
 
-        NUM_L { // left keypad for using with mouse
-            bindings = <
-  &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &trans &trans &trans &trans &trans 
-  &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &trans &trans &trans &trans &trans 
-  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &trans &trans &trans &trans &trans 
-                                                 &lt SYM N0     &lt SYM N0       &trans &trans
-            >;
-        };
-
         SYM {
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
@@ -396,33 +370,5 @@
                                   &trans    &kp C_POWER &kp CAPS  &trans
             >;
         };
-
-        AOE {
-            bindings = <
-  &kp Q        &kp W       &kp E        &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X       &kp C        &kp V        &lt ABS B    &trans  &trans  &trans  &trans  &trans
-                                        &lt AGS H    &lt ABS DOT  &trans  &trans
-            >;
-        };
-
-        AGS {
-            bindings = <
-  &kp N1        &kp N2       &kp N3        &kp N4        &kp DEL    &trans  &trans  &trans  &trans  &kp BSPC
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp HOME   &trans  &trans  &trans  &trans  &kp ENTER
-  &kp COMMA     &kp DOT      &kp BSPC      &kp HOME      &mo ABS    &trans  &trans  &trans  &trans  &kp F3
-                                           &trans        &kp SPACE  &trans  &trans
-            >;
-        };
-
-        ABS {
-            bindings = <
-  &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                               &kp LC(LS(H))  &trans           &trans  &trans
-            >;
-        };
-
     };
 };
