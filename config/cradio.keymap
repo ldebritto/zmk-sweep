@@ -309,17 +309,17 @@
             bindings = <
   &ltl MOU Q     &kp W         &kp E          &kp R         &kp T           &kp Y          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &ltl NUM C     &ltl MOU V    &kp B           &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
+  &hrml GLOBE Z  &kp X         &ltl NUM C     &ltl NUM V    &kp B           &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
                                               &lc NAV       &kp RSHFT       &kp SPACE      &lc SYM
             >;
         };
 
         NUM { // keypad on the right feels more fluid when typing and not holding a mouse
             bindings = <
-  &trans &trans &trans &trans &trans  &kp MINUS        &kp N7        &kp N8         &kp N9         &kp SLASH
-  &trans &trans &trans &trans &trans  &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 &hrmr RALT N6  &hrmr RCTRL DOT
-  &trans &trans &trans &trans &trans  &kp PLUS         &kp N1        &kp N2         &kp N3         &kp ASTRK
-                       &trans &trans  &lt NAV SPACE    &lt SYM N0
+  &trans &trans &trans &trans &trans  &kp ASTRK     &kp N7      &kp N8  &kp N9  &kp SLASH
+  &trans &trans &trans &trans &trans  &kp MINUS     &kp N4      &kp N5  &kp N6  &kp N0
+  &trans &trans &trans &trans &trans  &kp PLUS      &kp N1      &kp N2  &kp N3  &mt COMMA DOT
+                       &trans &trans  &lt NAV SPACE &lt SYM N0
             >;
         };
 
@@ -336,7 +336,7 @@
             bindings = <
   &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &kp LG(V)             &kp F18      &playnp        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
+  &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &kp F18      &playnp        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
                                                                                MNAV                  &kp SPACE    &mkp LCLK      &mkp RCLK            
             >;          
         };
