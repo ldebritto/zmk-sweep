@@ -122,12 +122,6 @@
             layers = <DEF MOU NUM>;
         };
         
-        toggle_num_word_2 {
-            key-positions = <32 33>;
-            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF MOU NUM>;
-        };
-        
         toggle_numpad { // For really extended edits it won't disable on space or other keys that break &num_word
             key-positions = <26 27 28>;
             bindings = <&tc NUM>;
@@ -332,7 +326,7 @@
   &trans &trans &trans &trans &trans  &kp ASTRK     &kp N7      &kp N8  &kp N9  &kp SLASH
   &trans &trans &trans &trans &trans  &kp MINUS     &kp N4      &kp N5  &kp N6  &kp N0
   &trans &trans &trans &trans &trans  &kp PLUS      &kp N1      &kp N2  &kp N3  &mt COMMA DOT
-                       &trans &trans  &lt NAV SPACE &lt SYM N0
+                       MNAV   &trans  &lt NAV SPACE &lt SYM N0
             >;
         };
 
