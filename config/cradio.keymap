@@ -96,9 +96,9 @@
             layers = <DEF MOU>;
         };
         
-        &lc_mou_for_quick_mouse_interactions {
+        lc_mou_for_quick_mouse_interactions {
             key-positions = <30 31>;
-            bindings = <&lc MOU>;
+            bindings = <&mt MOU ESC>;
             require-prior-idle-ms = <200>;
             layers = <DEF MOU>;
         };
