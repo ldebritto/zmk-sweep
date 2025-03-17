@@ -95,6 +95,13 @@
             require-prior-idle-ms = <200>;
             layers = <DEF MOU>;
         };
+        
+        &lc_mou_for_quick_mouse_interactions {
+            key-positions = <30 31>;
+            bindings = <&lc MOU>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF MOU>;
+        };
 
         toggle_mouse_emulation_layer_from_right_hand {
             key-positions = <27 28 29>;
@@ -111,6 +118,12 @@
         
         toggle_num_word {
             key-positions = <17 33>;
+            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            layers = <DEF MOU NUM>;
+        };
+        
+        toggle_num_word_2 {
+            key-positions = <32 33>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
             layers = <DEF MOU NUM>;
         };
