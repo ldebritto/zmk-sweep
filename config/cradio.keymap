@@ -138,7 +138,7 @@
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
-            layers = <DEF>;
+            layers = <DEF TMK>;
             require-prior-idle-ms = <200>;
         };
 
