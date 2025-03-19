@@ -6,11 +6,12 @@
 // Layer defines
 
 #define DEF 0
-#define NUM 1
-#define NAV 2 // must be bellow MOU for input_processor to work
-#define MOU 3
-#define SYM 4
-#define FUN 5
+#define TMK 1
+#define NUM 2
+#define NAV 3 // must be bellow MOU for input_processor to work
+#define MOU 4
+#define SYM 5
+#define FUN 6
 
 #include "mouse.dtsi" // Needts to be bellow the layer defines to work
 
@@ -126,6 +127,12 @@
             key-positions = <26 27 28>;
             bindings = <&tc NUM>;
             layers = <DEF NUM>;
+        };
+
+        toggle_tarmak { // Trying to learn Colemak in steps (see https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/)
+            key-positions = <0 9>;
+            bindings = <&tc TMK>;
+            layers = <FUN>;
         };
 
         toggle_caps_word {
@@ -257,13 +264,14 @@
         mlt: mouse_layer_tap_cancel {
             compatible = "zmk,behavior-hold-tap";
             label = "MTL";
-            bindings = <&mo>, <&to>;
+            bindings = <&mo>, <&tog>;
             #binding-cells = <2>;
             flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
             tapping-term-ms = <150>; // Needs to be low to avoid accidentally leaving mouse layer on short adjustments
         };
         
-        #define MNAV &mlt NAV DEF
+        #define MNAV &mlt NAV MOU // untoggle MOU on tap
+        #define NNAV &mlt NAV NUM // untoggle NUM on tap
 
     };
 
@@ -321,12 +329,21 @@
             >;
         };
 
+        TMK {
+            bindings = <
+  &ltl MOU Q     &kp W         &kp J          &kp R         &kp T           &kp Y          &kp U         &kp I          &kp O         &kp P
+  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H   &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
+  &hrml GLOBE Z  &kp X         &ltl NUM C     &ltl NUM V    &kp B           &kp K          &kp M         &kp COMMA      &kp DOT       &kp SEMI
+                                              &lc NAV       &kp RSHFT       &kp SPACE      &lc SYM
+            >;
+        };
+
         NUM { // keypad on the right feels more fluid when typing and not holding a mouse
             bindings = <
   &trans &trans &trans &trans &trans  &kp ASTRK     &kp N7      &kp N8  &kp N9  &kp SLASH
   &trans &trans &trans &trans &trans  &kp MINUS     &kp N4      &kp N5  &kp N6  &kp N0
   &trans &trans &trans &trans &trans  &kp PLUS      &kp N1      &kp N2  &kp N3  &mt COMMA DOT
-                       MNAV   &trans  &lt NAV SPACE &lt SYM N0
+                       NNAV   &trans  &lt NAV SPACE &lt SYM N0
             >;
         };
 
