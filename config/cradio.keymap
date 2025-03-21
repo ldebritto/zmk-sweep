@@ -87,46 +87,46 @@
             key-positions = <21 22 23>;
             bindings = <&tc NAV>;
             require-prior-idle-ms = <200>;
-            layers = <DEF NAV>;
+            layers = <DEF TMK NAV>;
         };
         
         toggle_mou_for_extended_edits_with_mouse_on_the_right_hand {
             key-positions = <20 21 22>;
             bindings = <&tc MOU>;
             require-prior-idle-ms = <200>;
-            layers = <DEF MOU>;
+            layers = <DEF TMK MOU>;
         };
         
-        lc_mou_for_quick_mouse_interactions {
+        lc_num_for_quick {
             key-positions = <30 31>;
-            bindings = <&lt MOU ESC>;
+            bindings = <&lt NUM ESC>;
             require-prior-idle-ms = <200>;
-            layers = <DEF MOU>;
+            layers = <DEF TMK MOU NUM>;
         };
 
         toggle_mouse_emulation_layer_from_right_hand {
             key-positions = <27 28 29>;
             bindings = <&tc MOU>;
-            layers = <DEF MOU>;
+            layers = <DEF TMK MOU>;
         };
         
         sticky_sym_layer_for_one_handed_operation {
             key-positions = <32 33>;
             bindings = <&sl SYM>; // usually just one symbol is used, so a &sl is better than &tog
             require-prior-idle-ms = <200>;
-            layers = <DEF SYM>;
+            layers = <DEF TMK SYM>;
         };
         
         toggle_num_word {
             key-positions = <17 33>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF MOU NUM>;
+            layers = <DEF TMK MOU NUM>;
         };
         
         toggle_numpad { // For really extended edits it won't disable on space or other keys that break &num_word
             key-positions = <26 27 28>;
             bindings = <&tc NUM>;
-            layers = <DEF NUM>;
+            layers = <DEF TMK NUM>;
         };
 
         toggle_tarmak { // Trying to learn Colemak in steps (see https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/)
@@ -138,7 +138,7 @@
         toggle_caps_word {
             key-positions = <12 17>;
             bindings = <&caps_word>;
-            layers = <DEF TMK>;
+            layers = <DEF TMK TMK>;
             require-prior-idle-ms = <200>;
         };
 
