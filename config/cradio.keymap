@@ -276,7 +276,7 @@
         // Layer-tap to &num_word on tap and &lc SYM on hold
         nwlc: num_word_layer_tap_cancel {
             compatible = "zmk,behavior-hold-tap";
-            label = "MTL";
+            label = "NWLC";
             bindings = <&lc>, <&num_word>;
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -284,6 +284,18 @@
         };
 
         #define NWSYM &nwlc SYM NUM
+        
+        // Layer-tap to &num_word on tap and &lc SYM on hold
+        mo_def_kp: mo_def_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DKP";
+            bindings = <&mo_def>, <&kp>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;            
+        };
+
+        #define NWSPC &mo_def_kp NUM SPACE
 
     };
 
@@ -327,7 +339,7 @@
             bindings =
                 <&macro_tap>,
                 <&macro_param_1to1>,
-                <&tog MACRO_PLACEHOLDER>,
+                <&tog MACRO_PLACEHOLDER>, // using &tog instead of a &to makes possible to reach whaterver layer is being base at the moment
                 <&macro_pause_for_release>,
                 <&macro_param_1to1>,
                 <&macro_tap>,
@@ -368,10 +380,10 @@
 
         NUM { // keypad on the right feels more fluid when typing and not holding a mouse
             bindings = <
-  &none     &none    &none     &none    &none       &kp ASTRK   &kp N7      &kp N8  &kp N9  &kp SLASH
-  &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &none       &kp MINUS   &kp N4      &kp N5  &kp N6  &kp N0
-  &none     &none    &none     &none    &none       &kp PLUS    &kp N1      &kp N2  &kp N3  &mt COMMA DOT
-                               NNAV     &mo_def NUM &trans      NSYM
+  &none     &none    &none     &none    &none   &kp ASTRK   &kp N7      &kp N8  &kp N9  &kp SLASH
+  &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &none   &kp MINUS   &kp N4      &kp N5  &kp N6  &kp N0
+  &none     &none    &none     &none    &none   &kp PLUS    &kp N1      &kp N2  &kp N3  &mt COMMA DOT
+                               NNAV     NWSPC   NWSPC       NSYM
             >;
         };
 
