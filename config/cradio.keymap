@@ -327,7 +327,7 @@
             bindings =
                 <&macro_tap>,
                 <&macro_param_1to1>,
-                <&to MACRO_PLACEHOLDER>,
+                <&tog MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_param_1to1>,
                 <&macro_tap>,
