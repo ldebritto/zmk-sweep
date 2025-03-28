@@ -274,6 +274,17 @@
         #define NNAV &mlt NAV NUM // untoggle NUM on tap NAV on hold
         #define NSYM &mlt SYM NUM // untoggle NUM on tap SYM on hold
 
+        // Layer-tap to &num_word on tap and &lc SYM on hold
+        nwlc: num_word_layer_tap_cancel {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MTL";
+            bindings = <&lc>, <&num_word>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+        };
+
+        #define NWSYM &nwlc SYM NUM
+
     };
 
     macros {
@@ -326,7 +337,7 @@
   &ltl MOU Q     &kp W         &kp E          &kp R         &kp T           &kp Y          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X         &ltl NUM C     &ltl NUM V    &hrml GLOBE B   &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &kp RSHFT       &kp SPACE      &lc SYM
+                                              &lc NAV       &kp RSHFT       &kp SPACE      NWSYM
             >;
         };
 
@@ -335,7 +346,7 @@
   &ltl MOU Q     &kp W         &kp J          &kp R         &kp T           &kp Y          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H   &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &ltl NUM X    &ltl NUM C     &ltl NUM V    &hrml GLOBE B   &kp K          &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc NAV       &kp RSHFT       &kp SPACE      &lc SYM
+                                              &lc NAV       &kp RSHFT       &kp SPACE      NWSYM
             >;
         };
 
