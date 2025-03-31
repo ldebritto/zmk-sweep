@@ -259,7 +259,7 @@
             bindings = <&mo>, <&tc>;
             #binding-cells = <2>;
             flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
-            tapping-term-ms = <150>; // Needs to be low to avoid accidentally leaving mouse layer on short adjustments
+            tapping-term-ms = <200>; 
         };
         
         #define MNAV &motog NAV MOU // untoggle MOU on tap NAV on hold
