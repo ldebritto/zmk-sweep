@@ -256,7 +256,7 @@
         motog: mo_tog_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "MTL";
-            bindings = <&mo>, <&tog>;
+            bindings = <&mo>, <&tc>;
             #binding-cells = <2>;
             flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
             tapping-term-ms = <150>; // Needs to be low to avoid accidentally leaving mouse layer on short adjustments
@@ -265,18 +265,6 @@
         #define MNAV &motog NAV MOU // untoggle MOU on tap NAV on hold
         #define NNAV &motog NAV NUM // untoggle NUM on tap NAV on hold
         #define NSYM &motog SYM NUM // untoggle NUM on tap SYM on hold
-
-        // Layer-tap to &num_word on tap and &lc SYM on hold
-        nwlc: num_word_layer_tap_cancel {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NWLC";
-            bindings = <&lc>, <&num_word>;
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;            
-        };
-
-        #define NWSYM &nwlc SYM NUM
 
     };
 
