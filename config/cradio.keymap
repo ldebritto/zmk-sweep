@@ -23,6 +23,32 @@
     combos {
         compatible = "zmk,combos";
         
+        left_hand_esc { // Left hand is great to allow mouse usage simultaneously
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 2 3>;
+            require-prior-idle-ms = <200>;
+        };
+
+        left_hand_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <11 12 13>;
+            require-prior-idle-ms = <200>;
+        };
+
+        left_hand_backspace {
+            bindings = <&kp BSPC>;
+            key-positions = <11 13>;
+            require-prior-idle-ms = <200>;
+        };
+
+
+        toggle_caps_word {
+            key-positions = <12 17>;
+            bindings = <&caps_word>;
+            layers = <DEF>;
+            require-prior-idle-ms = <200>;
+        };
+
         // SYS combos to replace a dedicated SYS layer        
         sys_bootloader {
             key-positions = <20 21>;
@@ -137,10 +163,10 @@
 
         NAV {
             bindings = <
-  &kp TAB   &swapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(RBKT)  &kp PG_UP &kp HOME    &kp UP   &kp END   &kp BSPC
-  &sk LCTRL &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)  &kp PG_DN &kp LEFT    &kp DOWN &kp RIGHT &kp RET
-  &kp LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18       &playnp   &caps_word  &vb_dn   &vb_up    &kp DEL
-                                      &trans      &kp F19       &trans    &trans   
+  &kp TAB   &swapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(RBKT)  &kp PG_UP &kp HOME  &kp UP   &kp END   &kp BSPC
+  &sk LCTRL &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)  &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp RET
+  &sk GLOBE &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18       &playnp   &kp F19   &vb_dn   &vb_up    &kp DEL
+                                      &trans      &trans        &trans    &trans
             >;
         };
 
