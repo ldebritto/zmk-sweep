@@ -82,13 +82,13 @@
         };
 
         right_hand_backspace {
-            bindings = <&hrml RA(RGUI) BSPC>;
+            bindings = <&hrmr RA(RGUI) BSPC>;
             key-positions = <16 18>;
             require-prior-idle-ms = <200>;
         };
         
         jk_f20 {
-            bindings = <&hrml LS(RGUI) F20>;
+            bindings = <&hrmr LS(RGUI) F20>;
             key-positions = <16 17>;
             require-prior-idle-ms = <200>;
         };
