@@ -91,6 +91,7 @@
             bindings = <&hrmr LS(RGUI) F17>;
             key-positions = <16 17>;
             require-prior-idle-ms = <200>;
+            layers = <DEF>;
         };
 
         // Layer toggles and other gimmickry
