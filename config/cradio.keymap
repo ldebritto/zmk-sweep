@@ -87,8 +87,8 @@
             require-prior-idle-ms = <200>;
         };
         
-        jk_f20 {
-            bindings = <&hrmr LS(RGUI) F20>;
+        jk_f17 {
+            bindings = <&hrmr LS(RGUI) F17>;
             key-positions = <16 17>;
             require-prior-idle-ms = <200>;
         };
