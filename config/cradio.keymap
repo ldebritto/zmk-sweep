@@ -356,7 +356,7 @@
             bindings = <
   &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &kp F11      &playnp        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
+  &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &kp F11      &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
                                                                                MNAV                  &kp SPACE    &mkp LCLK      &mkp RCLK            
             >;          
         };
