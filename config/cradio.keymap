@@ -18,8 +18,7 @@
 
 // Customizing behaviors
 
-&sk {
-    quick-release; // Avoids "THis" problem (double capitalization)
+&sk  {    quick-release; // Avoids "THis" problem (double capitalization)
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
@@ -298,17 +297,6 @@
                 <&tog MACRO_PLACEHOLDER>;
         };
 
-        nk: not_so_sticky_key { // copied from https://github.com/kkga/zmk-config/blob/master/config/34keys.keymap
-            compatible = "zmk,behavior-hold-tap";
-            label = "NOT_SO_STICKY_KEY";
-            #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&sk>;
-        };
-        
-        #define SK(KEY) &nk KEY KEY
-
     };
 
     conditional_layers {
@@ -335,7 +323,7 @@
         NUM {
             bindings = <
   &none     &none    &none     &none    &none    &none       &kp N7      &kp N8  &kp N9  &kp SLASH
-  SK(LCTRL) SK(LALT) SK(LSHFT) SK(LGUI) SK(HYPR) &kp MINUS   &kp N4      &kp N5  &kp N6  &kp DOT
+  &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPR &kp MINUS   &kp N4      &kp N5  &kp N6  &kp DOT
   &none     &none    &none     &none    &none    &kp PLUS    &kp N1      &kp N2  &kp N3  &kp COMMA
                                &trans   &trans   &trans      &lt SYM N0
             >;
@@ -344,7 +332,7 @@
         NAV {
             bindings = <
   &kp TAB           &swapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(RBKT)  &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
-  SK(LCTRL)         SK(LALT)  SK(LSHFT)       SK(LGUI)    &kp LG(LBKT)  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
+  &sk LCTRL         &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
   &hrml GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18       &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
                                               &trans      &kp SPACE     &trans    &trans               >;
         };
@@ -361,7 +349,7 @@
         SYM {
             bindings = <
   &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-  &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH  SK(RGUI)  SK(LSHFT)  SK(RALT)  SK(RCTRL)
+  &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp EQUAL  &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
                                    &trans     &mt RSHFT UNDER   &kp UNDER &trans
             >;
@@ -370,7 +358,7 @@
         FUN {
             bindings = <
   &kp N1     &kp N2    &kp N3     &kp N4    &kp N5      &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
-  SK(LCTRL)  SK(LALT)  SK(LSHFT)  SK(LGUI)  &kp F11     &kp F12   SK(RGUI)  SK(LSHFT)  SK(RALT)  SK(RCTRL)
+  &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11     &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5      &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &kp C_POWER &kp CAPS  &trans
             >;
