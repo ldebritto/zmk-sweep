@@ -46,7 +46,7 @@
         compatible = "zmk,combos";
 
         // Shorthand combo synthax copied from https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
-        #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM) \
+        #define COMBO(NAME,         BINDINGS,                   KEYPOS,  LAYERS,    TERM) \
         combo_##NAME { \
             timeout-ms = <TERM>; \
             bindings = <BINDINGS>; \
@@ -58,13 +58,17 @@
         // Making the keyboard more accessible for one-handed use with a mouse
         COMBO(left_esc,             &kp ESCAPE,                 1   2  3, DEF,      60)
         COMBO(left_tab,             &kp TAB,                    1      3, DEF,      60)
+        // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
         COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, DEF,      60)
         COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, DEF,      60)
         
-        COMBO(right_esc,            &kp ESCAPE,                  6  7  8, DEF,      60)
-        COMBO(right_tab,            &kp ESCAPE,                  6     8, DEF,      60)
+        COMBO(right_esc,            &kp ESCAPE,                  6  7  8, DEF NUM,  60)
+        COMBO(right_tab,            &kp TAB,                     6     8, DEF NUM,  60)
         COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18, DEF,      60)
         COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18, DEF,      60)
+        // non-mod variant for NUM layer
+        COMBO(right_num_enter,      &kp ENTER,                  16 17 18,     NUM,  60)
+        COMBO(right_num_bspc,       &kp BSPC,                   16    18,     NUM,  60)
 
         // Layer toggles and other gimmickry
 
@@ -77,12 +81,12 @@
 
         // SYS combos to connect to BT devices from FUN layer
         
-        COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,    FUN,      60)
-        COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,    FUN,      60)
-        COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               23 24,    FUN,      60)
+        COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,        FUN,  60)
+        COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,        FUN,  60)
+        COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               23 24,        FUN,  60)
         
-        COMBO(sys_bootloader,       &bootloader,                20 21,    FUN,      60)
-        COMBO(sys_clear_br_profile, &bt BT_CLR,                 28 29,    FUN,      60)
+        COMBO(sys_bootloader,       &bootloader,                20 21,        FUN,  60)
+        COMBO(sys_clear_br_profile, &bt BT_CLR,                 28 29,        FUN,  60)
 
     };
 
