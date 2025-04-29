@@ -16,6 +16,22 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
+// NAV key defines for macOS Shortcuts
+
+#define P_TAB LS(LC(TAB))
+#define N_TAB LC(TAB)
+#define BACK  LG(RBKT)
+#define FWRD  LG(LBKT)
+#define UNDO  LG(Z)
+#define CUT   LG(X)
+#define COPY  LG(C)
+#define PASTE LG(V)
+#define R_SPC LC(LA(MINUS))
+#define A_SPC LC(LA(EQUAL))
+#define P_SPC LC(LEFT)
+#define N_SPC LC(RIGHT)
+#define M_CTL LC(UP)
+
 // Customizing behaviors
 
 &sk  {    quick-release; // Avoids "THis" problem (double capitalization)
@@ -240,18 +256,19 @@
 
         NAV {
             bindings = <
-  &kp TAB           &swapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(RBKT)  &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
-  &sk LCTRL         &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
-  &hrml GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18       &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
-                                              &trans      &kp SPACE     &trans    &trans               >;
+  &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
+  &sk LCTRL       &sk LALT    &sk LSHFT   &sk LGUI    &kp BACK   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
+  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18    &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
+                                          &trans      &kp SPACE  &trans    &trans
+            >;
         };
 
         MOU {
             bindings = <
-  &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &kp F11      &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
-                                                                               &trans                &kp SPACE    &mkp LCLK      &mkp RCLK            
+  &tog MOU        &mt A_SPC M_CTL &mt P_SPC P_TAB &mt N_SPC N_TAB &mt R_SPC FWRD &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp LCTRL       &kp LALT        &kp LSHFT       &kp LGUI        &kp BACK       &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &mt GLOBE UNDO  &kp CUT         &kp COPY        &kp PASTE       &kp F11        &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
+                                                  &trans          &kp SPACE      &mkp LCLK      &mkp RCLK            
             >;          
         };
 
