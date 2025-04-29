@@ -26,6 +26,7 @@
 #define CUT   LG(X)
 #define COPY  LG(C)
 #define PASTE LG(V)
+#define M_CTL LC(UP)
 
 // Customizing behaviors
 
