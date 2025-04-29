@@ -16,7 +16,7 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
-// NAV key defines for macOS Shortcuts
+// NAV defines for macOS system keyboard shortcuts
 
 #define P_TAB LS(LC(TAB))
 #define N_TAB LC(TAB)
@@ -26,11 +26,6 @@
 #define CUT   LG(X)
 #define COPY  LG(C)
 #define PASTE LG(V)
-#define R_SPC LC(LA(MINUS))
-#define A_SPC LC(LA(EQUAL))
-#define P_SPC LC(LEFT)
-#define N_SPC LC(RIGHT)
-#define M_CTL LC(UP)
 
 // Customizing behaviors
 
@@ -189,6 +184,18 @@
             require-prior-idle-ms = <175>;
         };
 
+        // Layer-tap do escape from MOU and NUM to DEF on tap but still be able to use the NAV or SYM layers from the previous layers
+        motog: mo_tog_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MTL";
+            bindings = <&mo>, <&tc>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
+            tapping-term-ms = <200>; 
+        };
+        
+        #define MNAV &motog NAV MOU // untoggle MOU on tap NAV on hold
+
     };
 
     macros {
@@ -265,10 +272,10 @@
 
         MOU {
             bindings = <
-  &tog MOU        &mt A_SPC M_CTL &mt P_SPC P_TAB &mt N_SPC N_TAB &mt R_SPC FWRD &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  &kp LCTRL       &kp LALT        &kp LSHFT       &kp LGUI        &kp BACK       &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &mt GLOBE UNDO  &kp CUT         &kp COPY        &kp PASTE       &kp F11        &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
-                                                  &trans          &kp SPACE      &mkp LCLK      &mkp RCLK            
+  &tog MOU        &kp M_CTL &kp P_TAB   &kp N_TAB &kp FWRD      &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp LCTRL       &kp LALT  &kp LSHFT   &kp LGUI  &kp BACK      &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &mt GLOBE UNDO  &kp CUT   &kp COPY    &kp PASTE &kp F11       &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
+                                        MNAV      &kp SPACE     &mkp LCLK      &mkp RCLK            
             >;          
         };
 
