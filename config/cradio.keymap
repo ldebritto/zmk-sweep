@@ -20,8 +20,8 @@
 
 #define P_TAB LS(LC(TAB))
 #define N_TAB LC(TAB)
-#define BACK  LG(RBKT)
-#define FWRD  LG(LBKT)
+#define BACK  LG(LBKT)
+#define FWRD  LG(RBKT)
 #define UNDO  LG(Z)
 #define CUT   LG(X)
 #define COPY  LG(C)
