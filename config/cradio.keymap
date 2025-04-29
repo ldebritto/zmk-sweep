@@ -56,8 +56,8 @@
         };
 
         // Making the keyboard more accessible for one-handed use with a mouse
-        COMBO(left_esc,             &kp ESCAPE,                 1   2  3, DEF,      60)
-        COMBO(left_tab,             &kp TAB,                    1      3, DEF,      60)
+        COMBO(left_esc,             &kp ESCAPE,                  1  2  3, DEF,      60)
+        COMBO(left_tab,             &kp TAB,                     1     3, DEF,      60)
         // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
         COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, DEF,      60)
         COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, DEF,      60)
@@ -172,18 +172,6 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <175>;
         };
-  
-        // Layer-tap do escape from MOU and NUM to DEF on tap but still be able to use the NAV or SYM layers from the previous layers
-        motog: mo_tog_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MTL";
-            bindings = <&mo>, <&tc>;
-            #binding-cells = <2>;
-            flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
-            tapping-term-ms = <200>; 
-        };
-        
-        #define MNAV &motog NAV MOU // untoggle MOU on tap NAV on hold
 
     };
 
@@ -263,7 +251,7 @@
   &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
   &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &kp F11      &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
-                                                                               MNAV                  &kp SPACE    &mkp LCLK      &mkp RCLK            
+                                                                               &trans                &kp SPACE    &mkp LCLK      &mkp RCLK            
             >;          
         };
 
