@@ -274,7 +274,7 @@
         MOU {
             bindings = <
   &tog MOU        &kp M_CTL &kp P_TAB   &kp N_TAB &kp FWRD      &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  &kp LCTRL       &kp LALT  &kp LSHFT   &kp LGUI  &kp BACK      &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &kp LCTRL       &kp LALT  &kp LSHFT   &kp LGUI  &kp BACK      &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt NAV ENTER
   &mt GLOBE UNDO  &kp CUT   &kp COPY    &kp PASTE &kp F11       &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
                                         MNAV      &kp SPACE     &mkp LCLK      &mkp RCLK            
             >;          
@@ -282,9 +282,9 @@
 
         SYM {
             bindings = <
-  &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-  &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp EQUAL  &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
+  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
                                    &trans     &mt RSHFT UNDER   &kp UNDER &trans
             >;
         };
