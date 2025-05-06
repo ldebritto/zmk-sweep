@@ -45,7 +45,7 @@
         COMBO(right_bspc,           &kp BSPC,                   16    18,   DEF,        60)
         
         // Layer toggles and other gimmickry
-        COMBO(tog_nav,              &tc NAV,                    24 30,      DEF NAV,    60)
+        COMBO(tog_nav,              &tog NAV,                   24 30,      DEF NAV,    60)
         COMBO(tog_sym,              &sl SYM,                    25 33,      DEF SYM,    60)
         COMBO(tog_caps_word,        &caps_word,                 12 17,      DEF,        60)
         COMBO(play_next_previous,   &playnp,                    27 28,      NAV,        60)    
