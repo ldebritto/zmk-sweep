@@ -38,7 +38,7 @@
         COMBO(left_tab,             &kp TAB,                     1     3,   DEF,        60)
         COMBO(left_enter,           &kp ENTER,                  11 12 13,   DEF,        60)
         COMBO(left_bspc,            &kp BSPC,                   11    13,   DEF,        60)
-        COMBO(left_fn,              &kp FN,                     20 21,      DEF,        60)
+        COMBO(left_fn,              &kp GLOBE,                  20 21,      DEF,        60)
         COMBO(right_esc,            &kp ESCAPE,                  6  7  8,   DEF,        60)
         COMBO(right_tab,            &kp TAB,                     6     8,   DEF,        60)
         COMBO(right_enter,          &kp ENTER,                  16 17 18,   DEF,        60)
