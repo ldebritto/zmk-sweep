@@ -194,6 +194,20 @@
             require-prior-idle-ms = <200>;
         };
 
+        ltr: better_layer_tap_right { // urob's logic but for a layer-tap on right hand
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTR";
+            bindings = <&lc>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+        };
+
         // Layer-tap do escape from MOU and NUM to DEF on tap but still be able to use the NAV or SYM layers from the previous layers
         motog: mo_tog_layer {
             compatible = "zmk,behavior-hold-tap";
@@ -256,10 +270,10 @@
 
         DEF {
             bindings = <
-  &ltl MOU Q     &kp W         &kp E          &kp R         &kp T           &kp Y          &kp U         &kp I          &kp O         &kp P
+  &ltl MOU Q     &ltl NAV W    &ltl SYM E     &ltl NAV R    &kp T           &kp Y          &ltr NAV U    &ltr SYM I     &ltl NAV O    &ltl MOU P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &ltl NUM X    &ltl NUM C     &ltl NUM V    &hrml GLOBE B   &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &kp BSPC      &kp RSHFT       &kp SPACE     &kp ENTER
+                                              &kp BSPC      &sk RSHFT       &kp SPACE     &kp ENTER
             >;
         };
 
