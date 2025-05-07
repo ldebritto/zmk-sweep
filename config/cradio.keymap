@@ -146,10 +146,10 @@
         NAME { \
             compatible = "zmk,behavior-hold-tap";
             label = "HT_##NAME";
-            bindings = <HOLD-BEHAVIOR>, <TAP-BEHAVIOR>;
+            bindings = <HOLD_BEHAVIOR>, <TAP_BEHAVIOR>;
 
             #binding-cells = <2>;
-            hold-trigger-key-positions = <KEYS>; // right-side + thumbs
+            hold-trigger-key-positions = <HOLD_TRIGGER_KEYS>; // right-side + thumbs
             flavor = "FLAVOR";
             tapping-term-ms = <TERM>;
             hold-trigger-on-release;
@@ -164,7 +164,7 @@
 
         // Customized balanced hold-taps
         HT(hrml, &kp, &kp, balanced, 280, RIGHT_KEYS THUMB_KEYS) // urob's home row mods left;
-        HT(hrmr, &kp, &kp, balanced, 280, LEFT_KEYS THUMB_KEYS) // urob's home row mods right;
+        HT(hrmr, &kp, &kp, balanced, 280, LEFT_KEYS  THUMB_KEYS) // urob's home row mods right;
         HT(ltl,  &lc, &kp, balanced, 280, RIGHT_KEYS THUMB_KEYS) // urob's logic for layer-taps left;
 
         // Layer-tap do escape from MOU and NUM to DEF on tap but still be able to use the NAV or SYM layers from the previous layers
