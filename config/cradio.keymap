@@ -141,20 +141,19 @@
 
         // Customized hold-tap definitions
         
-        // Shorthand combo synthax for hold-taps inspired by https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
+        // Shorthand synthax for hold-taps inspired by https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
         #define HT(NAME, HOLD_BEHAVIOR, TAP_BEHAVIOR, FLAVOR, TERM, HOLD_TRIGGER_KEYS) \
-        NAME { \
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_##NAME";
-            bindings = <HOLD_BEHAVIOR>, <TAP_BEHAVIOR>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <HOLD_TRIGGER_KEYS>; // right-side + thumbs
-            flavor = "FLAVOR";
-            tapping-term-ms = <TERM>;
-            hold-trigger-on-release;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <200>;
+        ##NAME { \
+            compatible = "zmk,behavior-hold-tap"; \ 
+            label = "HT_##NAME"; \
+            bindings = <HOLD_BEHAVIOR>, <TAP_BEHAVIOR>; \
+            #binding-cells = <2>; \
+            hold-trigger-key-positions = <HOLD_TRIGGER_KEYS>;  \
+            flavor = "FLAVOR"; \
+            tapping-term-ms = <TERM>; \
+            hold-trigger-on-release; \
+            quick-tap-ms = <200>; \
+            require-prior-idle-ms = <200>; \
         };
         
         // Key positions for custom hold-tap behaviors
