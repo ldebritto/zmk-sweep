@@ -68,19 +68,19 @@
         };
 
         // Making the keyboard more accessible for one-handed use
-        COMBO(left_esc,             &kp ESCAPE,                  1  2  3, DEF,      60)
-        COMBO(left_tab,             &kp TAB,                     1     3, DEF,      60)
+        COMBO(left_esc,             &kp ESCAPE,                  1  2  3, DEF NAV,  60)
+        COMBO(left_tab,             &kp TAB,                     1     3, DEF NAV,  60)
         // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
-        COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, DEF,      60)
-        COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, DEF,      60)
+        COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, DEF NAV,  60)
+        COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, DEF NAV,  60)
         
-        COMBO(right_esc,            &kp ESCAPE,                  6  7  8, DEF NUM,  60)
-        COMBO(right_tab,            &kp TAB,                     6     8, DEF NUM,  60)
+        COMBO(right_esc,            &kp ESCAPE,                  6  7  8, DEF NAV NUM,  60)
+        COMBO(right_tab,            &kp TAB,                     6     8, DEF NAV NUM,  60)
         COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18, DEF,      60)
         COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18, DEF,      60)
         // non-mod variant for NUM layer
-        COMBO(right_num_enter,      &kp ENTER,                  16 17 18,     NUM,  60)
-        COMBO(right_num_bspc,       &kp BSPC,                   16    18,     NUM,  60)
+        COMBO(right_num_enter,      &kp ENTER,                  16 17 18, NAV NUM,  60)
+        COMBO(right_num_bspc,       &kp BSPC,                   16    18, NAV NUM,  60)
 
         // Layer toggles and other gimmickry
 
