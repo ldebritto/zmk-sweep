@@ -141,30 +141,49 @@
 
         // Customized hold-tap definitions
         
-        // Shorthand synthax for hold-taps inspired by https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
-        #define HT(NAME, HOLD_BEHAVIOR, TAP_BEHAVIOR, FLAVOR, TERM, HOLD_TRIGGER_KEYS) \
-        NAME { \
-            compatible = "zmk,behavior-hold-tap"; \ 
-            label = "HT_##NAME"; \
-            bindings = <HOLD_BEHAVIOR>, <TAP_BEHAVIOR>; \
-            #binding-cells = <2>; \
-            hold-trigger-key-positions = <HOLD_TRIGGER_KEYS>;  \
-            flavor = "FLAVOR"; \
-            tapping-term-ms = <TERM>; \
-            hold-trigger-on-release; \
-            quick-tap-ms = <200>; \
-            require-prior-idle-ms = <200>; \
-        };
-        
-        // Key positions for custom hold-tap behaviors
-        #define LEFT_KEYS 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
-        #define RIGHT_KEYS 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
-        #define THUMB_KEYS 30 31 32 33
+        hrml: hrml { // urob's home row mods left
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRML";
+            bindings = <&kp>, <&kp>;
 
-        // Customized balanced hold-taps
-        HT(hrml, &kp, &kp, balanced, 280, RIGHT_KEYS THUMB_KEYS) // urob's home row mods left;
-        HT(hrmr, &kp, &kp, balanced, 280, LEFT_KEYS  THUMB_KEYS) // urob's home row mods right;
-        HT(ltl,  &lc, &kp, balanced, 280, RIGHT_KEYS THUMB_KEYS) // urob's logic for layer-taps left;
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+        };
+
+        hrmr: hrmr { // urob's home row mods right
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
+            hold-trigger-on-release;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+        };
+
+        // Customized balanced layer-tap
+
+        ltl: better_layer_tap_left { // urob's logic but for a layer-tap on left hand
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTL";
+            bindings = <&lc>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <175>;
+        };
 
         // Layer-tap do escape from MOU and NUM to DEF on tap but still be able to use the NAV or SYM layers from the previous layers
         motog: mo_tog_layer {
@@ -176,7 +195,8 @@
             tapping-term-ms = <200>; 
         };
         
-        #define MNAV &motog NAV MOU // untoggle MOU on tap NAV on hold
+        #define MNAV &motog NAV MOU // untoggle MOU on tap NAV (for mouse input processor) on hold
+        #define MNAV &motog NAV NUM // untoggle MOU on tap NAV (for mouse input processor) on hold
 
     };
 
@@ -239,7 +259,7 @@
   &none     &none    &none     &none    &none       &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
   &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPR    &kp MINUS  &kp N4      &kp N5  &kp N6  &kp DOT
   &none     &none    &none     &none    &none       &kp COMMA  &kp N1      &kp N2  &kp N3  &kp SLASH
-                               &trans   &sk LGUI    &trans     &lt SYM N0
+                               NNAV     &sk LGUI    &trans     &lt SYM N0
             >;
         };
 
