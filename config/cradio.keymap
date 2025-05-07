@@ -273,7 +273,7 @@
   &ltl MOU Q     &ltl NAV W    &ltl SYM E     &ltl NAV R    &kp T           &kp Y          &ltr NAV U    &ltr SYM I     &ltl NAV O    &ltl MOU P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
   &hrml GLOBE Z  &ltl NUM X    &ltl NUM C     &ltl NUM V    &hrml GLOBE B   &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &kp BSPC      &sk RSHFT       &kp SPACE     &kp ENTER
+                                              &ltl NAV BSPC &sk RSHFT       &kp SPACE      &ltr SYM ENTER
             >;
         };
 
@@ -309,7 +309,7 @@
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                   &trans     &mt RSHFT UNDER   &kp UNDER &trans
+                                          &trans     &mt RSHFT UNDER   &kp UNDER &trans
             >;
         };
 
