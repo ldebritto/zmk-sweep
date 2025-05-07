@@ -142,7 +142,7 @@
         // Customized hold-tap definitions
         
         // Shorthand combo synthax copied from https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
-        #define BHT(NAME, HOLD-BEHAVIOR, TAP-BEHAVIOR, TERM, HOLD-TRIGGER-KEYS) \
+        #define BHT(NAME, HOLD_BEHAVIOR, TAP_BEHAVIOR, TERM, HOLD_TRIGGER_KEYS) \
         NAME { \
             compatible = "zmk,behavior-hold-tap";
             label = "HRML";
