@@ -296,9 +296,9 @@
 
         NAV {
             bindings = <
-  &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD   &kp PG_UP &kp HOME     &kp UP   &kp END   &kp BSPC
-  &sk LCTRL       &sk LALT    &sk LSHFT   &sk LGUI    &kp BACK   &kp PG_DN &kp LEFT     &kp DOWN &kp RIGHT &kp RET
-  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18    &playnp   &kp LG(SPC)  &vb_dn   &vb_up    &kp DEL
+  &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
+  &sk LCTRL       &sk LALT    &sk LSHFT   &sk LGUI    &kp BACK   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
+  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp PSCRN  &playnp   &kp INS  &vb_dn   &vb_up    &kp DEL
                                           &trans      &kp SPACE  &trans    &trans
             >;
         };
