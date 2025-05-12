@@ -68,8 +68,10 @@
         };
 
         // Making the keyboard more accessible for one-handed use
-        COMBO(left_esc,             &kp ESCAPE,                  1  2  3,       DEF NAV MOU,    60)
-        COMBO(left_tab,             &kp TAB,                     1     3,       DEF,            60)
+        COMBO(left_esc,             &kp ESCAPE,                  0  1  2,       DEF NAV MOU,    60)
+        COMBO(left_top_enter,       &kp ENTER,                   1  2  3,       DEF NAV MOU,    60) // experimenting with top combos to avoid mismatch with fast NAV mods
+        COMBO(left_tab,             &kp TAB,                     1     3,       DEF NAV MOU,    60)
+        COMBO(left_top_backspace,   &kp BSPC,                    2  3  4,       DEF NAV MOU,    60)
         // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
         COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13,       DEF NAV MOU,    60)
         COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13,       DEF NAV MOU,    60)
