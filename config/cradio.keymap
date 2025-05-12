@@ -222,16 +222,16 @@
         };
 
         // Layer-tap do escape from MOU and NUM to      DEF on tap but still be able to use the NAV or SYM layers from the previous layers
-        motog: mo_tog_layer {
+        moto: mo_to_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "MTL";
-            bindings = <&mo>, <&tc>;
+            bindings = <&lc>, <&tc>;
             #binding-cells = <2>;
             flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
             tapping-term-ms = <200>; 
         };
         
-        #define MNAV &motog NAV MOU // untoggle MOU on tap NAV (for mouse input processor) on hold
+        #define C_NAV &moto NAV DEF // untoggle layer on tap NAV on hold (for mouse input processor on MOU and general movement on other toggled layers) 
 
     };
 
@@ -253,7 +253,7 @@
                 <&mo MACRO_PLACEHOLDER>;
         };
         
-        tc: toggle_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mods_on_layer_activation {
+        tc: to_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mods_on_layer_activation {
             compatible = "zmk,behavior-macro-one-param";
             label = "tog_layer/cancel";
             wait-ms = <0>;
@@ -263,7 +263,7 @@
                 <&macro_tap>,
                 <&kp K_CANCEL &macro_param_1to1>,
                 <&macro_press>,
-                <&tog MACRO_PLACEHOLDER>;
+                <&to MACRO_PLACEHOLDER>;
         };
 
     };
@@ -294,7 +294,7 @@
   &none     &none    &none     &none    &none       &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
   &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPR    &kp MINUS  &kp N4      &kp N5  &kp N6  &kp SLASH
   &none     &none    &none     &none    &none       &kp COMMA  &kp N1      &kp N2  &kp N3  &kp DOT
-                               &trans   &sk LGUI    &trans     &lt SYM N0
+                               C_NAV    &sk LGUI    &trans     &lt SYM N0
             >;
         };
 
@@ -321,16 +321,16 @@
   &kp N1     &kp N2    &kp N3     &kp N4    &kp N5      &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
   &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11     &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5      &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
-                                  &trans    &kp C_POWER &kp CAPS  &trans
+                                  &trans    &kp POWER   &kp CAPS  &trans
             >;
         };
 
         MOU {
             bindings = <
-  &tog MOU        &kp M_CTL &kp P_TAB   &kp N_TAB &kp FWRD      &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp TAB         &kp M_CTL &kp P_TAB   &kp N_TAB &kp FWRD      &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL       &kp LALT  &kp LSHFT   &kp LGUI  &kp BACK      &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
   &mt GLOBE UNDO  &kp CUT   &kp COPY    &kp PASTE &kp F11       &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
-                                        MNAV      &kp SPACE     &mkp LCLK      &mkp RCLK            
+                                        C_NAV     &sk SPACE     &mkp LCLK      &mkp RCLK            
             >;          
         };
     };
