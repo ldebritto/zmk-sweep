@@ -76,11 +76,10 @@
         COMBO(right_esc,            &kp ESCAPE,                  6  7  8,       DEF NUM,        60) // NUM also gets these to make it possible to use with only the right hand
         COMBO(right_tab,            &kp TAB,                     6     8,       DEF NUM,        60) 
         COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18,       DEF NUM,        60) 
-        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18,       DEF NUM,        60) 
         
         COMBO(tog_nav,              &tc NAV,                    21 22 23,       DEF NAV,        60) // useful for long edits
         COMBO(tog_sym,              &sl SYM,                    25 33,          DEF SYM,        60) // uses a sticky layer to make possible to type symbols with one hand
-        COMBO(tog_mou,              &tc MOU,                    20 21 22 23,    DEF MOU,        60) // handy for one-handed use with a mouse on the right hand
+        COMBO(tog_mou,              &tc MOU,                    20 21 22 23,    DEF MOU,       100) // handy for one-handed use with a mouse on the right hand
         COMBO(tog_num,              &tc NUM,                    26 27 28,       DEF NUM,        60) // toggles will persist even after SPACE is pressed
         COMBO(tog_num_word,         &num_word NUM,              17 33,          DEF NUM,        60) // deactivates on SPACE or other keycodes from the continue-list
         COMBO(tog_caps_word,        &caps_word,                 12 17,          DEF,            60) // home shift positions
