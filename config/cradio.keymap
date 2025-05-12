@@ -303,7 +303,7 @@
   &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
   &sk LCTRL       &sk LALT    &sk LSHFT   &sk LGUI    &kp BACK   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
   &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18    &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
-                                          &trans      &kp SPACE  &trans    &trans
+                                          C_NAV       &kp SPACE  &trans    &trans
             >;
         };
 
@@ -312,7 +312,7 @@
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                          &trans     &mt RSHFT UNDER   &kp UNDER &trans
+                                          C_NAV      &mt RSHFT UNDER   &trans    &trans
             >;
         };
 
