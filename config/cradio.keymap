@@ -78,7 +78,7 @@
         
         COMBO(right_esc,            &kp ESCAPE,                  6  7  8,       DEF NUM MOU,    60)
         COMBO(right_tab,            &kp TAB,                     6     8,       DEF NUM MOU,    60)
-        COMBO(left_top_enter,       &kp ENTER,                6  7  8  9,       DEF NUM MOU,    60) // experimenting with top combos to avoid mismatch with fast NAV mods
+        COMBO(right_top_enter,      &kp ENTER,                6  7  8  9,       DEF NUM MOU,    60) // experimenting with top combos to avoid mismatch with fast NAV mods
         COMBO(right_top_backspace,  &kp BSPC,                       8  9,       DEF NUM MOU,    60)
         // // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
         // COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18,       DEF,            60)
