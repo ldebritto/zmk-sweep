@@ -284,7 +284,7 @@
             bindings = <
   &ltl MOU Q     &ltl NAV W    &ltl SYM E     &ltl NAV R    &kp T           &kp Y          &ltr NAV U    &ltr SYM I     &ltr NAV O    &ltr MOU P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &ltl NUM X    &ltl NUM C     &ltl NUM V    &hrml GLOBE B   &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
+  &hrml GLOBE Z  &ltl NUM X    &ltl NUM C     &ltl NUM V    &hrml GLOBE B   &hrmr GLOBE N  &ltr NAV M    &ltr SYM COMMA &ltr NAV DOT  &kp SEMI
                                               &lc NAV       &kp RSHFT       &kp SPACE      &lc SYM  
             >;
         };
