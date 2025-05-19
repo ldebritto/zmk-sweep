@@ -287,19 +287,19 @@
 
         NAV {
             bindings = <
-  &kp TAB         &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
-  &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
-  &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F18       &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
-                                              &moto NAV DEF &kp SPACE     &trans    &trans
+  &kp TAB         &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
+  &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
+  &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F18        &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
+                                              &moto NAV DEF &lt SYM SPACE  &trans    &trans
             >;
         };
 
         SYM {
             bindings = <
-  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR      &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE     &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH      &kp AT            &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                          &moto NAV DEF &mt RSHFT UNDER   &trans    &trans
+  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR      &kp PRCNT         &kp AMPS       &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
+  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE     &kp DOLLAR        &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH      &kp AT            &kp PIPE       &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+                                          &moto NAV DEF &mt RSHFT UNDER   &lt NAV SPACE &trans
             >;
         };
 
