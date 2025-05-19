@@ -267,7 +267,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-                DEF {
+        DEF {
             bindings = <
   &ltl MOU Q     &kp W         &kp E          &kp R         &kp T        &kp Y          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
@@ -278,10 +278,10 @@
 
         NUM {
             bindings = <
-  &mt GT LT         &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR   &kp PRCNT   &kp LA(N6)      &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
-  &sk LCTRL         &sk LALT      &sk LSHFT     &sk LGUI        &kp DOLLAR  &kp MINUS       &kp N4      &kp N5  &kp N6  &kp SLASH
-  &mt GLOBE EQUAL   &kp PLUS      &kp ASTRK     &kp FSLH        &kp AT      &kp COMMA       &kp N1      &kp N2  &kp N3  &kp DOT
-                                                &moto NAV DEF   &sk LGUI    &ltr NUM SPACE  &lt SYM N0
+  &ltl MOU TAB      &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR &kp PRCNT   &kp LA(N6)      &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
+  &sk LCTRL         &sk LALT      &sk LSHFT     &sk LGUI      &kp DOLLAR  &kp MINUS       &kp N4      &kp N5  &kp N6  &kp SLASH
+  &mt GLOBE EQUAL   &kp PLUS      &kp ASTRK     &kp COLON     &kp AT      &kp COMMA       &kp N1      &kp N2  &kp N3  &kp DOT
+                                                &moto NAV DEF &sk LGUI    &ltr NUM SPACE  &lt SYM N0
             >;
         };
 
@@ -296,7 +296,7 @@
 
         SYM {
             bindings = <
-  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR      &kp PRCNT         &kp AMPS       &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
+  &ltl MOU ESC      &kp LBRC   &kp LBKT   &kp LPAR      &kp PRCNT         &kp AMPS       &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE     &kp DOLLAR        &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH      &kp AT            &kp PIPE       &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
                                           &moto NAV DEF &mt RSHFT UNDER   &lt NAV SPACE &trans
@@ -305,9 +305,9 @@
 
         FUN {
             bindings = <
-  &kp N1     &kp N2    &kp N3     &kp N4    &kp N5      &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
-  &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11     &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp F1     &kp F2    &kp F3     &kp F4    &kp F5      &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
+  &ltl MOU N1 &kp N2    &kp N3     &kp N4    &kp N5     &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
+  &sk LCTRL   &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp F1      &kp F2    &kp F3     &kp F4    &kp F5     &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &kp C_POWER &kp CAPS  &trans
             >;
         };
