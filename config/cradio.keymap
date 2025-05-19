@@ -287,7 +287,7 @@
 
         NAV {
             bindings = <
-  &kp TAB         &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
+  &ltl MOU TAB    &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
   &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
   &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F18        &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
                                               &moto NAV DEF &lt SYM SPACE  &trans    &trans
