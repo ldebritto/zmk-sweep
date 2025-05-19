@@ -278,10 +278,10 @@
 
         NUM {
             bindings = <
-  &mt GT LT &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR   &kp PRCNT   &kp LA(N6)      &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
-  &sk LCTRL &sk LALT      &sk LSHFT     &sk LGUI        &kp DOLLAR  &kp MINUS       &kp N4      &kp N5  &kp N6  &kp SLASH
-  &mt GLOBE EQUAL         &kp PLUS      &kp ASTRK       &kp AT      &kp COMMA       &kp N1      &kp N2  &kp N3  &kp DOT
-                                        &moto NAV DEF   &sk LGUI    &ltr NUM SPACE  &lt SYM N0
+  &mt GT LT         &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR   &kp PRCNT   &kp LA(N6)      &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
+  &sk LCTRL         &sk LALT      &sk LSHFT     &sk LGUI        &kp DOLLAR  &kp MINUS       &kp N4      &kp N5  &kp N6  &kp SLASH
+  &mt GLOBE EQUAL   &kp PLUS      &kp ASTRK     &kp FSLH        &kp AT      &kp COMMA       &kp N1      &kp N2  &kp N3  &kp DOT
+                                                &moto NAV DEF   &sk LGUI    &ltr NUM SPACE  &lt SYM N0
             >;
         };
 
