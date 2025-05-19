@@ -9,8 +9,7 @@
 #define NAV     2 // must be bellow MOU for input_processor to work
 #define SYM     3
 #define FUN     4
-#define FUNKY   5
-#define MOU     6 // great for one-handed use with a mouse on the right hand
+#define MOU     5 // great for one-handed use with a mouse on the right hand
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
 
@@ -280,10 +279,10 @@
 
         NUM {
             bindings = <
-  &none     &none    &none     &none         &none       &kp LA(N6)      &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
-  &sk LCTRL &sk LALT &sk LSHFT &sk LGUI      &none       &kp MINUS       &kp N4      &kp N5  &kp N6  &kp SLASH
-  &none     &none    &none     &none         &mo FUNKY   &kp COMMA       &kp N1      &kp N2  &kp N3  &kp DOT
-                               &moto NAV DEF &sk LGUI    &ltr NUM SPACE  &lt SYM N0
+  &mt GT LT &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR   &kp PRCNT   &kp LA(N6)      &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
+  &sk LCTRL &sk LALT      &sk LSHFT     &sk LGUI        &kp DOLLAR  &kp MINUS       &kp N4      &kp N5  &kp N6  &kp SLASH
+  &mt GLOBE EQUAL         &kp PLUS      &kp ASTRK       &kp AT      &kp COMMA       &kp N1      &kp N2  &kp N3  &kp DOT
+                                        &moto NAV DEF   &sk LGUI    &ltr NUM SPACE  &lt SYM N0
             >;
         };
 
@@ -311,15 +310,6 @@
   &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11     &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp F1     &kp F2    &kp F3     &kp F4    &kp F5      &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
                                   &trans    &kp C_POWER &kp CAPS  &trans
-            >;
-        };
-
-        FUNKY {
-            bindings = <
-  &none     &none    &none     &none     &none       &none  &kp F7 &kp F8  &kp F9  &kp F10
-  &sk LCTRL &sk LALT &sk LSHFT &sk LGUI  &none       &none  &kp F4 &kp F5  &kp F6  &kp F11
-  &none     &none    &none     &none     &none       &none  &kp F1 &kp F2  &kp F3  &kp F12
-                               &trans    &sk LGUI    &trans &trans
             >;
         };
 
