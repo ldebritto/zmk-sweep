@@ -189,7 +189,7 @@
             require-prior-idle-ms = <200>;
         };
 
-        // Layer-tap do escape from any layer to DEF on tap but still be able to reach the NAV layer on hold, useful for cancelling toggles
+        // Layer-tap to make it possible to escape from MOU to DEF after toggling it up while still being able to use NAV as an input processor
         moto: mo_to_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "MTL";
