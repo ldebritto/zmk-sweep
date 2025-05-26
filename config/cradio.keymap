@@ -80,12 +80,11 @@
         COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13,       DEF     MOU, 60) // MOU gets this since there's no ENTER key assigned in the left hand
         COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13,       DEF     MOU, 60) // MOU gets this since there's no BSPC key assigned in the left hand
         
-        COMBO(right_tab,            &kp TAB,                     6  7  8,       DEF,         60) 
         COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   16 17 18,       DEF,         60) 
         COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        16    18,       DEF,         60)
 
-        COMBO(tog_nav,              &tc NAV,                       21 22 23,    DEF NAV,     60) // useful for long edits
-        COMBO(tog_mou,              &tc MOU,                    20 21 22 23,    DEF MOU,    100) // handy for one-handed use with a mouse on the right hand
+        COMBO(tog_nav,              &tc NAV,                    21 22 23,       DEF NAV,     60) // useful for long edits
+        COMBO(tog_mou,              &tc MOU,                    26 27 28,       DEF MOU,    100) // handy for one-handed use with a mouse on the right hand
         COMBO(tog_sym,              &sl SYM,                    25 33,          DEF SYM,     60) // uses a sticky layer to make possible to type symbols with one hand
         
         COMBO(tog_caps_word,        &caps_word,                 12 17,          DEF,         60) // home shift positions
