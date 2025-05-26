@@ -83,10 +83,7 @@
         COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   16 17 18,       DEF,         60) 
         COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        16    18,       DEF,         60)
 
-        COMBO(tog_nav,              &tc NAV,                    21 22 23,       DEF NAV,     60) // useful for long edits
-        COMBO(tog_mou,              &tc MOU,                    26 27 28,       DEF MOU,    100) // handy for one-handed use with a mouse on the right hand
-        COMBO(tog_sym,              &sl SYM,                    25 33,          DEF SYM,     60) // uses a sticky layer to make possible to type symbols with one hand
-        
+        COMBO(tog_mou,              &tc MOU,                    21 22 23,       DEF MOU,    100) // handy for one-handed use with a mouse on the right hand
         COMBO(tog_caps_word,        &caps_word,                 12 17,          DEF,         60) // home shift positions
 
         // SYS combos to connect to BT devices from FUN layer
