@@ -5,8 +5,8 @@
 
 // Layer defines to improve readability
 #define DEF     0
-#define NUM     1
 #define NAV     2 // must be bellow MOU for input_processor to work
+#define NUM     1
 #define SYM     3
 #define FUN     4
 #define MOU     5 // great for one-handed use with a mouse on the right hand
@@ -100,13 +100,13 @@
 
         COMBO(tog_nav,              &tc NAV,                       21 22 23,    DEF NAV,        60) // useful for long edits
         COMBO(tog_mou,              &tc MOU,                    20 21 22 23,    DEF MOU,       100) // handy for one-handed use with a mouse on the right hand
-        COMBO(tog_num,              &tc NUM,                    26 27 28,       DEF NUM,        60) // toggles will persist even after SPACE or other separator is pressed
         COMBO(tog_sym,              &sl SYM,                    25 33,          DEF SYM,        60) // uses a sticky layer to make possible to type symbols with one hand
-        COMBO(tog_num_word,         &num_word NUM,              17 33,          DEF NUM,        60) // deactivates on SPACE or other keycodes that are not on the continue-list
-        COMBO(tog_caps_word,        &caps_word,                 12 17,          DEF,            60) // home shift positions
+        COMBO(tog_num,              &tc NUM,                    26 27 28,       DEF NUM,        60) // toggles will persist even after SPACE or other separator is pressed
         
-        COMBO(mo_num,               &lc NUM,                    30 31,          DEF,            60) // home shift positions
-        COMBO(num_word,             &num_word NUM,              32 33,          DEF,            60) // home shift positions
+        COMBO(num_word,             &num_word NUM,              32 33,          DEF,            60) // deactivates on SPACE or other keycodes that are not on the continue-list
+        COMBO(tog_num_word,         &num_word NUM,              17 33,          DEF NUM,        60) // deactivates on SPACE or other keycodes that are not on the continue-list
+        
+        COMBO(tog_caps_word,        &caps_word,                 12 17,          DEF,            60) // home shift positions
 
         // SYS combos to connect to BT devices from FUN layer
         COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,          FUN,            60) // Currently paired to MacBook
@@ -141,6 +141,14 @@
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
 
             mods = <(MOD_LCTL)>;
+        };
+
+        lc_nav: lc_nav_on_hold_lc_num_on_rshift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&lc NAV>, <&lc NUM>;
+
+            mods = <(MOD_RSFT)>; // This will make it possible to activate NUM with thumb combo regardless of the order the thumb keys are pressed
         };
 
         // Swapper for Apple's CMD+TAB behavior
@@ -279,21 +287,21 @@
             >;
         };
 
+        NAV {
+            bindings = <
+  &ltl MOU TAB    &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
+  &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
+  &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F18        &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
+                                              &lc NAV       &lt NUM SPC    &trans    &trans
+            >;
+        };
+
         NUM {
             bindings = <
   &ltl MOU TAB      &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR &kp PRCNT   &kp LA(N6)      &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
   &sk LCTRL         &sk LALT      &sk LSHFT     &sk LGUI      &kp DOLLAR  &kp MINUS       &kp N4      &kp N5  &kp N6  &kp SLASH
   &mt GLOBE EQUAL   &kp PLUS      &kp ASTRK     &kp COLON     &kp AT      &kp COMMA       &kp N1      &kp N2  &kp N3  &kp DOT
                                                 &moto NAV DEF &sk LGUI    &ltr NUM SPACE  &lt SYM N0
-            >;
-        };
-
-        NAV {
-            bindings = <
-  &ltl MOU TAB    &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
-  &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
-  &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F18        &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
-                                              &moto NAV DEF &lt SYM SPACE  &trans    &trans
             >;
         };
 
