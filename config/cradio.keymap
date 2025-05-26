@@ -104,6 +104,9 @@
         COMBO(tog_sym,              &sl SYM,                    25 33,          DEF SYM,        60) // uses a sticky layer to make possible to type symbols with one hand
         COMBO(tog_num_word,         &num_word NUM,              17 33,          DEF NUM,        60) // deactivates on SPACE or other keycodes that are not on the continue-list
         COMBO(tog_caps_word,        &caps_word,                 12 17,          DEF,            60) // home shift positions
+        
+        COMBO(mo_num,               &lc NUM,                    30 31,          DEF,            60) // home shift positions
+        COMBO(num_word,             &num_word NUM,              32 33,          DEF,            60) // home shift positions
 
         // SYS combos to connect to BT devices from FUN layer
         COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,          FUN,            60) // Currently paired to MacBook
