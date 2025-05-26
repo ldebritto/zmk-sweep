@@ -1,15 +1,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
 
 // Layer defines to improve readability
 #define DEF     0
 #define NAV     1 // must be bellow MOU for input_processor to work
-#define NUM     2
-#define SYM     3
-#define FUN     4
-#define MOU     5 // great for one-handed use with a mouse on the right hand
+#define SYM     2
+#define FUN     3
+#define MOU     4 // great for one-handed use with a mouse on the right hand
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
 
@@ -63,16 +61,6 @@
 
 &lt { flavor = "balanced"; }; // used only in NUM
 
-&num_word { // great to quick entry of numbers requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-  continue-list = <
-    DOLLAR DOT COMMA SQT COLON
-    PLUS MINUS ASTRK SLASH EQUAL 
-    LPAR RPAR LBKT RBKT LBRC RBRC LT GT 
-    BSPC DEL ESC 
-    LCTRL LALT LSHFT LGUI
-    >; // These keys will NOT cancel the num_ word auto-layer
-};
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -101,10 +89,6 @@
         COMBO(tog_nav,              &tc NAV,                       21 22 23,    DEF NAV,        60) // useful for long edits
         COMBO(tog_mou,              &tc MOU,                    20 21 22 23,    DEF MOU,       100) // handy for one-handed use with a mouse on the right hand
         COMBO(tog_sym,              &sl SYM,                    25 33,          DEF SYM,        60) // uses a sticky layer to make possible to type symbols with one hand
-        COMBO(tog_num,              &tc NUM,                    26 27 28,       DEF NUM,        60) // toggles will persist even after SPACE or other separator is pressed
-        COMBO(mo_num,               &lc NUM,                    30 31,          DEF,            60) // &lc NUM on left thumb
-        COMBO(thumb_num_word,       &num_word NUM,              32 33,          DEF,            60) // deactivates on SPACE or other keycodes that are not on the continue-list
-        // COMBO(tog_num_word,         &num_word NUM,              17 33,          DEF NUM,        60) // deactivates on SPACE or other keycodes that are not on the continue-list
         
         COMBO(tog_caps_word,        &caps_word,                 12 17,          DEF,            60) // home shift positions
 
@@ -141,14 +125,6 @@
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
 
             mods = <(MOD_LCTL)>;
-        };
-
-        lc_nav: lc_nav_on_hold_lc_num_on_rshift {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&lc NAV>, <&lc NUM>;
-
-            mods = <(MOD_RSFT)>; // This will make it possible to activate NUM with thumb combo regardless of the order the thumb keys are pressed
         };
 
         // Swapper for Apple's CMD+TAB behavior
@@ -282,8 +258,8 @@
             bindings = <
   &ltl MOU Q     &kp W         &kp E          &kp R         &kp T        &kp Y          &kp U         &kp I          &kp O         &kp P
   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D  &hrml LGUI F  &hrml HYPR G &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X         &kp C          &ltl NUM V    &kp B        &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
-                                              &lc_nav       &kp RSHFT    &kp SPACE      &lc SYM  
+  &hrml GLOBE Z  &kp X         &kp C          &kp V         &kp B        &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI
+                                              &lc NAV       &kp RSHFT    &kp SPACE      &lc SYM  
             >;
         };
 
@@ -292,25 +268,16 @@
   &ltl MOU TAB    &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
   &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
   &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F18        &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
-                                              &lc NAV       &lt NUM SPC    &trans    &trans
-            >;
-        };
-
-        NUM {
-            bindings = <
-  &ltl MOU TAB      &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR &kp PRCNT   &mt CARET LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
-  &sk LCTRL         &sk LALT      &sk LSHFT     &sk LGUI      &kp DOLLAR  &mt PLUS MINUS   &kp N4      &kp N5  &kp N6  &mt ASTRK SLASH
-  &mt GLOBE EQUAL   &kp PLUS      &kp ASTRK     &kp COLON     &kp AT      &mt PRCNT EQUAL  &kp N1      &kp N2  &kp N3  &mt COMMA DOT
-                                                &moto NAV DEF &sk LGUI    &ltr NUM SPACE   &lt SYM N0
+                                              &trans        &ltl SYM SPACE &trans    &trans
             >;
         };
 
         SYM {
             bindings = <
-  &ltl MOU ESC      &kp LBRC   &kp LBKT   &kp LPAR      &kp PRCNT         &kp AMPS       &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE     &kp DOLLAR        &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH      &kp AT            &kp PIPE       &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                          &moto NAV DEF &mt RSHFT UNDER   &lt NAV SPACE &trans
+  &ltl MOU ESC      &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS       &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
+  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE       &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+                                          &trans     &mt RSHFT UNDER   &ltr NAV SPACE &trans
             >;
         };
 
@@ -325,10 +292,10 @@
 
         MOU {
             bindings = <
-  &kp TAB         &kp LC(UP)  &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)  &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F11       &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
-                                              &moto NAV DEF &kp SPACE     &mkp LCLK      &mkp RCLK            
+  &kp TAB         &mt F11 LC(UP)  &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &sk LCTRL       &sk LALT        &sk LSHFT       &sk LGUI      &kp LG(LBKT)  &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &mt GLOBE LG(Z) &kp LG(X)       &kp LG(C)       &kp LG(V)     &kp F18       &kp F11        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
+                                                  &moto NAV DEF &kp SPACE     &mkp LCLK      &mkp RCLK            
             >;          
         };
     };
