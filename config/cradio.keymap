@@ -103,8 +103,8 @@
         COMBO(tog_sym,              &sl SYM,                    25 33,          DEF SYM,        60) // uses a sticky layer to make possible to type symbols with one hand
         COMBO(tog_num,              &tc NUM,                    26 27 28,       DEF NUM,        60) // toggles will persist even after SPACE or other separator is pressed
         COMBO(mo_num,               &lc NUM,                    30 31,          DEF,            60) // &lc NUM on left thumb
-        COMBO(num_word,             &num_word NUM,              32 33,          DEF,            60) // deactivates on SPACE or other keycodes that are not on the continue-list
-        COMBO(tog_num_word,         &num_word NUM,              17 33,          DEF NUM,        60) // deactivates on SPACE or other keycodes that are not on the continue-list
+        COMBO(thumb_num_word,       &num_word NUM,              32 33,          DEF,            60) // deactivates on SPACE or other keycodes that are not on the continue-list
+        // COMBO(tog_num_word,         &num_word NUM,              17 33,          DEF NUM,        60) // deactivates on SPACE or other keycodes that are not on the continue-list
         
         COMBO(tog_caps_word,        &caps_word,                 12 17,          DEF,            60) // home shift positions
 
@@ -298,9 +298,9 @@
 
         NUM {
             bindings = <
-  &ltl MOU TAB      &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR &kp PRCNT   &mt COLON LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
+  &ltl MOU TAB      &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR &kp PRCNT   &mt CARET LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
   &sk LCTRL         &sk LALT      &sk LSHFT     &sk LGUI      &kp DOLLAR  &mt PLUS MINUS   &kp N4      &kp N5  &kp N6  &mt ASTRK SLASH
-  &mt GLOBE EQUAL   &kp PLUS      &kp ASTRK     &kp COLON     &kp AT      &mt CARET EQUAL  &kp N1      &kp N2  &kp N3  &mt COMMA DOT
+  &mt GLOBE EQUAL   &kp PLUS      &kp ASTRK     &kp COLON     &kp AT      &mt PRCNT EQUAL  &kp N1      &kp N2  &kp N3  &mt COMMA DOT
                                                 &moto NAV DEF &sk LGUI    &ltr NUM SPACE   &lt SYM N0
             >;
         };
