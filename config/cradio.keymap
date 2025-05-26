@@ -167,8 +167,6 @@
             require-prior-idle-ms = <200>;
         };
 
-        // Customized balanced layer-tap
-
         ltl: better_layer_tap_left { // urob's logic but for a layer-tap on left hand
             compatible = "zmk,behavior-hold-tap";
             label = "LTL";
