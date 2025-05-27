@@ -13,7 +13,7 @@
 #define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
 
 // Includes allow for easier maintenance and readability
-#include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from &sk &mt &lt &caps_word
+#include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse_settings.dtsi"             // Requires layer defines above since it uses NAV as input processor
 #include "features/num_word_settings.dtsi"          // Requires auto-layer module from urob
 
@@ -32,6 +32,7 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
+        
         tri_layer_for_function_and_number_row_keys {
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
