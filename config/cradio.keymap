@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-// Layer defines to improve readability
+// Layer and key defines to improve readability
 #define DEF     0
 #define NUM     1
 #define NAV     2 // must be bellow MOU for input_processor to work
@@ -12,9 +12,10 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
 
-#include "features/core_behaviors.dtsi" // Customized &sk &mt &lt &caps_word
-#include "features/mouse.dtsi"          // Requires layer defines above since it uses NAV as input processor
-#include "features/num_word.dtsi"       // Requires auto-layer module from urob
+// Includes allow for easier maintenance and readability
+#include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from &sk &mt &lt &caps_word
+#include "features/mouse_settings.dtsi"             // Requires layer defines above since it uses NAV as input processor
+#include "features/num_word_settings.dtsi"          // Requires auto-layer module from urob
 
 / {
     combos { 
