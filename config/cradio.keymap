@@ -12,14 +12,14 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
 
-#include "features/customized_core_behaviors.dtsi" // Customized &sk &mt &lt &caps_word
-#include "features/mouse.dtsi"                     // Requires layer defines above since it uses NAV as input processor
-#include "features/num_word.dtsi"                  // Requires auto-layer module from urob
+#include "features/core_behaviors.dtsi" // Customized &sk &mt &lt &caps_word
+#include "features/mouse.dtsi"          // Requires layer defines above since it uses NAV as input processor
+#include "features/num_word.dtsi"       // Requires auto-layer module from urob
 
 / {
-    combos      { #include "features/combos.dtsi" };
-    behaviors   { #include "features/my_behaviors.dtsi" };
-    macros      { #include "features/layer_cancel_macros.dtsi" };
+    combos { #include "features/combos.dtsi" };
+    behaviors { #include "features/my_behaviors.dtsi" };
+    macros { #include "features/layer_cancel_macros.dtsi" };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
