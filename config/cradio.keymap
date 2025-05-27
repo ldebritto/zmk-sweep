@@ -8,13 +8,13 @@
 #define NAV     2 // must be bellow MOU for input_processor to work
 #define SYM     3
 #define FUN     4
-#define MOU     5 // great for one-handed use with a mouse on the right hand
+#define MOU     5 // also great for one-handed use with a mouse on the right hand
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
 
 #include "features/mouse.dtsi"       // Requires layer defines above since it uses NAV as input processor
 #include "features/num_word.dtsi"    // Requires auto-layer module from urob
-#include "features/customized_core_behavirors.dtsi"
+#include "features/customized_core_behaviors.dtsi"
 
 / {
     combos {

@@ -1,19 +1,18 @@
 // This file was adapted from caksoylar's and urob's repos on GitHub
 
-// Add these lines to your .conf file
+// Add these lines to your *.conf file
 // # Mouse config
 // CONFIG_ZMK_MOUSE=y
 // CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y
 
-// Add the bellow lines to your .keymap file
-//
+// Add the bellow lines to your *.keymap file
 // Include and layer definition
 // #define MOU 5
 // #include "mouse.dtsi"
 
-// Settings tuned up for 3840 x 2160 display resolution
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500 // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20  // 10
+// Settings tuned up to deal with 3840 x 2160 display resolution
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // 10
 
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/pointing.h>
