@@ -7,6 +7,5 @@
     BSPC DEL ESC 
     LCTRL LALT LSHFT LGUI
     RCTRL RALT       RGUI
-    K_CANCEL
     >; // These keys will NOT cancel the num_ word auto-layer
 };
