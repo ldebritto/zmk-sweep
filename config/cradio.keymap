@@ -65,7 +65,7 @@
   &ltl MOU TAB    &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)   &kp PG_UP &kp HOME &kp UP   &kp END   &kp BSPC
   &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp RET
   &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F18        &playnp   &kp F19  &vb_dn   &vb_up    &kp DEL
-                                              &lc NAV       &lt NUM SPC    &trans    &trans
+                                              &trans        &lt SYM SPACE  &trans    &trans
             >;
         };
 
@@ -83,7 +83,7 @@
   &ltl MOU N1 &kp N2    &kp N3     &kp N4    &kp N5     &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
   &sk LCTRL   &sk LALT  &sk LSHFT  &sk LGUI  &kp F11    &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp F1      &kp F2    &kp F3     &kp F4    &kp F5     &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
-                                  &trans    &kp C_POWER &kp CAPS  &trans
+                                   &trans    &kp C_POWER &kp CAPS  &trans
             >;
         };
 
