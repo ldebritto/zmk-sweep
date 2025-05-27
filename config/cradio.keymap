@@ -17,9 +17,17 @@
 #include "features/num_word.dtsi"       // Requires auto-layer module from urob
 
 / {
-    combos { #include "features/combos.dtsi" };
-    behaviors { #include "features/my_behaviors.dtsi" };
-    macros { #include "features/layer_cancel_macros.dtsi" };
+    combos { 
+        #include "features/combos.dtsi"
+    };
+    
+    behaviors { 
+        #include "features/my_behaviors.dtsi" 
+    };
+
+    macros { 
+        #include "features/layer_cancel_macros.dtsi"
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
