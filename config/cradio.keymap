@@ -22,7 +22,7 @@
     };
     
     behaviors { 
-        #include "features/my_behaviors.dtsi" 
+        #include "features/custom_behaviors.dtsi" 
     };
 
     macros { 
