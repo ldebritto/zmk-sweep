@@ -268,7 +268,7 @@
             bindings = <
   &ltl MOU ESC      &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS       &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR        &kp HASH       &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE EQUAL   &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE       &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+  &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH   &kp AT            &kp PIPE       &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
                                           &trans     &mt RSHFT UNDER   &ltr NAV SPACE &trans
             >;
         };
