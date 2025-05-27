@@ -1,0 +1,47 @@
+// Media controls
+    playnp: play_next_previous_media_key { 
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <300>;
+        bindings =
+            <&mt C_MUTE C_PLAY_PAUSE>,
+            <&kp C_NEXT>,
+            <&kp C_PREVIOUS>;
+    };
+    
+    vb_up: volume_brightness_up_on_control {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
+
+        mods = <(MOD_LCTL)>;
+    };
+
+    vb_dn: volume_brightness_down_on_control {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
+
+        mods = <(MOD_LCTL)>;
+    };
+
+// Swapper for Apple's CMD+TAB behavior
+
+    swapper: swapper_for_apple_cmd_tab {
+        compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
+        #binding-cells = <0>;
+        bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
+
+        ignored-key-positions = <7 16 17 18 9 19 29>; // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls
+    };
+
+// Layer-tap do escape from any layer to DEF on tap but still be able to reach the NAV layer on hold, useful for cancelling toggles
+        
+    moto: mo_to_layer {
+        compatible = "zmk,behavior-hold-tap";
+        label = "MTL";
+        bindings = <&lc>, <&tc>;
+        #binding-cells = <2>;
+        flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
+        tapping-term-ms = <200>; 
+    };

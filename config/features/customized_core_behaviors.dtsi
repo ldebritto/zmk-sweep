@@ -1,0 +1,14 @@
+// Customizing some core behaviors from their defaults
+
+&sk {  
+    quick-release;                      // Avoids "THis" problem (double capitalization)
+    release-after-ms = <86400000>;      // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
+};
+
+&caps_word { 
+    /delete-property/ ignore-modifiers; // This voids pressing command+shift+s instead of a simple command+s - sadly not working at the moment…
+    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT LALT RALT SQT CARET TILDE GRAVE SLASH MINUS>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on '^`~" keys, ALT is needed to enter alt characters
+}; 
+
+&mt { flavor = "balanced"; };
+&lt { flavor = "balanced"; };
