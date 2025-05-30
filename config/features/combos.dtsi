@@ -29,7 +29,7 @@ COMBO(tc_nav,               &tc NAV,                        LB1 LB2 LB3,  DEF   
 COMBO(tc_mou,               &tc MOU,                    LB0 LB1 LB2 LB3,  DEF             MOU,    100) // handy for one-handed use with a mouse on the right hand
 COMBO(tc_num,               &tc NUM,                    RB1 RB2 RB3,      DEF NUM,                 60) // toggles will persist even after SPACE or other separator is pressed
 COMBO(sl_sym,               &sl SYM,                    RB0 RIT,          DEF         SYM,         60) // uses a sticky layer to make possible to type symbols with one hand
-COMBO(lc_num,               &lc NUM,                    LOT LIT,          DEF,                     60) // &lc NUM on left thumb
+COMBO(lc_num,               &lc NUM,                    LIT LHT,          DEF,                     60) // &lc NUM on left thumb
 COMBO(tc_def,               &tc DEF,                    RHT RIT,          DEF NUM NAV SYM MOU,     60) // escape from any layer to DEF, allowing it to be triggered from DEF itself makes it act lika a general "reset"
 
 // SYS combos to connect to BT devices from FUN layer
