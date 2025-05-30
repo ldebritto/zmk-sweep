@@ -13,6 +13,7 @@
 #define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
 
 // Includes allow for easier maintenance and readability
+#include "features/sweep_keypos.h"               // Key positions for the Sweep keyboard
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse_settings.dtsi"             // Requires layer defines above since it uses NAV as input processor
 #include "features/num_word_settings.dtsi"          // Requires auto-layer module from urob
