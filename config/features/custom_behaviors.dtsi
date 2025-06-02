@@ -1,8 +1,7 @@
-// Variables in this file will have precedence over the ones in other files
-#pragma once
+// Variables for easier tweak of timeouts and behaviors
 
 // Key references for custom behaviors using x_keypos.dtsi naming scheme
-    
+
     // Key groups for home row mods and layer-taps
     #define LEFT_SIDE_KEYS LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
     #define RIGHT_SIDE_KEYS RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
@@ -10,12 +9,6 @@
 
     // Keys ignored by the swapper for CMD+TAB behavior
     #define SWAPPER_IGNORED_KEYS RT2 RM1 RM2 RM3 RT4 RM4 RB4 // Arrows, BSPC, ENTER and DEL for alt-tab movement and window/app controls
-
-// Timeouts
-    #define HOLD_TAP_TERM 280
-    #define QUICK_TAP 200
-    #define REQUIRE_PRIOR_IDLE 200
-    #define TAP_DANCE_TERM 300
 
 // Media controls
     playnp: play_next_previous_media_key { 
@@ -60,7 +53,7 @@
         bindings = <&lc>, <&tc>;
         #binding-cells = <2>;
         flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
-        tapping-term-ms = <200>; 
+        tapping-term-ms = <HOLD_TAP_TERM>; 
     };
     #define NAV_DEF &moto NAV DEF
 

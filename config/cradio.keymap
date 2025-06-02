@@ -19,9 +19,11 @@
 
 // These includes allow for easier maintenance and readability between different keymaps
 #include "features/sweep_keypos.h"                  // Key positions naming scheme for 34 keys keymaps
+#include "features/timings.h"                       // Timing definitions for hold-tap and combos
+
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
-#include "features/mouse.dtsi"             // Requires layer defines above since it uses NAV as input processor
-#include "features/num_word.dtsi"          // Requires auto-layer module from urob
+#include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
+#include "features/num_word.dtsi"                   // Requires auto-layer module from urob
 
 / {
     combos { 
