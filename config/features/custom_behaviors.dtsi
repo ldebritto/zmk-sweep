@@ -8,11 +8,17 @@
     // Keys ignored by the swapper for CMD+TAB behavior
     #define SWAPPER_IGNORED_KEYS RT2 RM1 RM2 RM3 RT4 RM4 RB4 // Arrows, BSPC, ENTER and DEL for alt-tab movement and window/app controls
 
+// Timeouts
+    #define HOLD_TAP_TERM <280>
+    #define QUICK_TAP <200>
+    #define REQUIRE_PRIOR_IDLE <200>
+    #define TAP_DANCE_TIMEOUT <300>
+
 // Media controls
     playnp: play_next_previous_media_key { 
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <300>;
+        tapping-term-ms = <TAP_DANCE_TIMEOUT>;
         bindings =
             <&mt C_MUTE C_PLAY_PAUSE>,
             <&kp C_NEXT>,
@@ -65,10 +71,10 @@
         #binding-cells = <2>;
         hold-trigger-key-positions = <RIGHT_SIDE_KEYS THUMB_KEYS>;
         flavor = "balanced";
-        tapping-term-ms = <280>;
+        tapping-term-ms = <TAPPING_TERM>;
         hold-trigger-on-release;
-        quick-tap-ms = <200>;
-        require-prior-idle-ms = <200>;
+        quick-tap-ms = <QUICK_TAP>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     hrmr: hrmr { // urob's home row mods right
@@ -78,11 +84,11 @@
 
         #binding-cells = <2>;
         flavor = "balanced";
-        tapping-term-ms = <280>;
+        tapping-term-ms = <TAPPING_TERM>;
         hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
         hold-trigger-on-release;
-        quick-tap-ms = <200>;
-        require-prior-idle-ms = <200>;
+        quick-tap-ms = <QUICK_TAP>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
 // Customized balanced layer-tap
@@ -95,10 +101,10 @@
         #binding-cells = <2>;
         hold-trigger-key-positions = <RIGHT_SIDE_KEYS THUMB_KEYS>;
         flavor = "balanced";
-        tapping-term-ms = <280>;
+        tapping-term-ms = <TAPPING_TERM>;
         hold-trigger-on-release;
-        quick-tap-ms = <200>;
-        require-prior-idle-ms = <200>;
+        quick-tap-ms = <QUICK_TAP>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     ltr: better_layer_tap_right { // urob's logic but for a layer-tap on right hand
@@ -109,8 +115,8 @@
         #binding-cells = <2>;
         hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
         flavor = "balanced";
-        tapping-term-ms = <280>;
+        tapping-term-ms = <TAPPING_TERM>;
         hold-trigger-on-release;
-        quick-tap-ms = <200>;
-        require-prior-idle-ms = <200>;
+        quick-tap-ms = <QUICK_TAP>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
