@@ -1,5 +1,9 @@
 compatible = "zmk,combos";
 
+// Timeouts
+#define SHORT_COMBO_TIMEOUT 60       // Default timeout for combos in ms
+#define LONG_COMBO_TIMEOUT 100 // Default timeout for combos in ms
+
 // Shorthand combo synthax copied from https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
 #define COMBO(NAME,         BINDINGS,                   KEYPOS,         LAYERS,    TERM) \
 combo_##NAME { \
@@ -11,41 +15,41 @@ combo_##NAME { \
 };
 
 // These make the keyboard more accessible for one-handed use and to avoid the need to hold layer keys for very long
-COMBO(left_esc,             &kp ESCAPE,                 LT1 LT2 LT3,      DEF     NAV     MOU,     60) // ESC is the only combo that moves to NAV since there's no ESC key there
-COMBO(left_tab,             &kp TAB,                    LT1     LT3,      DEF             MOU,     60) // MOU gets this since its TAB key position untoggles the layer
-COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,      DEF             MOU,     60) // MOU gets this since there's no ENTER key assigned in the left hand
-COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1     LM3,      DEF             MOU,     60) // MOU gets this since there's no BSPC key assigned in the left hand
+COMBO(left_esc,             &kp ESCAPE,                 LT1 LT2 LT3,      DEF     NAV     MOU,     SHORT_COMBO_TIMEOUT) // ESC is the only combo that moves to NAV since there's no ESC key there
+COMBO(left_tab,             &kp TAB,                    LT1     LT3,      DEF             MOU,     SHORT_COMBO_TIMEOUT) // MOU gets this since its TAB key position untoggles the layer
+COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,      DEF             MOU,     SHORT_COMBO_TIMEOUT) // MOU gets this since there's no ENTER key assigned in the left hand
+COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1     LM3,      DEF             MOU,     SHORT_COMBO_TIMEOUT) // MOU gets this since there's no BSPC key assigned in the left hand
 
-COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,      DEF NUM,                 60) // NUM also gets these to make it possible to use with only the right hand
-COMBO(right_tab,            &kp TAB,                    RT1     RT3,      DEF NUM,                 60) 
-COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF NUM,                 60) 
-COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NUM         MOU,     60)
+COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,      DEF NUM,                 SHORT_COMBO_TIMEOUT) // NUM also gets these to make it possible to use with only the right hand
+COMBO(right_tab,            &kp TAB,                    RT1     RT3,      DEF NUM,                 SHORT_COMBO_TIMEOUT) 
+COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF NUM,                 SHORT_COMBO_TIMEOUT) 
+COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NUM         MOU,     SHORT_COMBO_TIMEOUT)
 
 
 // Layer toggles and combos
-COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                     60) // home shift positions
-COMBO(tog_num_word,         &num_word NUM,              RM2 RIT,          DEF NUM,                 60) // deactivates on SPACE or other keycodes that are not on the continue-list
-COMBO(tc_nav,               &tc NAV,                        LB1 LB2 LB3,  DEF     NAV,             60) // useful for long edits
-COMBO(tc_mou,               &tc MOU,                    LB0 LB1 LB2 LB3,  DEF             MOU,    100) // handy for one-handed use with a mouse on the right hand
-COMBO(tc_num,               &tc NUM,                    RB1 RB2 RB3,      DEF NUM,                 60) // toggles will persist even after SPACE or other separator is pressed
-COMBO(sl_sym,               &sl SYM,                    RB0 RIT,          DEF         SYM,         60) // uses a sticky layer to make possible to type symbols with one hand
-COMBO(lc_num,               &lc NUM,                    LIT LHT,          DEF,                     60) // &lc NUM on left thumb
-COMBO(tc_def,               &tc DEF,                    RHT RIT,          DEF NUM NAV SYM MOU,     60) // escape from any layer to DEF, allowing it to be triggered from DEF itself makes it act lika a general "reset"
+COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                     SHORT_COMBO_TIMEOUT) // home shift positions
+COMBO(tog_num_word,         &num_word NUM,              RM2 RIT,          DEF NUM,                 SHORT_COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
+COMBO(tc_nav,               &tc NAV,                        LB1 LB2 LB3,  DEF     NAV,             SHORT_COMBO_TIMEOUT) // useful for long edits
+COMBO(tc_mou,               &tc MOU,                    LB0 LB1 LB2 LB3,  DEF             MOU,     LONG_COMBO_TIMEOUT ) // handy for one-handed use with a mouse on the right hand
+COMBO(tc_num,               &tc NUM,                    RB1 RB2 RB3,      DEF NUM,                 SHORT_COMBO_TIMEOUT) // toggles will persist even after SPACE or other separator is pressed
+COMBO(sl_sym,               &sl SYM,                    RB0 RIT,          DEF         SYM,         SHORT_COMBO_TIMEOUT) // uses a sticky layer to make possible to type symbols with one hand
+COMBO(lc_num,               &lc NUM,                    LIT LHT,          DEF,                     SHORT_COMBO_TIMEOUT) // &lc NUM on left thumb
+COMBO(tc_def,               &tc DEF,                    RHT RIT,          DEF NUM NAV SYM MOU,     SHORT_COMBO_TIMEOUT) // escape from any layer to DEF, allowing it to be triggered from DEF itself makes it act lika a general "reset"
 
 // SYS combos to connect to BT devices from FUN layer
-COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                              FUN, 60) // Currently paired to MacBook
-COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               LM3 LM4,                              FUN, 60) // Currently paired to iPad
-COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               LB3 LB4,                              FUN, 60) // Open to connect to any other device
-COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                              FUN, 60) // Hard resets the left half only (see https://zmk.dev/docs/keymaps/combos#advanced-usage on why there's no way to combo for a right half hard reset)
-COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                              FUN, 60) // Unpairs from currently active bt profile
+COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                              FUN, SHORT_COMBO_TIMEOUT) // Currently paired to MacBook
+COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               LM3 LM4,                              FUN, SHORT_COMBO_TIMEOUT) // Currently paired to iPad
+COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               LB3 LB4,                              FUN, SHORT_COMBO_TIMEOUT) // Open to connect to any other device
+COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                              FUN, SHORT_COMBO_TIMEOUT) // Hard resets the left half only (see https://zmk.dev/docs/keymaps/combos#advanced-usage on why there's no way to combo for a right half hard reset)
+COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                              FUN, SHORT_COMBO_TIMEOUT) // Unpairs from currently active bt profile
 
 // AOE combos for in game use
-COMBO(toggle_aoe_layer,     &tog AOE,                   LB1 LB2 LB3 LB4,  DEF                 AOE, 60)
-COMBO(aoe_left_esc,         &kp ESCAPE,                 LT1 LT2 LT3,                          AOE, 60)
-COMBO(aoe_left_tab,         &kp TAB,                    LT1     LT3,                          AOE, 60)
-COMBO(aoe_left_enter,       &hrml LA(LS(LCTRL)) ENTER,  LM1 LM2 LM3,                          AOE, 60)
-COMBO(aoe_left_backspace,   &hrml LA(LCTRL) BSPC,       LM1     LM3,                          AOE, 60)
-COMBO(aoe_right_esc,        &kp ESCAPE,                 RT1 RT2 RT3,                          AOE, 60)
-COMBO(aoe_right_tab,        &kp TAB,                    RT1     RT3,                          AOE, 60) 
-COMBO(aoe_right_enter,      &hrmr RA(LS(RCTRL)) ENTER,  RM1 RM2 RM3,                          AOE, 60) 
-COMBO(aoe_right_backspace,  &hrmr LA(LCTRL) BSPC,       RM1     RM3,                          AOE, 60)
+COMBO(toggle_aoe_layer,     &tog AOE,                   LB1 LB2 LB3 LB4,  DEF                 AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_left_esc,         &kp ESCAPE,                 LT1 LT2 LT3,                          AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_left_tab,         &kp TAB,                    LT1     LT3,                          AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_left_enter,       &hrml LA(LS(LCTRL)) ENTER,  LM1 LM2 LM3,                          AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_left_backspace,   &hrml LA(LCTRL) BSPC,       LM1     LM3,                          AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_right_esc,        &kp ESCAPE,                 RT1 RT2 RT3,                          AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_right_tab,        &kp TAB,                    RT1     RT3,                          AOE, SHORT_COMBO_TIMEOUT) 
+COMBO(aoe_right_enter,      &hrmr RA(LS(RCTRL)) ENTER,  RM1 RM2 RM3,                          AOE, SHORT_COMBO_TIMEOUT) 
+COMBO(aoe_right_backspace,  &hrmr LA(LCTRL) BSPC,       RM1     RM3,                          AOE, SHORT_COMBO_TIMEOUT)

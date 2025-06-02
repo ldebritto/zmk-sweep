@@ -12,13 +12,13 @@
     #define HOLD_TAP_TERM 280
     #define QUICK_TAP 200
     #define REQUIRE_PRIOR_IDLE 200
-    #define TAP_DANCE_TIMEOUT 300
+    #define TAP_DANCE_TERM 300
 
 // Media controls
     playnp: play_next_previous_media_key { 
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <TAP_DANCE_TIMEOUT>;
+        tapping-term-ms = <TAP_DANCE_TERM>;
         bindings =
             <&mt C_MUTE C_PLAY_PAUSE>,
             <&kp C_NEXT>,
@@ -71,7 +71,7 @@
         #binding-cells = <2>;
         hold-trigger-key-positions = <RIGHT_SIDE_KEYS THUMB_KEYS>;
         flavor = "balanced";
-        tapping-term-ms = <TAPPING_TERM>;
+        tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
@@ -84,7 +84,7 @@
 
         #binding-cells = <2>;
         flavor = "balanced";
-        tapping-term-ms = <TAPPING_TERM>;
+        tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
@@ -101,7 +101,7 @@
         #binding-cells = <2>;
         hold-trigger-key-positions = <RIGHT_SIDE_KEYS THUMB_KEYS>;
         flavor = "balanced";
-        tapping-term-ms = <TAPPING_TERM>;
+        tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
@@ -115,7 +115,7 @@
         #binding-cells = <2>;
         hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
         flavor = "balanced";
-        tapping-term-ms = <TAPPING_TERM>;
+        tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
