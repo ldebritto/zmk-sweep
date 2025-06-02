@@ -9,10 +9,10 @@
     #define SWAPPER_IGNORED_KEYS RT2 RM1 RM2 RM3 RT4 RM4 RB4 // Arrows, BSPC, ENTER and DEL for alt-tab movement and window/app controls
 
 // Timeouts
-    #define HOLD_TAP_TERM <280>
-    #define QUICK_TAP <200>
-    #define REQUIRE_PRIOR_IDLE <200>
-    #define TAP_DANCE_TIMEOUT <300>
+    #define HOLD_TAP_TERM 280
+    #define QUICK_TAP 200
+    #define REQUIRE_PRIOR_IDLE 200
+    #define TAP_DANCE_TIMEOUT 300
 
 // Media controls
     playnp: play_next_previous_media_key { 

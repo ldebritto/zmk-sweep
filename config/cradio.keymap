@@ -3,12 +3,12 @@
 #include <dt-bindings/zmk/keys.h>
 
 // Layer and key defines to improve readability
-#define DEF     0
-#define NUM     1
-#define NAV     2 // must be bellow MOU for input_processor to work
-#define SYM     3
-#define FUN     4
-#define MOU     5 // also great for one-handed use with a mouse on the right hand
+#define DEF 0
+#define NUM 1
+#define NAV 2 // must be bellow MOU for input_processor to work
+#define SYM 3
+#define FUN 4
+#define MOU 5 // also great for one-handed use with a mouse on the right hand
 
 // AOE layers
 #define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
