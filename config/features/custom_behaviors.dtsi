@@ -1,3 +1,6 @@
+// Variables in this file will have precedence over the ones in other files
+#pragma once
+
 // Key references for custom behaviors using x_keypos.dtsi naming scheme
     
     // Key groups for home row mods and layer-taps

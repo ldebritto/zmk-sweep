@@ -1,8 +1,9 @@
 compatible = "zmk,combos";
 
 // Timeouts
-#define SHORT_COMBO_TIMEOUT 60       // Default timeout for combos in ms
-#define LONG_COMBO_TIMEOUT 100 // Default timeout for combos in ms
+#define SHORT_COMBO_TIMEOUT 60      // Default timeout for combos in ms
+#define LONG_COMBO_TIMEOUT 100      // Long timeout for four-finger combos in ms
+#define REQUIRE_PRIOR_IDLE 200      // Will inherit the value set in custom_behaviors.dtsi since it has #pragma once
 
 // Shorthand combo synthax copied from https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
 #define COMBO(NAME,         BINDINGS,                   KEYPOS,         LAYERS,    TERM) \
@@ -11,7 +12,7 @@ combo_##NAME { \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
-    require-prior-idle-ms = <200>; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>; \
 };
 
 // These make the keyboard more accessible for one-handed use and to avoid the need to hold layer keys for very long
@@ -44,7 +45,7 @@ COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                
 COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                              FUN, SHORT_COMBO_TIMEOUT) // Unpairs from currently active bt profile
 
 // AOE combos for in game use
-COMBO(toggle_aoe_layer,     &tog AOE,                   LB1 LB2 LB3 LB4,  DEF                 AOE, SHORT_COMBO_TIMEOUT)
+COMBO(toggle_aoe_layer,     &tog AOE,                   LB1 LB2 LB3 LB4,  DEF                 AOE, LONG_COMBO_TIMEOUT )
 COMBO(aoe_left_esc,         &kp ESCAPE,                 LT1 LT2 LT3,                          AOE, SHORT_COMBO_TIMEOUT)
 COMBO(aoe_left_tab,         &kp TAB,                    LT1     LT3,                          AOE, SHORT_COMBO_TIMEOUT)
 COMBO(aoe_left_enter,       &hrml LA(LS(LCTRL)) ENTER,  LM1 LM2 LM3,                          AOE, SHORT_COMBO_TIMEOUT)
