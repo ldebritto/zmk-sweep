@@ -32,6 +32,10 @@ COMBO(sl_sym,               &sl SYM,                    RB0 RIT,          DEF   
 COMBO(lc_num,               &lc NUM,                    LIT LHT,          DEF,                          SHORT_COMBO_TIMEOUT) // &lc NUM on left thumb
 COMBO(tc_def,               &tc DEF,                    RHT RIT,          DEF NUM NAV SYM     MOU,      SHORT_COMBO_TIMEOUT) // escape from any layer to DEF, allowing it to be triggered from DEF itself makes it act lika a general "reset"
 
+// OS functionality
+COMBO(sleep_computer,       &kp C_POWER,                RT1 RT2 RT3 RT4,  DEF                ,          SHORT_COMBO_TIMEOUT)
+COMBO(mute_system,          &kp C_MUTE,                 RB1 RB2 RB3 RB4,  DEF                ,          SHORT_COMBO_TIMEOUT)
+
 // SYS combos to connect to BT devices from FUN layer
 COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to MacBook
 COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               LM3 LM4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to iPad
