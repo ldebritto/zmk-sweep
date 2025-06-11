@@ -97,7 +97,7 @@
 
         MOU {
             bindings = <
-  &kp TAB         &mt F11 LC(UP) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &to DEF         &mt F11 LC(UP) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &sk LCTRL       &sk LALT       &sk LSHFT       &sk LGUI      &kp LG(LBKT)  &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &ltl NAV ENTER
   &mt GLOBE LG(Z) &kp LG(X)      &kp LG(C)       &kp LG(V)     &kp F18       &playnp        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
                                                  NAV_DEF       &kp SPACE     &mkp LCLK      &mkp RCLK            
