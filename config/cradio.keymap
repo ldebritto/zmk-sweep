@@ -61,9 +61,9 @@
 
         NUM {
             bindings = <
-  &ltl MOU TAB      &kp LBRC    &kp LBKT    &kp LPAR    &kp PRCNT   &kp LA(N6)  &kp N7 &kp N8  &kp N9  &kp BSPC
-  &sk LCTRL         &sk LALT    &sk LSHFT   &sk LGUI    &kp DOLLAR  &kp DOT     &kp N4 &kp N5  &kp N6  &kp ENTER
-  &mt GLOBE PIPE    &kp RBRC    &kp RBKT    &kp RPAR    &kp AMPS    &kp COMMA   &kp N1 &kp N2  &kp N3  &mt LA(N9) LA(N0)
+  &ltl MOU TAB      &kp LBRC    &kp LBKT    &kp LPAR    &kp PRCNT   &kp LA(N6)  &kp N7 &kp N8  &kp N9  &kp LA(N9)
+  &sk LCTRL         &sk LALT    &sk LSHFT   &sk LGUI    &kp DOLLAR  &kp DOT     &kp N4 &kp N5  &kp N6  &kp LA(N0)
+  &mt GLOBE PIPE    &kp RBRC    &kp RBKT    &kp RPAR    &kp AMPS    &kp COMMA   &kp N1 &kp N2  &kp N3  &kp COLON
                                             NAV_DEF     &sk LGUI    &lt NAV SPC &lt SYM N0
             >;
         };
