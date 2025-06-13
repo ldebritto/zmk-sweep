@@ -61,27 +61,27 @@
 
         NUM {
             bindings = <
-  &ltl MOU TAB      &kp LBRC    &kp LBKT    &kp LPAR    &kp PRCNT   &kp LA(N6)  &kp N7 &kp N8  &kp N9  &kp LA(N9)
-  &sk LCTRL         &sk LALT    &sk LSHFT   &sk LGUI    &kp DOLLAR  &kp DOT     &kp N4 &kp N5  &kp N6  &kp LA(N0)
-  &mt GLOBE PIPE    &kp RBRC    &kp RBKT    &kp RPAR    &kp AMPS    &kp COMMA   &kp N1 &kp N2  &kp N3  &kp COLON
-                                            NAV_DEF     &sk LGUI    &lt NAV SPC &lt SYM N0
+  &trans    &trans   &trans     &trans   &trans      &kp LA(N6)  &kp N7  &kp N8  &kp N9  &kp LA(N0)
+  &sk LCTRL &sk LALT &sk LSHFT  &sk LGUI &kp DOLLAR  &kp DOT     &kp N4  &kp N5  &kp N6  &kp LA(N6)
+  &trans    &trans   &trans     &trans   &trans      &kp COMMA   &kp N1  &kp N2  &kp N3  &kp LA(N9)
+                                NAV_DEF  &sk LGUI    &lt NAV SPC &lt SYM N0
             >;
         };
 
         NAV {
             bindings = <
-  &ltl MOU TAB    &swapper    &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)    &kp PG_UP &kp HOME  &kp UP    &kp END   &kp BSPC
-  &sk LCTRL       &sk LALT    &sk LSHFT       &sk LGUI      &kp LG(LBKT)    &kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
-  &mt GLOBE LG(Z) &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F18         &playnp   &kp F19   &vb_dn    &vb_up    &kp DEL
-                                              &trans        &lt SYM SPC     &trans    &trans
+  &ltl MOU TAB    &swapper  &kp LC(LS(TAB)) &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP &kp HOME  &kp UP    &kp END   &kp BSPC
+  &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)    &kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
+  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18         &playnp   &kp F19   &vb_dn    &vb_up    &kp DEL
+                                            &trans      &lt SYM SPC     &trans    &trans
             >;
         };
 
         SYM {
             bindings = <
-  &kp ESC        &kp LBRC   &kp LBKT  &kp LPAR  &kp DOLLAR  &kp PLUS    &kp ASTRK &kp EQUAL  &kp PRCNT &kp DQT
-  &kp AT         &kp CARET  &kp GRAVE &kp TILDE &kp HASH    &kp MINUS   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE PIPE &kp RBRC   &kp RBKT  &kp RPAR  &kp AMPS    &kp FSLH    &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+  &kp ESC   &kp LBRC   &kp LBKT  &kp LPAR  &kp DOLLAR  &kp PLUS    &kp ASTRK &kp EQUAL  &kp PRCNT &kp DQT
+  &kp AT    &kp CARET  &kp GRAVE &kp TILDE &kp HASH    &kp MINUS   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp PIPE  &kp RBRC   &kp RBKT  &kp RPAR  &kp AMPS    &kp FSLH    &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
                                       &trans    &kp UNDER   &lc NAV     &trans
             >;
         };
@@ -108,8 +108,8 @@
             bindings = <
   &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
   &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X      &kp C       &kp V        &kp B        &trans  &trans  &trans  &trans  &trans  &none
-                                &none       &lt AGS H    &lt ABS DOT  &trans  &trans  &none
+  &kp Z        &kp X      &kp C       &kp V        &kp B        &trans  &trans  &trans  &trans  &trans
+                                      &lt AGS H    &lt ABS DOT  &trans  &trans
             >;
         };
 
@@ -117,8 +117,8 @@
             bindings = <
   &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans     &trans  &trans  &trans  &kp BSPC
   &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans     &trans  &trans  &trans  &kp ENTER
-  &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3   &none
-                                   &none        &trans        &kp DEL    &trans     &trans  &none
+  &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3
+                                          &trans        &kp DEL    &trans     &trans
             >;
         };
 
@@ -126,8 +126,8 @@
             bindings = <
   &kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
   &kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans &none
-                                        &none           &trans          &trans           &trans  &trans  &none
+  &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+                                                  &trans          &trans           &trans  &trans
             >;
         };
     };
