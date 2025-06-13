@@ -62,7 +62,7 @@
         NUM {
             bindings = <
   &trans    &trans   &trans     &trans   &trans      &kp LA(N6)  &kp N7  &kp N8  &kp N9  &kp LA(N0)
-  &sk LCTRL &sk LALT &sk LSHFT  &sk LGUI &kp DOLLAR  &kp DOT     &kp N4  &kp N5  &kp N6  &kp LA(N6)
+  &sk LCTRL &sk LALT &sk LSHFT  &sk LGUI &kp DOLLAR  &kp DOT     &kp N4  &kp N5  &kp N6  &trans
   &trans    &trans   &trans     &trans   &trans      &kp COMMA   &kp N1  &kp N2  &kp N3  &kp LA(N9)
                                 NAV_DEF  &sk LGUI    &lt NAV SPC &lt SYM N0
             >;
@@ -131,4 +131,4 @@
             >;
         };
     };
-};ˆ
+};
