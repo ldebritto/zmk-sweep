@@ -79,10 +79,10 @@
 
         SYM {
             bindings = <
-  &kp ESC   &kp LBRC   &kp LBKT  &kp LPAR  &kp DOLLAR  &kp PLUS  &kp ASTRK &kp EQUAL  &kp PRCNT &kp DQT
-  &kp AT    &kp CARET  &kp GRAVE &kp TILDE &kp HASH    &kp MINUS &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &kp PIPE  &kp RBRC   &kp RBKT  &kp RPAR  &kp AMPS    &kp BSLH  &kp FSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                 &trans    &kp UNDER   &lc NAV   &trans
+  &kp ESC   &kp HASH   &kp LBKT  &kp RBKT  &kp DOLLAR  &kp PLUS  &kp ASTRK &kp EQUAL  &kp LPAR  &kp RPAR
+  &kp AT    &kp CARET  &kp GRAVE &kp TILDE &kp UNDER   &kp MINUS &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp PIPE  &kp BLSH   &kp LBRC  &kp RBRC  &kp AMPS    &kp PRCNT &kp FSLH  &kp QMARK  &kp EXCL  &kp COLON
+                                 &trans    &trans      &lc NAV   &trans
             >;
         };
 
