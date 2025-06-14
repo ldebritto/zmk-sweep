@@ -82,7 +82,7 @@
   &kp ESC   &kp LBKT   &kp RBKT  &kp HASH  &kp AMPS     &kp PLUS  &kp ASTRK &kp LPAR  &kp RPAR  &kp EQUAL
   &kp AT    &kp CARET  &kp GRAVE &kp TILDE &kp DOLLAR   &kp MINUS &sk RGUI  &sk LSHFT &sk RALT  &sk RCTRL
   &kp PIPE  &kp LBRC   &kp RBRC  &kp UNDER &kp BSLH     &kp PRCNT &kp FSLH  &kp QMARK &kp EXCL  &kp COLON
-                                 &trans    &trans       &lc NAV   &trans
+                                 &trans    &lc NUM      &lc NAV   &trans
             >;
         };
 
