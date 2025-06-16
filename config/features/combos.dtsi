@@ -32,6 +32,14 @@ COMBO(sl_sym,               &sl SYM,                    RB0 RIT,          DEF   
 COMBO(lc_num,               &lc NUM,                    LIT LHT,          DEF,                          SHORT_COMBO_TIMEOUT) // &lc NUM on left thumb
 COMBO(tc_def,               &tc DEF,                    RHT RIT,          DEF NUM NAV SYM     MOU,      SHORT_COMBO_TIMEOUT) // escape from any layer to DEF, allowing it to be triggered from DEF itself makes it act lika a general "reset"
 
+// NUM combos
+COMBO(num_open_par,         &kp LPAR,                   RM1 RT1,          NUM,                          SHORT_COMBO_TIMEOUT) 
+COMBO(num_open_brc,         &kp LBKT,                   RM1 RB1,          NUM,                          SHORT_COMBO_TIMEOUT) 
+COMBO(num_equal,            &kp EQUAL,                  RT2 RM2,          NUM,                          SHORT_COMBO_TIMEOUT) 
+COMBO(num_colon,            &kp COLON,                  RM2 RB2,          NUM,                          SHORT_COMBO_TIMEOUT) 
+COMBO(num_close_par,        &kp RPAR,                   RM3 RT3,          NUM,                          SHORT_COMBO_TIMEOUT) 
+COMBO(num_close_brc,        &kp RBKT,                   RM3 RB3,          NUM,                          SHORT_COMBO_TIMEOUT) 
+
 // OS functionality
 COMBO(sleep_computer,       &kp C_POWER,                RT1 RT2 RT3 RT4,  DEF                ,          SHORT_COMBO_TIMEOUT)
 COMBO(mute_system,          &kp C_MUTE,                 RB1 RB2 RB3 RB4,  DEF                ,          SHORT_COMBO_TIMEOUT)
