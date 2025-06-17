@@ -81,7 +81,7 @@
             bindings = <
   &kp ESC         &kp MINUS &kp PLUS   &kp LBKT &kp RBKT        &kp AMPS &kp PRCNT &kp DOLLAR &kp GRAVE &kp DQT
   &kp AT          &kp CARET &kp TILDE  &kp LPAR &kp RPAR        &kp HASH &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE EQUAL &kp SLASH &kp ASTRK  &kp LBRC &kp RBRC        &kp PIPE &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+  &mt GLOBE EQUAL &kp ASTRK &kp SLASH  &kp LBRC &kp RBRC        &kp PIPE &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
                                        &trans   &mt RSHFT UNDER &lc NAV  &trans
 //
 //   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT         &kp AMPS      &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
