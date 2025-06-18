@@ -79,15 +79,10 @@
 
         SYM {
             bindings = <
-  &kp ESC        &kp AT     &kp EQUAL  &kp LBKT &kp RBKT        &kp AMPS &kp PRCNT &kp DOLLAR &kp GRAVE &kp DQT
-  &kp MINUS      &kp CARET  &kp TILDE  &kp LPAR &kp RPAR        &kp HASH &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE PLUS &kp ASTRK  &kp SLASH  &kp LBRC &kp RBRC        &kp PIPE &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                       &trans   &mt RSHFT UNDER &lc NAV  &trans
-//
-//   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT         &kp AMPS      &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-//   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR        &kp HASH      &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-//   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT            &kp PIPE      &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-//                                           &trans    &mt RSHFT UNDER   &lt NAV SPACE &trans
+  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT         &kp AMPS   &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
+  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR        &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT            &kp PIPE   &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+                                          &trans    &mt RSHFT UNDER   &lc NAV    &trans
             >;
         };
 
