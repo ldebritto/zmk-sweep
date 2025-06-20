@@ -41,8 +41,8 @@ COMBO(num_close_par,        &kp RPAR,                   RM3 RT3,          NUM,  
 COMBO(num_close_brc,        &kp RBKT,                   RM3 RB3,          NUM,                          SHORT_COMBO_TIMEOUT) 
 
 // OS functionality
-COMBO(sleep_computer,       &kp C_POWER,                RT1 RT2 RT3 RT4,  DEF                ,          SHORT_COMBO_TIMEOUT)
-COMBO(mute_system,          &kp C_MUTE,                 RB1 RB2 RB3 RB4,  DEF                ,          SHORT_COMBO_TIMEOUT)
+COMBO(sleep_computer,       &kp C_POWER,                RT1 RT2 RT3 RT4,  DEF NUM NAV        MOU ,      SHORT_COMBO_TIMEOUT)
+COMBO(mute_system,          &kp C_MUTE,                 RB1 RB2 RB3 RB4,  DEF NUM NAV        MOU ,      SHORT_COMBO_TIMEOUT)
 
 // SYS combos to connect to BT devices from FUN layer
 COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to MacBook
