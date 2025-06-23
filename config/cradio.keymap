@@ -28,10 +28,11 @@
 / {
     combos { 
         #include "features/combos.dtsi"
+        #include "features/urob_style_combos.dtsi"
     };
     
     behaviors { 
-        #include "features/custom_behaviors.dtsi" 
+        #include "features/custom_behaviors.dtsi"
     };
 
     macros { 
