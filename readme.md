@@ -1,29 +1,19 @@
-# Design principles
-
-This 34 key keymap was inspired by [Callum's layout for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and was conceived with these principles in mind:
-
-01. **Every key should have one way to type it**
-02. **Avoid hold-taps for regular typing** to discourage holding keys and eliminate the chance of misfiring. 
-	- An *excecption* was made to accomodate `GLOBE` at the `Z` key position. This allows me to trigger my window manager of choice on macOS ([Swish](https://highlyopinionated.co/swish/)) and to use iPadOS shortcuts that require this key.
-    
-03. **Thumbs do all the regular layer changes**. `&numword`, toggling `NAV` for extended edits/mouse usage, and toggle of gaming layers are all made by combos.
-
-04. **Keyboard functionality** (such as `&bootloader` and bluetooth toggles) is **hidden behind combos** available from `FUN` layer. This makes them *purposelly difficult* to trigger by accident, while still being still being accessible when needed;
-
-05. **Combos** should be *convenience only* and always preceded by `require-prior-idle` to avoid misfiring.
+This 34 key keymap was heavilly inspired by the works @Callum's [keymap for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and [urob's ZMK keymap](https://github.com/urob/zmk-config).
 
 # My use case and layer design choices
  
-Its main use is writing prose in both English and Portuguese in both macOS and iPadOS. I use in on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano/). I find it particularly great to type on when paired with very light and silent switches, such as [LowProKB.ca's Amnbienz twilight and nocturnals](https://lowprokb.ca/products/ambients-silent-choc-switches).
+Its main use is writing prose in both English and Portuguese in both macOS and iPadOS. I'm also a lawyer and academic, so I have mapped some special characters that make sense to have easy access on the day to day that may not be any useful to you.
 
-Here's the render made with [caksoylar's Keymap Drawer](https://github.com/caksoylar/keymap-drawer):
-![](draw/main.svg)
+I use in on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano) and also on a Totem (I simply don't use the further keys there, here's that [repo](https://github.com/ldebritto/zmk-config-totem)). 
 
-## 1. QWERTY with my two cents (`'`, `;` keys positions swapped with `/`)
+I find it particularly great to type on when paired with very light and silent switches, such as [LowProKB.ca's Amnbienz twilight and nocturnals](https://lowprokb.ca/products/ambients-silent-choc-switches).
 
-QWERTY was kept to retain muscle memory, with a few changes:
+## 1. Default layer is QWERTY with my two cents (`'`, `;` keys positions swapped with `/`)
 
-- On `DEF`, `;` was moved down and made way to `'` as this is far more useful to make accents (as dead key) and quotations
+QWERTY made me able to retain muscle memory and still move to a "regular" keyboard as needed. However, I've made just a few changes:
+
+- On `DEF`, `;` was moved down and made way to `'` as this is far more useful to make accents and quotation marks (as a dead key, it can be combined with vowels to output `áéíóú` or with a space to output `'`), wich is preferred in prose
+- I've kept `;` on `DEF` as I use it as a marker for text expansions snippets
 - `/` was moved to `SYM`
 
 ## 2. Long `&sk` timeouts and `&lc` macro for cancelling queued mods when triggering layers
@@ -32,45 +22,49 @@ This emulates in ZMK the `LA_NAV` and `LA_SYM` custom behaviors found in [Callum
 
 A crazy long timeout (1 day) was assigned to `&sk` behavior in this keymap. So there's no rush to combine mods with either keycodes from `DEF` or the active layer.
 
-`&mo` keys were replaced by a custom layer-cancel macro (`&lc`) that sends a `&kp K_CANCEL` tap alongside the `&mo` command within a 0ms interval. This design allows for _canceling_ mods when invoking `SYM`, `NAV`, of `FUN`, while _keeping them triggered_ for typing keys that exists only on `DEF` layer.
+The `&mo` behavior was replaced by a custom layer-cancel macro (`&lc`) that sends a `&kp K_CANCEL` tap alongside the `&mo` command within a 0ms interval on press. This design allows for _canceling_ any queued mods when invoking `SYM`, `NAV`, of `FUN`, while still _keeps them triggered_ on the release for typing keys that exists only on `DEF` layer.
 
-It was built with the [parametrized macros](https://zmk.dev/docs/behaviors/macros#parameterized-macros) behavior to make the `.keymap` file easier to read and change.
+Same logic is behind the `&tc` replacing `&to` behaviors.
+
+See `features/layer_cancel_macros.dtsi` file for the code.
 
 ## 3. `SYM` layer optimized for BR-PT prose
 
 * I recommend pgetreuer’s post on [how to set up a symbols layer that works for you](https://getreuer.info/posts/keyboards/symbol-layer/index.html).
 
-- ^`~ dead keys are on home row making them trivial to type accented vowels which are common in Portuguese prose
-- Basic math operations and other symbols that usually follow numbers can be typed with the left hand (very useful from within `num_word`’s `&sl SYM` on the G key position);
+- `^` ``` `~` dead keys are on home row position, making it easy to type accented vowels common in Portuguese prose
 - Parenthesis and braces are mirrored on both hands, left opens, right closes them. Slashes are also mirrored.
 - Shifted punctuation symbols that exist in `DEF` and are much used in prose (`”` and `:`) from `DEF` were assigned to SYM to 
-	a. make possible to trigger them single handed via `&lc SYM` 
-	b. make them more convenient to type punctuated numbers from `FUN` such as when typing hours or dates or measurements (e.g. 00:00 will not require one to move the left thumb to thumb `RSHFT` and then back to the `&lc NAV` to trigger the tri-layer, same thing happens when typing 0’00”)
+	a. make possible to trigger them single-handed via `&lc SYM`
+	b. make them more convenient to type punctuated numbers from `FUN` and `NUM`, such as when typing hours or dates or measurements (e.g. 00:00 will not require one to move the left thumb to thumb `RSHFT` and then back to the `&lc NAV` to trigger the tri-layer, same thing happens when typing 0’00”)
 - Common markdown symbols (# and *) are close to home row.
 
 ## 4. Numpad for `&num_word`
 
 * Requires [auto-layer module](https://github.com/urob/zmk-auto-layer).
 
-`&numword` is accessible as a combo through `D` and `&lc NAV` (leftmost thumb).
+`&numword` is accessible as a combo through `K` and `&lc SYM` (rightmost thumb). This behavior allows for quick entering numbers in a numpad layout and will disable it upon key press of any key than a number, math symbol or `BACKSPACE`/`DELETE`. It's pretty much the same logic from [urob's numword](https://github.com/urob/zmk-config#numword), with a customization on the cancel key list. 
 
-Numpad layer sits at the left half of the keyboard to make it usable while holding the mouse on the right.
+Numpad layer sits at the right half of the keyboard, since I'm right-handed. Also, making it accessible from a combo on the right-hand makes it really useful when jotting down a number while my left hand is busy holding a phone, a book or something else.
 
-This behavior allows for quick entering numbers in a numpad layout and will disable it upon key press of any key than a number, math symbol or `BACKSPACE`/`DELETE`. 
+I've also made it accessible by holding the `V` key on `DEF`, however I rarely use that.
 
-This behavior was first introduced by [Jonas Hietala](https://www.jonashietala.se/blog/2022/09/06/the_current_t-34_keyboard_layout/#numword) and this ZMK implementation was made by [urob](https://github.com/urob/zmk-config#numword).
+Oddly enough, I keep the number row in `FUN` since I find it easier to use it when triggering numbered keyboard shortcuts (such as `cmd+shift+1`) with the one shot mods from `FUN`.
 
 ## 5. Combos for one handed use of common action keys and in combination with the mouse on the right hand
 
-Combos where added to make it possible to use the keyboard one handed.
+While I preffer moving layers when typing with both hands and getting the desired key, I've added some combos to make it possible to use the keyboard one handed.
 
-- There’s `&sl SYM` on a combo with both right thumbs to make it possible to enter symbols.
+Highlights are:
+
+- There’s `&sl SYM` on a combo on the right thumb to make it possible to enter symbols.
 - One handed number entering can be done via `&num_word` combo (see #4).
-- This goes well with toggling the `NAV` layer (combo with both left thumbs) for extended mouse edits while keeping these keys available with the left hand:
-	- `QA` for `ESC`
-	- `RF` for `ENTER`
-	- `TG` for `BACKSPACE`
-	- `GB` for `DELETE`
+- This goes well with toggling the `NAV` layer (`XCV` combo) for extended edits with a mouse while keeping these keys available with the left hand:
+	- `WER` for `ESC`
+	- `SDF` for `ENTER`
+	- `S F` for `BACKSPACE`
+
+Full list in the `features/combos.dtsi` wich use a [macro](https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi) written by @kkga to make them one liners and, thus, easier to use and compare.
 
 ## 6. `&swapper` for swapping between apps/windows
 
@@ -78,10 +72,34 @@ Combos where added to make it possible to use the keyboard one handed.
 
 This allows for `CMD+TAB` with one key from `NAV`. It will simulate holding `CMD` between `TAB` keypresses for as long as you keep the `&lc NAV` key held.
 
-## 7. Gaming layers
+## 7. Mouse layer
 
-I play Age of Empires II Definitive Edition and made a series of 3 layers (`AOE`, `AGS` and `ABS`) that go well with mouse usage on the right hand. They're certainly not needed, but really tucked away by a `ZXC` combo that only can be activated from within a leftmost thumb layer from either gaming (`AGS`) or default (`NAV`) modes.
+While I still use the mouse/trackpad when it's the best tool for the job, I created a `MOU` layer that can be entered either by holding `Q` or toggled by hitting `QWERT` combo. So many times, using an app like [Homerow](https://www.homerow.app/), [Vimium](https://vimium.github.io/) on Chrome or [Vimlike](https://www.jasminestudios.net/vimlike/) on Safari is enough to avoid the mouse for the random click. 
 
-# Non-upstream ZMK implementation
+However, the mouse layer has proven to be quite useful for these some cases:
 
-Some of the features used in this keymap require the implementation of non-vanilla ZMK, such as [tri-state](https://github.com/urob/zmk-tri-state) [auto-layer](https://github.com/urob/zmk-auto-layer) modules. For that, I've pointed my `west.yml` to urob's repo that already has these features merged.
+- Repeating the previous click in the same position by holding `Q` and hitting the right thumb on it's hold position
+- Hidding/unhidding the windows and showing the desktop by holding `Q` and long-pressing `W`
+- Scrolling up/down by holding `Q` and tapping `Y` and `H` keys
+- By toggling it and then using the mouse/trackpad with the right hand I keep the (non-sticky) modifiers on home row, as well as the much useful editting shortcuts (cut, copy, paste, undo) and navigation shorcuts (exposè, desktop, back, forward, next/previous tab). This makes for the lack of shortcut buttons on Apple's Magic trackpad without the need of complicated gestures that can be set from apps like BetterTouch Tools.
+
+## 8. `F18` and `F19` keys on `NAV`
+
+These won't colide with any native shortcut and are used on macOS for:
+
+- `F19` is my homerow app trigger
+- `F18` is a trigger I set via Keyboard Maestro to trigger different macros depending on the frontmost app, so I can make it do the things I use the most on different apps, even if they're not easy to trigger with regular shortcuts. Since this can be modded (i.e. `shift+F18`) I can assign different actions on the same app by combining mods. I _really_ like this!
+
+
+## 9. Gaming layers
+
+I play Age of Empires II Definitive Edition and made a series of 3 layers (`AOE`, `AGS` and `ABS`) that go well with mouse usage on the right hand. They're certainly not needed most of the time, so I've tucked away with a `XCVB` combo from `DEF` or the very `AOE` base layer.
+
+# ZMK modules required
+
+While the core is vanilla ZMK, some of the features used in this keymap require the implementation of ZMK modules, namelly:
+
+- [tri-state](https://github.com/urob/zmk-tri-state) 
+- [auto-layer](https://github.com/urob/zmk-auto-layer) 
+
+I've got mine both from @urob code. Have a look at my `west.yml` to see their references if you don't want a long version on why modules are a great thing and how they work.
