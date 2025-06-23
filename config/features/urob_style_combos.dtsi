@@ -52,6 +52,6 @@ COMBO(bspc,          &kp BSPC,                  RT1 RT2,      DEF,      SHORT_CO
 COMBO(open_par,      &hrmr RG(LSHFT) LPAR,      RM1 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(open_brc,      &kp LBRC,                  RB1 RB2,      DEF,      SHORT_COMBO_TIMEOUT)
 
-COMBO(del,           &kp BSPC,                  LT2 LT3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(close_par,     &hrmr RA(LSHFT) RPAR,      LM2 LM3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(close_brc,     &kp RBRC,                  LB2 LB3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(del,           &kp BSPC,                  RT2 RT3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(close_par,     &hrmr RA(LSHFT) RPAR,      RM2 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(close_brc,     &kp RBRC,                  RB2 RB3,      DEF,      SHORT_COMBO_TIMEOUT)
