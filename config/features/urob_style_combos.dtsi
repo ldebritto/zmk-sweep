@@ -29,14 +29,14 @@ COMBO(ordo,           &mt LA(9) LA(0),          RT4 RM4,      DEF,      SHORT_CO
 COMBO(question,       &kp QMARK,                LM0 LB0,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(grave,          &kp GRAVE,                LM1 LB1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(backslash,      &kp BSLH,                 LM2 LB2,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(equal,          &kp EQUAL,                LM3 LB3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(tilde,          &kp TILDE,                LM4 LB4,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(tilde,          &kp TILDE,                LM3 LB3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(equal,          &kp EQUAL,                LM4 LB4,      DEF,      SHORT_COMBO_TIMEOUT)
 
-COMBO(underscore,     &kp UNDER,                RT0 RM0,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(minus,          &kp MINUS,                RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(slash,          &kp SLASH,                RT2 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(pipe,           &kp PIPE,                 RT3 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(orda,           &kp LA(6),                RT4 RM4,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(underscore,     &kp UNDER,                RM0 RB0,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(minus,          &kp MINUS,                RM1 RB1,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(slash,          &kp SLASH,                RM2 RB2,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(pipe,           &kp PIPE,                 RM3 RB3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(paragrapph,     &kp LA(6),                RM4 RB4,      DEF,      SHORT_COMBO_TIMEOUT)
 
 // Horizontal left combos
 COMBO(esc,           &kp ESC,                   LT1 LT2,      DEF,      SHORT_COMBO_TIMEOUT)
@@ -50,8 +50,8 @@ COMBO(paste,         &kp LG(V),                 LB2 LB3,      DEF,      SHORT_CO
 // Horizontal right combos
 COMBO(bspc,          &kp BSPC,                  RT1 RT2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(open_par,      &hrmr RG(LSHFT) LPAR,      RM1 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(open_brc,      &kp LBRC,                  RB1 RB2,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(open_bkt,      &kp LBKT,                  RB1 RB2,      DEF,      SHORT_COMBO_TIMEOUT)
 
-COMBO(del,           &kp BSPC,                  RT2 RT3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(del,           &kp DEL,                   RT2 RT3,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(close_par,     &hrmr RA(LSHFT) RPAR,      RM2 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(close_brc,     &kp RBRC,                  RB2 RB3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(close_bkt,     &kp RBKT,                  RB2 RB3,      DEF,      SHORT_COMBO_TIMEOUT)
