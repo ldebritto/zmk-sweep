@@ -13,24 +13,30 @@ combo_##NAME { \
 // Recreating urob combos from https://github.com/urob/zmk-config
 
 // Vertical top symbol combos
+COMBO(exclamation,    &kp EXCL,                 LT0 LM0,      DEF,      SHORT_COMBO_TIMEOUT) 
 COMBO(at,             &kp AT,                   LT1 LM1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(hash,           &kp HASH,                 LT2 LM2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(dollar,         &kp DOLLAR,               LT3 LM3,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(percent,        &kp PRCNT,                LT4 LM4,      DEF,      SHORT_COMBO_TIMEOUT)
+
 COMBO(circ,           &kp CARET,                RT0 RM0,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(plus,           &kp PLUS,                 RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(asterisk,       &kp ASTRK,                RT2 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(ampersand,      &kp AMPS,                 RT3 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(ordo,           &mt LA(9) LA(0),          RT4 RM4,      DEF,      SHORT_COMBO_TIMEOUT)
 
 // Vertical bottom symbol combos
+COMBO(question,       &kp QMARK,                LM0 LB0,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(grave,          &kp GRAVE,                LM1 LB1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(backslash,      &kp BSLH,                 LM2 LB2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(equal,          &kp EQUAL,                LM3 LB3,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(tilde,          &kp TILDE,                LM4 LB4,      DEF,      SHORT_COMBO_TIMEOUT)
+
 COMBO(underscore,     &kp UNDER,                RT0 RM0,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(minus,          &kp MINUS,                RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(slash,          &kp SLASH,                RT2 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(pipe,           &kp PIPE,                 RT3 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(orda,           &kp LA(6),                RT4 RM4,      DEF,      SHORT_COMBO_TIMEOUT)
 
 // Horizontal left combos
 COMBO(esc,           &kp ESC,                   LT1 LT2,      DEF,      SHORT_COMBO_TIMEOUT)
