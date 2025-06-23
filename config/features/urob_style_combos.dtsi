@@ -23,7 +23,7 @@ COMBO(circ,           &kp CARET,                RT0 RM0,      DEF,      SHORT_CO
 COMBO(plus,           &kp PLUS,                 RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(asterisk,       &kp ASTRK,                RT2 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(ampersand,      &kp AMPS,                 RT3 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(ordo,           &mt LA(9) LA(0),          RT4 RM4,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(ordo,           &mt LA(N9) LA(N0),        RT4 RM4,      DEF,      SHORT_COMBO_TIMEOUT)
 
 // Vertical bottom symbol combos
 COMBO(question,       &kp QMARK,                LM0 LB0,      DEF,      SHORT_COMBO_TIMEOUT)
@@ -36,7 +36,7 @@ COMBO(underscore,     &kp UNDER,                RM0 RB0,      DEF,      SHORT_CO
 COMBO(minus,          &kp MINUS,                RM1 RB1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(slash,          &kp SLASH,                RM2 RB2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(pipe,           &kp PIPE,                 RM3 RB3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(paragrapph,     &kp LA(6),                RM4 RB4,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(paragrapph,     &kp LA(N6),               RM4 RB4,      DEF,      SHORT_COMBO_TIMEOUT)
 
 // Horizontal left combos
 COMBO(esc,           &kp ESC,                   LT1 LT2,      DEF,      SHORT_COMBO_TIMEOUT)
