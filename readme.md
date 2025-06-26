@@ -2,11 +2,13 @@ This 34 key keymap was heavilly inspired by the works @Callum's [keymap for QMK]
 
 # My use case and layer design choices
  
-Its main use is writing prose in both English and Portuguese in both macOS and iPadOS. I'm also a lawyer and academic, so I have mapped some special characters that make sense to have easy access on the day to day that may not be any useful to you.
+Its main use is writing prose, in both English and Portuguese, using both macOS and iPadOS. I'm a lawyer and a professor who likes to prettend I can code as well.
 
-I use in on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano) and also on a Totem (I simply don't use the further keys there, here's that [repo](https://github.com/ldebritto/zmk-config-totem)). 
+I use it on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano) and also on a Totem (I simply don't use the extra 4 keys there, here's that [repo](https://github.com/ldebritto/zmk-config-totem)). 
 
 I find it particularly great to type on when paired with very light and silent switches, such as [LowProKB.ca's Amnbienz twilight and nocturnals](https://lowprokb.ca/products/ambients-silent-choc-switches).
+
+Here's some hightlights on this:
 
 ## 1. Default layer is QWERTY with my two cents (`'`, `;` keys positions swapped with `/`)
 

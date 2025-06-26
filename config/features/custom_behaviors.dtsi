@@ -116,23 +116,3 @@
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
-
-// &num_word on &lc_sym double tap while keeping the rest also work
-    #define LC_SYM &lc_sym SYM N0
-    lc_sym: layer_tap_sym_num_word {
-        compatible = "zmk,behavior-hold-tap";
-        label = "LCSYM_NUM_WORD";
-        bindings = <&lc>, <&nw_td>;
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-    };
-
-    nw_td: num_word_tap_dance { 
-        compatible = "zmk,behavior-tap-dance";
-        #binding-cells = <0>;
-        tapping-term-ms = <TAP_DANCE_TERM>;
-        bindings =
-            <&kp K_CANCEL>,
-            <&num_word NUM>;
-    };
