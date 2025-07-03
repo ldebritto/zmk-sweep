@@ -11,7 +11,8 @@
 #define MOU 5 // also great for one-handed use with a mouse on the right hand
 
 // These includes allow for easier maintenance and readability between different keymaps
-#include "features/sweep_keypos.h"                  // Key positions naming scheme for 34 keys keymaps
+#include "features/sweep_keypos.h"                  // Key positions naming scheme for 34 keys keymaps (this is keyboard specific, , but makes the rest keyboard agnostic)
+// Features and customizations (these files are shared with Sweep repo)
 #include "features/timings.h"                       // Timing definitions for hold-tap and combos
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
@@ -89,9 +90,9 @@
 
         MOU {
             bindings = <
-  &to DEF         &mt F11 LC(UP) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp BSPC        &mt F11 LC(UP) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &sk LCTRL       &sk LALT       &sk LSHFT       &sk LGUI      &kp LG(LBKT)  &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &ltl NAV ENTER
-  &mt GLOBE LG(Z) &kp LG(X)      &kp LG(C)       &kp LG(V)     &kp F18       &kp LG(PRCNT)  &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
+  &mt GLOBE LG(Z) &kp LG(X)      &kp LG(C)       &kp LG(V)     &kp ENTER     &kp LG(PRCNT)  &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
                                                  NAV_DEF       &kp SPACE     &mkp LCLK      &mkp RCLK            
             >;          
         };
