@@ -50,14 +50,3 @@ COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               LM3 LM4,                
 COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               LB3 LB4,                          FUN,          SHORT_COMBO_TIMEOUT) // Open to connect to any other device
 COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                          FUN,          SHORT_COMBO_TIMEOUT) // Hard resets the left half only (see https://zmk.dev/docs/keymaps/combos#advanced-usage on why there's no way to combo for a right half hard reset)
 COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                          FUN,          SHORT_COMBO_TIMEOUT) // Unpairs from currently active bt profile
-
-// AOE combos for in game use
-COMBO(toggle_aoe_layer,     &tog AOE,                   LB1 LB2 LB3 LB4,  DEF                      AOE,  LONG_COMBO_TIMEOUT)
-COMBO(aoe_left_esc,         &kp ESCAPE,                 LT1 LT2 LT3,                               AOE, SHORT_COMBO_TIMEOUT)
-COMBO(aoe_left_tab,         &kp TAB,                    LT1     LT3,                               AOE, SHORT_COMBO_TIMEOUT)
-COMBO(aoe_left_enter,       &hrml LA(LS(LCTRL)) ENTER,  LM1 LM2 LM3,                               AOE, SHORT_COMBO_TIMEOUT)
-COMBO(aoe_left_backspace,   &hrml LA(LCTRL) BSPC,       LM1     LM3,                               AOE, SHORT_COMBO_TIMEOUT)
-COMBO(aoe_right_esc,        &kp ESCAPE,                 RT1 RT2 RT3,                               AOE, SHORT_COMBO_TIMEOUT)
-COMBO(aoe_right_tab,        &kp TAB,                    RT1     RT3,                               AOE, SHORT_COMBO_TIMEOUT) 
-COMBO(aoe_right_enter,      &hrmr RA(LS(RCTRL)) ENTER,  RM1 RM2 RM3,                               AOE, SHORT_COMBO_TIMEOUT) 
-COMBO(aoe_right_backspace,  &hrmr LA(LCTRL) BSPC,       RM1     RM3,                               AOE, SHORT_COMBO_TIMEOUT)

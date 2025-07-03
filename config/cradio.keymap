@@ -10,17 +10,9 @@
 #define FUN 4
 #define MOU 5 // also great for one-handed use with a mouse on the right hand
 
-// AOE layers
-#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 7
-#define ABS 8
-
-#define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
-
 // These includes allow for easier maintenance and readability between different keymaps
 #include "features/sweep_keypos.h"                  // Key positions naming scheme for 34 keys keymaps
 #include "features/timings.h"                       // Timing definitions for hold-tap and combos
-
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
 #include "features/num_word.dtsi"                   // Requires auto-layer module from urob
@@ -32,12 +24,10 @@
     
     behaviors { 
         #include "features/custom_behaviors.dtsi"
-        #define HRML(k1, k2, k3, k4, k5) &hrml LCTRL k1 &hrml LALT k2 &hrml LSHFT k3  &hrml LGUI k4 &hrml HYPR  k5 // Shorthand for hold-tap with layer modifier
-        #define HRMR(k1, k2, k3, k4, k5) &hrmr HYPR k1  &hrmr RGUI k2 &hrmr LSHFT k3  &hrmr RALT k4 &hrmr RCTRL k5 // Shorthand for hold-tap with layer modifier
     };
 
     macros { 
-        #include "features/layer_cancel_macros.dtsi"
+        #include "features/layer_cancel_macros.dtsi" // &lc behavior
     };
 
     conditional_layers {
@@ -74,7 +64,7 @@
             bindings = <
   &ltl MOU TAB    &swapper  &kp LC(LS(TAB)) &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP   &kp HOME  &kp UP    &kp END   &kp BSPC
   &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
-  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL
+  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18         &kp LG(SPC) &kp F19   &vb_dn    &vb_up    &kp DEL
                                             &trans      &lt SYM SPC     &trans      &trans
             >;
         };
@@ -105,32 +95,4 @@
                                                  NAV_DEF       &kp SPACE     &mkp LCLK      &mkp RCLK            
             >;          
         };
-
-        AOE {
-            bindings = <
-  &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
-  &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
-  &kp Z        &kp X      &kp C       &kp V        &kp B        &trans  &trans  &trans  &trans  &trans
-                                      &lt AGS H    &lt ABS DOT  &trans  &trans
-            >;
-        };
-
-        AGS {
-            bindings = <
-  &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans     &trans  &trans  &trans  &kp BSPC
-  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans     &trans  &trans  &trans  &kp ENTER
-  &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3
-                                          &trans        &kp DEL    &trans     &trans
-            >;
-        };
-
-        ABS {
-            bindings = <
-  &kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-  &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                                  &trans          &trans           &trans  &trans
-            >;
-        };
-    };
 };

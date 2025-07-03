@@ -30,28 +30,28 @@ Same logic is behind the `&tc` replacing `&to` behaviors.
 
 See `features/layer_cancel_macros.dtsi` file for the code.
 
-## 3. `SYM` layer optimized for BR-PT prose
+## 3. `SYM` layer optimized for BR-PT prose and diacriticals
 
 * I recommend pgetreuer’s post on [how to set up a symbols layer that works for you](https://getreuer.info/posts/keyboards/symbol-layer/index.html).
 
 - `^` ``` `~` dead keys are on home row position, making it easy to type accented vowels common in Portuguese prose
-- Parenthesis and braces are mirrored on both hands, left opens, right closes them. Slashes are also mirrored.
-- Shifted punctuation symbols that exist in `DEF` and are much used in prose (`”` and `:`) from `DEF` were assigned to SYM to 
-	a. make possible to trigger them single-handed via `&lc SYM`
-	b. make them more convenient to type punctuated numbers from `FUN` and `NUM`, such as when typing hours or dates or measurements (e.g. 00:00 will not require one to move the left thumb to thumb `RSHFT` and then back to the `&lc NAV` to trigger the tri-layer, same thing happens when typing 0’00”)
+- Parenthesis and braces are mirrored on both hands, left opens, right closes them. Slashes are also mirrored, which helps memorizing.
+- Shifted punctuation symbols that exist in `DEF` and are much used in prose (`”` and `:`) from `DEF` were assigned to SYM so 
+	a. they can be triggered single-handed via `&lc SYM`
+	b. they feel more comfortable to type alongside with numbers either from `FUN` and `NUM`, such as when typing hours or dates or measurements (e.g. 00:00 will not require one to move the left thumb to thumb `RSHFT` and then back to the `&lc NAV` to trigger the tri-layer, same thing happens when typing 0’00”)
 - Common markdown symbols (# and *) are close to home row.
 
-## 4. Numpad for `&num_word`
+## 4. Numpad layer for `&num_word`
 
 * Requires [auto-layer module](https://github.com/urob/zmk-auto-layer).
 
-`&numword` is accessible as a combo through `K` and `&lc SYM` (rightmost thumb). This behavior allows for quick entering numbers in a numpad layout and will disable it upon key press of any key than a number, math symbol or `BACKSPACE`/`DELETE`. It's pretty much the same logic from [urob's numword](https://github.com/urob/zmk-config#numword), with a customization on the cancel key list. 
+`&num_word` is accessible as a combo through `K` and `&lc SYM` (rightmost thumb). This behavior allows for quick entering numbers in a numpad layout and will disable it upon key press of any key than a number, math symbol or `BACKSPACE`/`DELETE`. It's pretty much the same logic from [urob's numword](https://github.com/urob/zmk-config#numword), with some customization on the cancel key list.
 
-Numpad layer sits at the right half of the keyboard, since I'm right-handed. Also, making it accessible from a combo on the right-hand makes it really useful when jotting down a number while my left hand is busy holding a phone, a book or something else.
+Numpad layer sits at the right half of the keyboard, since I'm right-handed. Also, making it accessible from a combo on the right-hand makes it really useful when jotting down a number while my left hand is busy holding a phone, a book or something else. We know we should not do this for ergonomics but… life happens!
 
 I've also made it accessible by holding the `V` key on `DEF`, however I rarely use that.
 
-Oddly enough, I keep the number row in `FUN` since I find it easier to use it when triggering numbered keyboard shortcuts (such as `cmd+shift+1`) with the one shot mods from `FUN`.
+Oddly enough, I keep the number row in `FUN` since I find it easier to use it when triggering numbered keyboard shortcuts (such as `cmd+shift+1`) with the one shot mods from `FUN`. To be honest, I still haven't fully made up my mind on the numpad x numrow debate. 
 
 ## 5. Combos for one handed use of common action keys and in combination with the mouse on the right hand
 
@@ -92,10 +92,6 @@ These won't colide with any native shortcut and are used on macOS for:
 - `F19` is my homerow app trigger
 - `F18` is a trigger I set via Keyboard Maestro to trigger different macros depending on the frontmost app, so I can make it do the things I use the most on different apps, even if they're not easy to trigger with regular shortcuts. Since this can be modded (i.e. `shift+F18`) I can assign different actions on the same app by combining mods. I _really_ like this!
 
-
-## 9. Gaming layers
-
-I play Age of Empires II Definitive Edition and made a series of 3 layers (`AOE`, `AGS` and `ABS`) that go well with mouse usage on the right hand. They're certainly not needed most of the time, so I've tucked away with a `XCVB` combo from `DEF` or the very `AOE` base layer.
 
 # ZMK modules required
 
