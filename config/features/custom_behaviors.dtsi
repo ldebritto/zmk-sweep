@@ -58,8 +58,6 @@
     #define NAV_DEF &moto NAV DEF
 
 // Customized hold-tap definitions
-    
-    #define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
 
     hrml: hrml { // urob's home row mods left
         compatible = "zmk,behavior-hold-tap";
@@ -74,7 +72,6 @@
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
-    #define HRML(k1, k2, k3, k4, k5) &hrml LCTRL k1 &hrml LALT k2 &hrml LSHFT k3  &hrml LGUI k4 &hrml HYPR  k5 // Shorthand for hold-tap with layer modifier
 
     hrmr: hrmr { // urob's home row mods right
         compatible = "zmk,behavior-hold-tap";
@@ -89,7 +86,6 @@
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
-    #define HRMR(k1, k2, k3, k4, k5) &hrmr HYPR k1  &hrmr RGUI k2 &hrmr LSHFT k3  &hrmr RALT k4 &hrmr RCTRL k5 // Shorthand for hold-tap with layer modifier
 
 // Customized balanced layer-tap
 

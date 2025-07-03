@@ -10,7 +10,7 @@
 #define FUN 4
 #define MOU 5 // also great for one-handed use with a mouse on the right hand
 
-#define HYPR LG(LS(LC(LALT))) // HYPR key shorthand
+#define HYPR LG(LS(LC(LALT))) // shorthand for HYPER key hold-tap on G and H keys
 
 // These includes allow for easier maintenance and readability between different keymaps
 #include "features/sweep_keypos.h"                  // Key positions naming scheme for 34 keys keymaps
