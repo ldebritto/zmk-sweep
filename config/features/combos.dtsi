@@ -22,25 +22,23 @@ COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF NU
 COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NUM             MOU,      SHORT_COMBO_TIMEOUT)
 
 
-// Layer toggles and combos
+// Layer toggles and system functionality
 COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                          SHORT_COMBO_TIMEOUT) // home shift positions
 COMBO(tog_num_word,         &num_word NUM,              RM2 RIT,          DEF NUM,                      SHORT_COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
+COMBO(tc_mou,               &tc MOU,                    LT0 LT1 LT2 LT3,  DEF                 MOU,       LONG_COMBO_TIMEOUT) // handy for one-handed use with a mouse on the right hand
 COMBO(tc_nav,               &tc NAV,                    LB1 LB2 LB3,  DEF     NAV,                      SHORT_COMBO_TIMEOUT) // useful for long edits
-COMBO(tc_mou,               &tc MOU,                    LT1 LT2 LT3,      DEF                 MOU,       LONG_COMBO_TIMEOUT) // handy for one-handed use with a mouse on the right hand
+COMBO(sleep_computer,       &kp C_POWER,                RT1 RT2 RT3,      DEF NUM NAV         MOU ,     SHORT_COMBO_TIMEOUT)
 COMBO(tc_num,               &tc NUM,                    RB1 RB2 RB3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) // toggles will persist even after SPACE or other separator is pressed
 COMBO(sl_sym,               &sl SYM,                    RB0 RIT,          DEF         SYM,              SHORT_COMBO_TIMEOUT) // uses a sticky layer to make possible to type symbols with one hand
 COMBO(lc_num,               &lc NUM,                    LIT LHT,          DEF,                          SHORT_COMBO_TIMEOUT) // &lc NUM on left thumb
 
-// NUM combos
-COMBO(num_open_par,         &kp LPAR,                   RM1 RT1,          NUM,                          SHORT_COMBO_TIMEOUT) 
-COMBO(num_open_brc,         &kp LBKT,                   RM1 RB1,          NUM,                          SHORT_COMBO_TIMEOUT) 
-COMBO(num_equal,            &kp EQUAL,                  RT2 RM2,          NUM,                          SHORT_COMBO_TIMEOUT) 
-COMBO(num_colon,            &kp COLON,                  RM2 RB2,          NUM,                          SHORT_COMBO_TIMEOUT) 
-COMBO(num_close_par,        &kp RPAR,                   RM3 RT3,          NUM,                          SHORT_COMBO_TIMEOUT) 
-COMBO(num_close_brc,        &kp RBKT,                   RM3 RB3,          NUM,                          SHORT_COMBO_TIMEOUT) 
-
-// OS functionality
-COMBO(sleep_computer,       &kp C_POWER,                RT1 RT2 RT3,      DEF NUM NAV         MOU ,     SHORT_COMBO_TIMEOUT)
+// NUM-only combos vertical combos
+COMBO(num_open_par,         &kp LPAR,                   RM1 RT1,          NUM,                          SHORT_COMBO_TIMEOUT) // (
+COMBO(num_open_brc,         &kp LBKT,                   RM1 RB1,          NUM,                          SHORT_COMBO_TIMEOUT) // [
+COMBO(num_equal,            &kp EQUAL,                  RT2 RM2,          NUM,                          SHORT_COMBO_TIMEOUT) // =
+COMBO(num_colon,            &kp COLON,                  RM2 RB2,          NUM,                          SHORT_COMBO_TIMEOUT) // :
+COMBO(num_close_par,        &kp RPAR,                   RM3 RT3,          NUM,                          SHORT_COMBO_TIMEOUT) // )
+COMBO(num_close_brc,        &kp RBKT,                   RM3 RB3,          NUM,                          SHORT_COMBO_TIMEOUT) // ]
 
 // SYS combos to connect to BT devices from FUN layer
 COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to MacBook
