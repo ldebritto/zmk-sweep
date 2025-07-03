@@ -21,7 +21,6 @@ COMBO(right_tab,            &kp TAB,                    RT1     RT3,      DEF NU
 COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) 
 COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NUM             MOU,      SHORT_COMBO_TIMEOUT)
 
-
 // Layer toggles and system functionality
 COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                          SHORT_COMBO_TIMEOUT) // home shift positions
 COMBO(tog_num_word,         &num_word NUM,              RM2 RIT,          DEF NUM,                      SHORT_COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
