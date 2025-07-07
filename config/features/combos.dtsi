@@ -24,9 +24,9 @@ COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NU
 // Layer toggles and system functionality
 COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                          SHORT_COMBO_TIMEOUT) // home shift positions
 COMBO(tog_num_word,         &num_word NUM,              RM2 RIT,          DEF NUM,                      SHORT_COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
-COMBO(tc_mou,               &tc MOU,                    LT0 LT1 LT2 LT3,  DEF                 MOU,       LONG_COMBO_TIMEOUT) // handy for one-handed use with a mouse on the right hand
+COMBO(tc_mou_left,          &tc MOU,                    LT0 LT1 LT2 LT3,  DEF                 MOU,       LONG_COMBO_TIMEOUT) // handy for one-handed use with a mouse on the right hand
+COMBO(tc_mou_right,         &tc MOU,                    RT1 RT2 RT3 RT4,  DEF                 MOU,      SHORT_COMBO_TIMEOUT) // it's useful when using the keyboard without a mouse to also have a combom at the same hand as the mouse movement keys
 COMBO(tc_nav,               &tc NAV,                    LB1 LB2 LB3,      DEF     NAV,                  SHORT_COMBO_TIMEOUT) // useful for long edits
-COMBO(sleep_computer,       &kp C_POWER,                RT1 RT2 RT3 RT4,  DEF NUM NAV         MOU ,     SHORT_COMBO_TIMEOUT)
 COMBO(tc_num,               &tc NUM,                    RB1 RB2 RB3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) // toggles will persist even after SPACE or other separator is pressed
 COMBO(sl_sym,               &sl SYM,                    RB0 RIT,          DEF         SYM,              SHORT_COMBO_TIMEOUT) // uses a sticky layer to make possible to type symbols with one hand
 COMBO(lc_num,               &lc NUM,                    LIT LHT,          DEF,                          SHORT_COMBO_TIMEOUT) // &lc NUM on left thumb
