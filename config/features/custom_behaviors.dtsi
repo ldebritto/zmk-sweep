@@ -11,6 +11,7 @@
     #define SWAPPER_IGNORED_KEYS RT2 RM1 RM2 RM3 RT4 RM4 RB4 // Arrows, BSPC, ENTER and DEL for alt-tab movement and window/app controls
 
 // Media controls
+
     playnp: play_next_previous_media_key { 
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
@@ -38,6 +39,7 @@
     };
 
 // Swapper for Apple's CMD+TAB behavior
+
     swapper: swapper_for_apple_cmd_tab {
         compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
         #binding-cells = <0>;
@@ -47,6 +49,7 @@
     };
 
 // Layer-tap to escape from any layer to DEF on tap but still be able to reach the NAV layer on hold, useful for cancelling toggles
+
     moto: mo_to_layer {
         compatible = "zmk,behavior-hold-tap";
         label = "MTL";

@@ -10,6 +10,11 @@
 #define FUN 4
 #define MOU 5 // also great for one-handed use with a mouse on the right hand
 
+// AOE layers
+#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 7
+#define ABS 8
+
 #define HYPR LG(LS(LC(LALT))) // shorthand for HYPER key hold-tap on G and H keys
 
 // These includes allow for easier maintenance and readability between different keymaps
@@ -97,6 +102,33 @@
   &mt GLOBE LG(Z) &kp LG(X)      &kp LG(C)       &kp LG(V)     &kp ENTER     &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
                                                  &def-nav      &kp SPACE     &mkp LCLK      &mkp RCLK            
             >;          
+        };
+
+        AOE {
+            bindings = <
+    &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
+    &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
+    &kp Z        &kp X      &kp C       &kp V        &kp B        &trans  &trans  &trans  &trans  &trans
+                                        &lt AGS H    &lt ABS DOT  &trans  &trans
+            >;
+        };
+
+        AGS {
+            bindings = <
+    &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans     &trans  &trans  &trans  &kp BSPC
+    &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans     &trans  &trans  &trans  &kp ENTER
+    &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3
+                                            &trans        &kp DEL    &trans     &trans  &none
+            >;
+        };
+
+        ABS {
+            bindings = <
+    &kp LC(LS(M)) &kp LC(LS(S)) &kp LC(LS(U)) &kp LC(LS(Y)) &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+    &kp LC(LS(A)) &kp LC(LS(L)) &kp LC(LS(B)) &kp LC(LS(K)) &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
+    &kp LC(LS(Z)) &kp LC(LS(I)) &kp LC(LS(G)) &kp LC(LS(V)) &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+                                              &trans        &trans           &trans  &trans
+            >;
         };
     };
 };
