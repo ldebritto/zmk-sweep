@@ -48,6 +48,23 @@
         ignored-key-positions = <SWAPPER_IGNORED_KEYS>;
     };
 
+// mou mod-morphs to allow closing windows and quitting apps from MOU
+
+    mou_expose: expose_on_tap_close_window_on_lcmd {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp LC(UP)>, <&kp LG(W)>;
+        mods = <(MOD_LGUI)>;
+    };
+
+    mou_f11: f11_on_tap_quit_app_on_lcmd {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp F11>, <&kp LG(Q)>;
+        mods = <(MOD_LGUI)>;
+    };
+
+
 // Layer-tap to escape from any layer to DEF on tap but still be able to reach the NAV layer on hold, useful for cancelling toggles
 
     moto: mo_to_layer {

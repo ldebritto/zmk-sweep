@@ -13,13 +13,13 @@ combo_##NAME { \
 // These make the keyboard more accessible for one-handed use and to avoid the need to hold layer keys for very long
 COMBO(left_esc,             &kp ESCAPE,                 LT1 LT2 LT3,      DEF     NAV         MOU,      SHORT_COMBO_TIMEOUT) // ESC is the only combo that moves to NAV since there's no ESC key there
 COMBO(left_tab,             &kp TAB,                    LT1     LT3,      DEF                 MOU,      SHORT_COMBO_TIMEOUT) // MOU gets this since its TAB key position untoggles the layer
-COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,      DEF                    ,      SHORT_COMBO_TIMEOUT) // MOU gets this since there's no ENTER key assigned in the left hand
-COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1     LM3,      DEF                    ,      SHORT_COMBO_TIMEOUT) // MOU gets this since there's no BSPC key assigned in the left hand
+COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,      DEF                 MOU,      SHORT_COMBO_TIMEOUT) // MOU gets this since there's no ENTER key assigned in the left hand
+COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1     LM3,      DEF                 MOU,      SHORT_COMBO_TIMEOUT) // MOU gets this since there's no BSPC key assigned in the left hand
 
 COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) // NUM also gets these to make it possible to use with only the right hand
 COMBO(right_tab,            &kp TAB,                    RT1     RT3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) 
 COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) 
-COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NUM             MOU,      SHORT_COMBO_TIMEOUT)
+COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NUM                ,      SHORT_COMBO_TIMEOUT)
 
 // Layer toggles and system functionality
 COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                          SHORT_COMBO_TIMEOUT) // home shift positions
