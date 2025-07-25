@@ -83,7 +83,7 @@
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT         &kp AMPS   &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR        &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT            &kp PIPE   &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                          &trans    &mt RSHFT UNDER   &lc NAV    &trans
+                                          &trans    &mt RSHFT UNDER   &trans     &trans
             >;
         };
 
@@ -100,7 +100,7 @@
             bindings = <
   &mou_f11        &mou_expose   &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &sk LCTRL       &sk LALT      &sk LSHFT       &sk LGUI      &kp LG(LBKT)  &msc SCRL_UP   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &ltl NAV ENTER
-  &mt GLOBE LG(Z) &kp LG(X)     &kp LG(C)       &kp LG(V)     &kp F18       &kp F18        &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
+  &mt GLOBE LG(Z) &kp LG(X)     &kp LG(C)       &kp LG(V)     &kp F18       &kp LG(LS(4))  &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL
                                                 &defnav       &kp SPACE     &mkp LCLK      &mkp RCLK            
             >;          
         };
