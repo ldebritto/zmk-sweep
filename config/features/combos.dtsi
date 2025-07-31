@@ -16,9 +16,9 @@ COMBO(left_tab,             &kp TAB,                    LT1     LT3,      DEF   
 COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,      DEF                 MOU,      SHORT_COMBO_TIMEOUT) // MOU gets this since there's no ENTER key assigned in the left hand
 COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1     LM3,      DEF                 MOU,      SHORT_COMBO_TIMEOUT) // MOU gets this since there's no BSPC key assigned in the left hand
 
-COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) // NUM also gets these to make it possible to use with only the right hand
-COMBO(right_tab,            &kp TAB,                    RT1     RT3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) 
-COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF NUM,                      SHORT_COMBO_TIMEOUT) 
+COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,      DEF NUM             MOU,      SHORT_COMBO_TIMEOUT) // NUM also gets these to make it possible to use with only the right hand
+COMBO(right_tab,            &kp TAB,                    RT1     RT3,      DEF NUM             MOU,      SHORT_COMBO_TIMEOUT) // Having ESC and TAB in MOU is also a good thing for one-handed use
+COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF NUM                ,      SHORT_COMBO_TIMEOUT) // These are already available in MOU through specific keys
 COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NUM                ,      SHORT_COMBO_TIMEOUT)
 
 // Layer toggles and system functionality
