@@ -34,7 +34,7 @@
 
 &mmv_input_listener {
     precision {
-        layers = <NAV>;
+        layers = <SYM>;
         input-processors = <&zip_xy_scaler 1 3>;
     };
 };
