@@ -12,7 +12,7 @@
   // It also Requires a layer define for NAV on the .keymap file
 
 // Settings tuned up to deal with 3840 x 2160 display resolution
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000  // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // 10
 
 #include <dt-bindings/zmk/mouse.h>
