@@ -50,14 +50,14 @@
 
 // mou mod-morphs to allow closing windows and quitting apps from MOU
 
-    mou_expose: expose_on_tap_close_window_on_lcmd {
+    expose_close: expose_on_tap_close_window_on_lcmd {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp LC(UP)>, <&kp LG(W)>;
         mods = <(MOD_LGUI)>;
     };
 
-    mou_f11: f11_on_tap_quit_app_on_lcmd {
+    desktop_quit: f11_on_tap_quit_app_on_lcmd {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp F11>, <&kp LG(Q)>;
