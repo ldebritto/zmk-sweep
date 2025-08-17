@@ -54,10 +54,10 @@
 
         DEF {
             bindings = <
-  &ltl MOU Q     &kp W          &kp E         &kp R         &kp T           &kp Y        &kp U          &kp I           &kp O           &kp P
-  &hrml LCTRL A  &hrml LALT S   &hrml LSHFT D &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H &hrmr RGUI J   &hrmr LSHFT K   &hrmr RALT L    &hrmr RCTRL SQT
-  &hrml GLOBE Z  &kp X          &kp C         &ltl NUM V    &kp B           &kp N        &kp M          &kp COMMA       &kp DOT         &kp SEMI
-                                              &lc NAV       &kp RSHFT       &kp SPACE    &lc SYM
+  &ltl MOU Q     &kp W          &kp E         &kp R         &kp T           &kp Y           &kp U          &kp I           &kp O           &kp P
+  &hrml LCTRL A  &hrml LALT S   &hrml LSHFT D &hrml LGUI F  &hrml HYPR G    &hrmr HYPR H    &hrmr RGUI J   &hrmr LSHFT K   &hrmr RALT L    &hrmr RCTRL SQT
+  &hrml GLOBE Z  &kp X          &kp C         &ltl NUM V    &kp B           &kp N           &kp M          &kp COMMA       &kp DOT         &kp SEMI
+                                              &lc NAV       &kp RSHFT       &mt RSHFT SPACE &lc SYM
             >;
         };
 
@@ -81,10 +81,10 @@
 
         SYM {
             bindings = <
-  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT         &kp AMPS   &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR        &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT            &kp PIPE   &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                          &lc NAV   &mt RSHFT UNDER   &trans     &lc SYM
+  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
+  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT            &kp UNDER &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+                                          &lc NAV   &mt RSHFT UNDER   &kt PIPE  &lc SYM
             >;
         };
 
