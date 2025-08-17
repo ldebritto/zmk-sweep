@@ -137,9 +137,9 @@
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
-    ltt: better_layer_tap_thumb {
+    blt: better_layer_tap { // urob's logic but for a layer-tap on right hand
         compatible = "zmk,behavior-hold-tap";
-        label = "LTT";
+        label = "BLT";
         bindings = <&lc>, <&kp>;
         #binding-cells = <2>;
         flavor = "balanced";
