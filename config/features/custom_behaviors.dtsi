@@ -136,6 +136,18 @@
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
+
+    ltt: better_layer_tap_thumb { // urob's logic but for a layer-tap on right hand
+        compatible = "zmk,behavior-hold-tap";
+        label = "LTR";
+        bindings = <&lc>, <&kp>;
+
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <HOLD_TAP_TERM>;
+        hold-trigger-on-release;
+        quick-tap-ms = <QUICK_TAP>;
+    };
     
 // Customized hold-tap for toggling layers on tap and holding on hold, used on home row mods for HYPR on hold
     kptcl: toggle_layer_on_tap_left { // urob's logic but for a layer-tap on left hand
