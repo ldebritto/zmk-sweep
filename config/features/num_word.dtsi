@@ -8,5 +8,6 @@
     LCTRL LALT LSHFT LGUI
     RCTRL RALT       RGUI
     TAB
-    >; // These keys will NOT cancel the num_ word auto-layer
+    SPC
+    >; // These keys will NOT cancel the num_ word auto-layer. SPC was added to allow for &reais macro and other keypresses
 };
