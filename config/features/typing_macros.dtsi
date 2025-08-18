@@ -4,7 +4,7 @@ reais: reais {
     wait-ms = <20>;
     tap-ms = <15>;
     bindings = 
-        <&macro_tap &kp LS_(R)>,
+        <&macro_tap &kp LS(R)>,
         <&macro_tap &kp LS(N4)>;
 };
 
