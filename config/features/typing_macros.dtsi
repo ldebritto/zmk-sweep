@@ -7,13 +7,3 @@ reais: reais {
         <&macro_tap &kp LS(R)>,
         <&macro_tap &kp LS(N4)>;
 };
-
-num_spc: num_spc {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>; // Must be 0
-    wait-ms = <20>;
-    tap-ms = <15>;
-    bindings = 
-        <&macro_tap &kp SPC>,
-        <&macro_tap &kp K_CANCEL>;
-};
