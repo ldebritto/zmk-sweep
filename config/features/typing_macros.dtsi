@@ -5,6 +5,6 @@ reais: reais {
     tap-ms = <15>;
     bindings = 
         <&macro_tap &kp LS(R)>,
-        <&macro_tap &kp LS(N4)>;
+        <&macro_tap &kp LS(N4)>,
         <&macro_tap &kp SPACE>;
 };
