@@ -55,9 +55,9 @@ num_shift: num_shift {
 num_spc: num_spc {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>; // Must be 0
-    wait-ms = <20>;
-    tap-ms = <15>;
+    wait-ms = <0>;
+    tap-ms = <0>;
     bindings = 
-        <&macro_tap &kp SPC>,
-        <&macro_tap &kp K_CANCEL>;
+        <&macro_tap &to DEF>,
+        <&macro_tap &kp SPC>;
 };
