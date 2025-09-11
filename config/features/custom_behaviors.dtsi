@@ -107,6 +107,34 @@
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
+// Customized hold-tap definitions for shifts, without require-prior-idle to make them more responsive
+
+    shrml: shrml { // urob's home row mods left
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRML";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        hold-trigger-key-positions = <RIGHT_SIDE_KEYS THUMB_KEYS>;
+        flavor = "balanced";
+        tapping-term-ms = <HOLD_TAP_TERM>;
+        hold-trigger-on-release;
+        quick-tap-ms = <QUICK_TAP>;
+    };
+
+    shrmr: shrmr { // urob's home row mods right
+        compatible = "zmk,behavior-hold-tap";
+        label = "HRMR";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <HOLD_TAP_TERM>;
+        hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
+        hold-trigger-on-release;
+        quick-tap-ms = <QUICK_TAP>;
+    };
+
 // Customized balanced layer-tap
 
     ltl: better_layer_tap_left { // urob's logic but for a layer-tap on left hand
