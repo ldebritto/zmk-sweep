@@ -44,6 +44,9 @@ COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               LB3 LB4,                
 COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                          FUN,          SHORT_COMBO_TIMEOUT) // Hard resets the left half only (see https://zmk.dev/docs/keymaps/combos#advanced-usage on why there's no way to combo for a right half hard reset)
 COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                          FUN,          SHORT_COMBO_TIMEOUT) // Unpairs from currently active bt profile
 
+// OS features
+COMBO(power,               &kp C_POWER,                 RT1 RT2 RT3 RT4,  DEF,                           LONG_COMBO_TIMEOUT) // shutting down
+
 // AOE combos for in game use
 COMBO(toggle_aoe_layer,     &tog AOE,                   LB1 LB2 LB3 LB4,  DEF                      AOE, SHORT_COMBO_TIMEOUT)
 COMBO(aoe_left_esc,         &kp ESCAPE,                 LT1 LT2 LT3,                               AOE, SHORT_COMBO_TIMEOUT)
