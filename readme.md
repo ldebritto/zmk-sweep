@@ -92,10 +92,6 @@ These won't colide with any native shortcut and are used on macOS for:
 - `F19` is my [homerow app](https://homerow.app) trigger
 - `F18` is a trigger I set via Keyboard Maestro to trigger different macros depending on the frontmost app, so I can make it do the things I use the most on different apps, even if they're not easy to trigger with regular shortcuts. Since this can be modded (i.e. `shift+F18`) I can assign different actions on the same app by combining mods. I _really_ like this!
 
-## 9. Gaming layers
-
-I play Age of Empires II Definitive Edition and made a series of 3 layers (`AOE`, `AGS` and `ABS`) that go well with mouse usage on the right hand. They're certainly not needed most of the time, so I've tucked away with a `XCVB` combo from `DEF` or the very `AOE` base layer.
-
 # ZMK modules required
 
 While the core is vanilla ZMK, some of the features used in this keymap require the implementation of [ZMK modules](https://zmk.dev/docs/features/modules), namelly:
