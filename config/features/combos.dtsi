@@ -46,3 +46,15 @@ COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                
 
 // OS features
 COMBO(power,               &kp C_POWER,                 RT1 RT2 RT3 RT4,  DEF,                           LONG_COMBO_TIMEOUT) // shutting down
+
+
+// AOE combos for in game use
+COMBO(toggle_aoe_layer,     &tog AOE,                   LB1 LB2 LB3 LB4,  DEF                      AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_left_esc,         &kp ESCAPE,                 LT1 LT2 LT3,                               AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_left_tab,         &kp TAB,                    LT1     LT3,                               AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_left_enter,       &hrml LA(LS(LCTRL)) ENTER,  LM1 LM2 LM3,                               AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_left_backspace,   &hrml LA(LCTRL) BSPC,       LM1     LM3,                               AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_right_esc,        &kp ESCAPE,                 RT1 RT2 RT3,                               AOE, SHORT_COMBO_TIMEOUT)
+COMBO(aoe_right_tab,        &kp TAB,                    RT1     RT3,                               AOE, SHORT_COMBO_TIMEOUT) 
+COMBO(aoe_right_enter,      &hrmr RA(LS(RCTRL)) ENTER,  RM1 RM2 RM3,                               AOE, SHORT_COMBO_TIMEOUT) 
+COMBO(aoe_right_backspace,  &hrmr LA(LCTRL) BSPC,       RM1     RM3,                               AOE, SHORT_COMBO_TIMEOUT)

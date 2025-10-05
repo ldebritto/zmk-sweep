@@ -1,0 +1,25 @@
+glhf: good_luck_have_fun_macro {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>; // Must be 0
+    wait-ms = <30>;
+    tap-ms = <20>;
+    bindings = 
+        <&macro_tap &kp ENTER>,
+        <&macro_tap &kp G>,
+        <&macro_tap &kp L>,
+        <&macro_tap &kp H>,
+        <&macro_tap &kp F>,
+        <&macro_tap &kp ENTER>;
+};
+
+laugh: laughing_macro {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>; // Must be 0
+    wait-ms = <30>;
+    tap-ms = <20>;
+    bindings = 
+        <&macro_tap &kp ENTER>,
+        <&macro_tap &kp 1>,
+        <&macro_tap &kp 1>,
+        <&macro_tap &kp ENTER>;
+};
