@@ -46,6 +46,7 @@ COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                
 
 // OS features
 COMBO(power,               &kp C_POWER,                 RT1 RT2 RT3 RT4,  DEF,                           LONG_COMBO_TIMEOUT) // shutting down
+COMBO(globe_control,       &kp LCTRL(GLOBE),            LM0 LB0,          DEF NAV,                       LONG_COMBO_TIMEOUT) // Globe+Control fow better window managment on iPadOS
 
 // AOE combos for in game use
 COMBO(toggle_aoe_layer,     &tog AOE,                   LB1 LB2 LB3 LB4,  DEF                      AOE, SHORT_COMBO_TIMEOUT)
