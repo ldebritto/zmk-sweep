@@ -111,7 +111,7 @@
 
     shrml: shrml { // urob's home row mods left
         compatible = "zmk,behavior-hold-tap";
-        label = "HRML";
+        label = "SHIFT_HRML";
         bindings = <&kp>, <&kp>;
 
         #binding-cells = <2>;
@@ -124,7 +124,7 @@
 
     shrmr: shrmr { // urob's home row mods right
         compatible = "zmk,behavior-hold-tap";
-        label = "HRMR";
+        label = "SHIFT_HRMR";
         bindings = <&kp>, <&kp>;
 
         #binding-cells = <2>;
