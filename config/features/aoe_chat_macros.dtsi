@@ -19,7 +19,7 @@ laugh: laughing_macro {
     tap-ms = <20>;
     bindings = 
         <&macro_tap &kp ENTER>,
-        <&macro_tap &kp 1>,
-        <&macro_tap &kp 1>,
+        <&macro_tap &kp N1>,
+        <&macro_tap &kp N1>,
         <&macro_tap &kp ENTER>;
 };
