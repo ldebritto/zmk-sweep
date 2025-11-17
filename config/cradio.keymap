@@ -24,6 +24,7 @@
 #include "features/timings.h"                       // Timing definitions for hold-tap and combos
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
+#include "features/num_word.dtsi"                   // Requires auto-layer module from urob
 
 / {
     combos { 
@@ -84,7 +85,7 @@
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT          &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR         &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT             &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                          &lc NAV   &mt RSHFT UNDER    &kp UNDER &lc SYM
+                                          &lc NAV   &mt RSHFT UNDER    &tog NUM  &lc SYM
             >;
         };
 
@@ -132,6 +133,6 @@
                                             &kp LC(LS(H)) &trans           &trans  &trans
             >;
         };
-
+z
     };
 };
