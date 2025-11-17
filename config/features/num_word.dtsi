@@ -7,8 +7,7 @@
     LPAR RPAR LBKT RBKT LBRC RBRC LT GT 
     BSPC DEL ESC 
     LCTRL LALT LSHFT LGUI
-    RCTRL RALT       RGUI
+    RCTRL RALT RSHFT RGUI
     TAB
-    SPC
-    >; // These keys will NOT cancel the num_ word auto-layer. SPC was added to allow for &reais macro and other keypresses
+    >;
 };
