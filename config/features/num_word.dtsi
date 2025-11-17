@@ -1,4 +1,5 @@
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+
 &num_word { // great to quick entry of numbers requires auto-layer module (https://github.com/urob/zmk-auto-layer)
   continue-list = <
     DOLLAR DOT COMMA SQT COLON
