@@ -10,5 +10,5 @@
 
 // Combos
     #define SHORT_COMBO_TIMEOUT 60  // Default timeout for combos in ms
-    #define LONG_COMBO_TIMEOUT 100  // Long timeout for four-finger combos in ms
+    #define LONG_COMBO_TIMEOUT 150  // Long timeout for four-finger combos in ms
     #define COMBO_REQUIRE_PRIOR_IDLE 250
