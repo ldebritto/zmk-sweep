@@ -24,6 +24,7 @@
 / {
     combos { 
         #include "features/combos.dtsi"
+        #include "features/urob_style_combos.dtsi"
     };
     
     behaviors { 
