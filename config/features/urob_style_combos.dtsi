@@ -39,6 +39,8 @@ COMBO(pipe,           &kp PIPE,                 RM3 RB3,      DEF,      SHORT_CO
 COMBO(paragrapph,     &kp LA(N6),               RM4 RB4,      DEF NUM,  SHORT_COMBO_TIMEOUT)
 
 // Horizontal left combos
+COMBO(undo,          &kp LG(Z),                 LB0 LB1,      DEF,      SHORT_COMBO_TIMEOUT)
+
 COMBO(esc,           &kp ESC,                   LT1 LT2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(tab,           &hrml LA(LSHFT) TAB,       LM1 LM2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(copy,          &kp LG(C),                 LB1 LB2,      DEF,      SHORT_COMBO_TIMEOUT)
