@@ -30,8 +30,8 @@ COMBO(sl_sym_left,          &sl SYM,                    LB4 LIT,          DEF   
 COMBO(sl_sym_right,         &sl SYM,                    RB0 RIT,          DEF         SYM,              SHORT_COMBO_TIMEOUT) // uses a sticky layer to make possible to type symbols with one hand
 
 // NUM-only combos vertical combos
-COMBO(num_percent,          &kp PRCNT,                  RM0 RT0,          NUM,                          SHORT_COMBO_TIMEOUT) // (
-COMBO(num_dollar,           &kp DOLLAR,                 RM0 RB0,          NUM,                          SHORT_COMBO_TIMEOUT) // [
+COMBO(num_dollar,           &reais,                     RM0 RT0,          NUM,                          SHORT_COMBO_TIMEOUT) // (
+COMBO(num_percent,          &kp PRCNT,                  RM0 RB0,          NUM,                          SHORT_COMBO_TIMEOUT) // [
 COMBO(num_open_par,         &kp LPAR,                   RM1 RT1,          NUM,                          SHORT_COMBO_TIMEOUT) // (
 COMBO(num_open_brc,         &kp LBKT,                   RM1 RB1,          NUM,                          SHORT_COMBO_TIMEOUT) // [
 COMBO(num_equal,            &kp EQUAL,                  RT2 RM2,          NUM,                          SHORT_COMBO_TIMEOUT) // =
