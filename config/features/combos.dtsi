@@ -36,6 +36,7 @@ COMBO(num_equal,            &kp EQUAL,                  RT2 RM2,          NUM,  
 COMBO(num_colon,            &kp COLON,                  RM2 RB2,          NUM,                          SHORT_COMBO_TIMEOUT) // :
 COMBO(num_close_par,        &kp RPAR,                   RM3 RT3,          NUM,                          SHORT_COMBO_TIMEOUT) // )
 COMBO(num_close_brc,        &kp RBKT,                   RM3 RB3,          NUM,                          SHORT_COMBO_TIMEOUT) // ]
+COMBO(space,                &kp SPACE,                  ROT RIT,          NUM,                          SHORT_COMBO_TIMEOUT) // ]
 
 // SYS combos to connect to BT devices from FUN layer
 COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to MacBook
