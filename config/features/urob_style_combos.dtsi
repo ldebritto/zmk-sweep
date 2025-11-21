@@ -32,7 +32,7 @@ COMBO(backslash,      &kp BSLH,                 LM2 LB2,      DEF,      SHORT_CO
 COMBO(tilde,          &kp TILDE,                LM3 LB3,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(dollar,         &kp DOLLAR,               LM4 LB4,      DEF,      SHORT_COMBO_TIMEOUT)
 
-COMBO(percent,        &kp PRCNT,                RM0 RB0,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(percent,        &kp PRCNT,                RM0 RB0,      DEF NUM,  SHORT_COMBO_TIMEOUT)
 COMBO(minus,          &kp MINUS,                RM1 RB1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(slash,          &kp SLASH,                RM2 RB2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(pipe,           &kp PIPE,                 RM3 RB3,      DEF,      SHORT_COMBO_TIMEOUT)
