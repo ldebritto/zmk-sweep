@@ -30,13 +30,13 @@ COMBO(sl_sym_left,          &sl SYM,                    LB4 LIT,          DEF   
 COMBO(sl_sym_right,         &sl SYM,                    RB0 RIT,          DEF         SYM,              SHORT_COMBO_TIMEOUT) // uses a sticky layer to make possible to type symbols with one hand
 
 // NUM-only combos vertical combos
-COMBO(num_open_par,         &kp LPAR,                   RM1 RT1,          NUM,                          SHORT_COMBO_TIMEOUT) // (
-COMBO(num_open_brc,         &kp LBKT,                   RM1 RB1,          NUM,                          SHORT_COMBO_TIMEOUT) // [
-COMBO(num_equal,            &kp EQUAL,                  RT2 RM2,          NUM,                          SHORT_COMBO_TIMEOUT) // =
-COMBO(num_colon,            &kp COLON,                  RM2 RB2,          NUM,                          SHORT_COMBO_TIMEOUT) // :
-COMBO(num_close_par,        &kp RPAR,                   RM3 RT3,          NUM,                          SHORT_COMBO_TIMEOUT) // )
-COMBO(num_close_brc,        &kp RBKT,                   RM3 RB3,          NUM,                          SHORT_COMBO_TIMEOUT) // ]
-COMBO(num_space,            &kp SPACE,                  RHT RIT,          NUM,                          SHORT_COMBO_TIMEOUT) // SPACE for NUM
+// COMBO(num_open_par,         &kp LPAR,                   RM1 RT1,          NUM,                          SHORT_COMBO_TIMEOUT) // (
+// COMBO(num_open_brc,         &kp LBKT,                   RM1 RB1,          NUM,                          SHORT_COMBO_TIMEOUT) // [
+// COMBO(num_equal,            &kp EQUAL,                  RT2 RM2,          NUM,                          SHORT_COMBO_TIMEOUT) // =
+// COMBO(num_colon,            &kp COLON,                  RM2 RB2,          NUM,                          SHORT_COMBO_TIMEOUT) // :
+// COMBO(num_close_par,        &kp RPAR,                   RM3 RT3,          NUM,                          SHORT_COMBO_TIMEOUT) // )
+// COMBO(num_close_brc,        &kp RBKT,                   RM3 RB3,          NUM,                          SHORT_COMBO_TIMEOUT) // ]
+// COMBO(num_space,            &kp SPACE,                  RHT RIT,          NUM,                          SHORT_COMBO_TIMEOUT) // SPACE for NUM
 
 // SYS combos to connect to BT devices from FUN layer
 COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to MacBook
