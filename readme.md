@@ -1,102 +1,61 @@
-This 34 key keymap was heavilly inspired by the works @Callum's [keymap for QMK](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and [urob's ZMK keymap](https://github.com/urob/zmk-config).
+This 34-key keymap was heavily inspired by @Callum's [QMK keymap](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md) and [urob's ZMK keymap](https://github.com/urob/zmk-config).
 
 # My use case and layer design choices
- 
-Its main use is writing prose, in both English and Portuguese, using both macOS and iPadOS. I'm a lawyer and a professor who likes to prettend I can code as well.
 
-I use it on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano) and also on a Totem (I simply don't use the extra 4 keys there, here's that [repo](https://github.com/ldebritto/zmk-config-totem)). 
+Its main use is writing prose, in both English and Portuguese, using both macOS and iPadOS. I'm a lawyer and a professor who likes to pretend I can code as well.
 
-I find it particularly great to type on when paired with very light and silent switches, such as [LowProKB.ca's Amnbienz twilight and nocturnals](https://lowprokb.ca/products/ambients-silent-choc-switches).
+I use it on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano) and also on a Totem (I simply don't use the extra 4 keys there, here's that [repo](https://github.com/ldebritto/zmk-config-totem)).
 
-Here's some hightlights on this:
+I find it particularly great to type on when paired with very light and silent switches, such as [LowProKB.ca's Ambients twilight and nocturnals](https://lowprokb.ca/products/ambients-silent-choc-switches).
 
-## 1. Default layer is QWERTY with my two cents (`'`, `;` keys positions swapped with `/`)
+Here's what's currently implemented:
 
-QWERTY made me able to retain muscle memory and still move to a "regular" keyboard as needed. However, I've made just a few changes:
+## 1. Default layer, thumbs, and entry points to other layers
 
-- On `DEF`, `;` was moved down and made way to `'` as this is far more useful to make accents and quotation marks (as a dead key, it can be combined with vowels to output `áéíóú` or with a space to output `'`), wich is preferred in prose
-- I've kept `;` on `DEF` as I use it as a marker for text expansions snippets
-- `/` was moved to `SYM`
+- QWERTY base with `'` and `;` swapped (`'` lives on the RCTRL mod-tap and `;` is on the bottom row). `/` moved to `SYM`.
+- Home row mods follow urob's balanced HRM setup, with Hyper on `G`/`H`.
+- The left thumb is `&lc NAV`, the right thumb is `&lc SYM`, and there's a dedicated left-thumb `RSHFT`. `C` and `V` are layer-taps into `NUM` and `MOU` respectively while still tapping as `C`/`V`.
 
-## 2. Long `&sk` timeouts and `&lc` macro for cancelling queued mods when triggering layers
+## 2. Sticky mods with cancel-on-layer-change macros
 
-This emulates in ZMK the `LA_NAV` and `LA_SYM` custom behaviors found in [Callum's QMK keymap](https://github.com/qmk/qmk_firmware/blob/master/users/callum/readme.md).
+- Sticky keys (`&sk`) use a one-day release-after time with quick-release to mirror Callum's queue-friendly behavior.
+- Layer changes use the `&lc`/`&tc` macros that send a `K_CANCEL` tap when entering a layer, so queued sticky mods are cleared on entry but still released when leaving. See `config/features/layer_cancel_macros.dtsi`.
+- Helpers like `&defnav` (tap `DEF`, hold `NAV`) and `num_spc` (tap `SPACE` and return to `DEF`) smooth transitions out of modal layers.
 
-A crazy long timeout (1 day) was assigned to `&sk` behavior in this keymap. So there's no rush to combine mods with either keycodes from `DEF` or the active layer.
+## 3. `SYM` layer tuned for BR-PT diacritics
 
-The `&mo` behavior was replaced by a custom layer-cancel macro (`&lc`) that sends a `&kp K_CANCEL` tap alongside the `&mo` command within a 0ms interval on press. This design allows for _canceling_ any queued mods when invoking `SYM`, `NAV`, of `FUN`, while still _keeps them triggered_ on the release for typing keys that exists only on `DEF` layer.
+- `^`, `` ` ``, and `~` sit on home row for comfortable accented vowels.
+- Braces/parentheses are mirrored (open on the left, close on the right), and both slashes are mirrored too.
+- Shifted prose punctuation (`"` and `:`) is here for single-hand access with `&lc SYM`.
+- Common Markdown symbols (`#`, `*`, `_`, `|`) stay near home. The thumb on `SYM` also offers `&tog NUM`.
 
-Same logic is behind the `&tc` replacing `&to` behaviors.
+## 4. `NUM` layer for right-hand numpad work
 
-See `features/layer_cancel_macros.dtsi` file for the code.
+- Accessible by holding `C` (`&ltl NUM C`), via the `&tc NUM` combo (`RM2 + RIT`), or by toggling from `SYM` (`&tog NUM` on the right thumb).
+- Right-hand numpad layout with math keys; the left half carries alt-modified number keys and a `reais` macro for `R$`.
+- `num_spc` taps `SPACE` then returns to `DEF`; holding the `0` key (`&lt SYM N0`) temporarily reaches `SYM` while on `NUM`. `defnav` on the left thumb lets me leave `NUM` straight into `NAV` for cursor movement.
 
-## 3. `SYM` layer optimized for BR-PT prose and diacriticals
+## 5. `NAV` and `FUN` layers, plus `&swapper`
 
-* I recommend pgetreuer’s post on [how to set up a symbols layer that works for you](https://getreuer.info/posts/keyboards/symbol-layer/index.html).
+- `NAV` (left thumb) keeps arrows, paging, home/end, delete/backspace, and media controls (`playnp` tap dance plus volume/brightness morphs on `CTRL`).
+- `&swapper` on `TAB` replicates macOS `CMD+TAB`, ignoring arrow/edit keys so focus stays on switching.
+- `F18` and `F19` live here for macOS automation (Homerow trigger and Keyboard Maestro macro trigger).
+- `FUN` is a tri-layer that activates when `NAV` and `SYM` are held together. It carries the number row, function keys, and Bluetooth/system combos (BT profile switching, bootloader, clear profile).
 
-- `^` ``` `~` dead keys are on home row position, making it easy to type accented vowels common in Portuguese prose
-- Parenthesis and braces are mirrored on both hands, left opens, right closes them. Slashes are also mirrored, which helps memorizing.
-- Shifted punctuation symbols that exist in `DEF` and are much used in prose (`”` and `:`) from `DEF` were assigned to SYM so 
-	a. they can be triggered single-handed via `&lc SYM`
-	b. they feel more comfortable to type alongside with numbers either from `FUN` and `NUM`, such as when typing hours or dates or measurements (e.g. 00:00 will not require one to move the left thumb to thumb `RSHFT` and then back to the `&lc NAV` to trigger the tri-layer, same thing happens when typing 0’00”)
-- Common markdown symbols (# and *) are close to home row.
+## 6. Mouse layer
 
-## 4. Numpad layer for `&num_word`
+- Enabled via ZMK pointing; movement and scroll are tuned for 4K displays (`config/features/mouse.dtsi`).
+- Enter by holding `V` (`&ltl MOU V`) or via the `tc_mou` combo (left-hand row-1 chord). `&to DEF` lives on the bottom-right if the layer is toggled.
+- Includes scroll directions, pointer movement, MB4/MB5, repeat-click, and mod-morphs for macOS window management (`expose_close` and `desktop_quit`).
 
-* Requires [auto-layer module](https://github.com/urob/zmk-auto-layer).
+## 7. Combos for one-handed use and shortcuts
 
-`&num_word` is accessible as a combo through `K` and `&lc SYM` (rightmost thumb). This behavior allows for quick entering numbers in a numpad layout and will disable it upon key press of any key than a number, math symbol or `BACKSPACE`/`DELETE`. It's pretty much the same logic from [urob's numword](https://github.com/urob/zmk-config#numword), with some customization on the cancel key list.
+- Both halves offer combos for `ESC`, `TAB`, `ENTER`, and `BACKSPACE` so each hand can edit alone. `NAV` and `MOU` inherit these where needed.
+- Sticky `SYM` combos on either side support one-hand symbol entry; `NUM` has vertical combos for paired brackets, `:`, and other punctuation that complement the numpad.
+- Toggles: `LM2 + LIT` for `NAV`, `RM2 + RIT` for `NUM`, `LM0 + LM1 + LM2 + LM3` for `MOU`, and `LM2 + RM2` for `caps_word`. A four-finger right-hand chord powers down the board.
+- On `FUN`, combos handle Bluetooth profile selection (0–2), bootloader, and clearing the active profile.
 
-Numpad layer sits at the right half of the keyboard, since I'm right-handed. Also, making it accessible from a combo on the right-hand makes it really useful when jotting down a number while my left hand is busy holding a phone, a book or something else. We know we should not do this for ergonomics but… life happens!
+## 8. ZMK modules required
 
-I've also made it accessible by holding the `V` key on `DEF`, however I rarely use that.
-
-Oddly enough, I keep the number row in `FUN` since I find it easier to use it when triggering numbered keyboard shortcuts (such as `cmd+shift+1`) with the one shot mods from `FUN`. To be honest, I still haven't fully made up my mind on the numpad x numrow debate. 
-
-## 5. Combos for one handed use of common action keys and in combination with the mouse on the right hand
-
-While I preffer moving layers when typing with both hands and getting the desired key, I've added some combos to make it possible to use the keyboard one handed.
-
-Highlights are:
-
-- There’s `&sl SYM` on a combo on the right thumb to make it possible to enter symbols.
-- One handed number entering can be done via `&num_word` combo (see #4).
-- This goes well with toggling the `NAV` layer (`XCV` combo) for extended edits with a mouse while keeping these keys available with the left hand:
-	- `WER` for `ESC`
-	- `SDF` for `ENTER`
-	- `S F` for `BACKSPACE`
-
-Full list in the `features/combos.dtsi` wich use a [macro](https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi) written by @kkga to make them one liners and, thus, easier to use and compare.
-
-## 6. `&swapper` for swapping between apps/windows
-
-* Requires [tri-state module](https://github.com/urob/zmk-tri-state).
-
-This allows for `CMD+TAB` with one key from `NAV`. It will simulate holding `CMD` between `TAB` keypresses for as long as you keep the `&lc NAV` key held.
-
-## 7. Mouse layer
-
-While I still use the mouse/trackpad when it's the best tool for the job, I created a `MOU` layer that can be entered either by holding `Q` or toggled by hitting `QWERT` combo. So many times, using an app like [Homerow](https://www.homerow.app/), [Vimium](https://vimium.github.io/) on Chrome or [Vimlike](https://www.jasminestudios.net/vimlike/) on Safari is enough to avoid the mouse for the random click. 
-
-However, the mouse layer has proven to be quite useful for these some cases:
-
-- Repeating the previous click in the same position by holding `Q` and hitting the right thumb on it's hold position
-- Hidding/unhidding the windows and showing the desktop by holding `Q` and long-pressing `W`
-- Scrolling up/down by holding `Q` and tapping `Y` and `H` keys
-- By toggling it and then using the mouse/trackpad with the right hand I keep the (non-sticky) modifiers on home row, as well as the much useful editting shortcuts (cut, copy, paste, undo) and navigation shorcuts (exposè, desktop, back, forward, next/previous tab). This makes for the lack of shortcut buttons on Apple's Magic trackpad without the need of complicated gestures that can be set from apps like BetterTouch Tools.
-
-## 8. `F18` and `F19` keys on `NAV`
-
-These won't colide with any native shortcut and are used on macOS for:
-
-- `F19` is my [homerow app](https://homerow.app) trigger
-- `F18` is a trigger I set via Keyboard Maestro to trigger different macros depending on the frontmost app, so I can make it do the things I use the most on different apps, even if they're not easy to trigger with regular shortcuts. Since this can be modded (i.e. `shift+F18`) I can assign different actions on the same app by combining mods. I _really_ like this!
-
-# ZMK modules required
-
-While the core is vanilla ZMK, some of the features used in this keymap require the implementation of [ZMK modules](https://zmk.dev/docs/features/modules), namelly:
-
-- [tri-state](https://github.com/urob/zmk-tri-state) 
-- [auto-layer](https://github.com/urob/zmk-auto-layer) 
-
-I've got mine both from @urob code. Have a look at my `west.yml` to see their references if you don't want a long version on why modules are a great thing and how they work.
+- [tri-state](https://github.com/urob/zmk-tri-state) (used by `&swapper`) as referenced in `config/west.yml`.
+- Everything else runs on core ZMK; no auto-layer module is needed. Mouse support is enabled via `CONFIG_ZMK_POINTING` in `config/cradio.conf`.

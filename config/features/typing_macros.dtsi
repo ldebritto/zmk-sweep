@@ -8,3 +8,14 @@ reais: reais {
         <&macro_tap &kp LS(N4)>,
         <&macro_tap &kp SPACE>;
 };
+
+comma00: comma00 {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>; // Must be 0
+    wait-ms = <20>;
+    tap-ms = <15>;
+    bindings = 
+        <&macro_tap &kp COMMA>,
+        <&macro_tap &kp N0>,
+        <&macro_tap &kp N0>;
+};
