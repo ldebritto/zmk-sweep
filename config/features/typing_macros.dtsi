@@ -20,7 +20,7 @@ comma00: comma00 {
         <&macro_tap &kp N0>;
 };
 
-000: 000 {
+triple0: triple0 {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>; // Must be 0
     wait-ms = <20>;
