@@ -10,5 +10,5 @@
     RCTRL RALT       RGUI
     TAB
     SPC
-    >;
-};
+    >; // Added SPC to this list so that &reais macro won't break &num_word. &num_spc became needed as a workaroung to exit &num_word by adding K_CANCEL before SPACE
+}; 
