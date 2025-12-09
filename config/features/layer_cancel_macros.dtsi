@@ -25,7 +25,7 @@ tc: to_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mo
         <&macro_tap>,
         <&kp K_CANCEL &macro_param_1to1>,
         <&macro_press>,
-        <&to MACRO_PLACEHOLDER>;
+        <&tog MACRO_PLACEHOLDER>;
 };
 
 defnav: tap_def_then_hold_nav_layer {
