@@ -16,6 +16,6 @@ manifest:
       revision: main
     - name: zmk-auto-layer
       remote: urob
-      revision: main
+      revision: next
   self:
     path: config

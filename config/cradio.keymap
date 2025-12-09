@@ -21,6 +21,7 @@
 #include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
 
 #include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
+
 / {
     combos { 
         #include "features/combos.dtsi"
