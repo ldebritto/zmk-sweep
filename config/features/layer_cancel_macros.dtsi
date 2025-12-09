@@ -52,7 +52,7 @@ num_shift: num_shift {
         <&macro_release &kp RSHFT>;
 };
 
-num_spc: num_spc {
+num_spc: num_spc { // Adds a K_CANCEL before SPACE to exit NUM layer from &num_word, but keep NUM alive if it's been &tc'd
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>; // Must be 0
     wait-ms = <0>;

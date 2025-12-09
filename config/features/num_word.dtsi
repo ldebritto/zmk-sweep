@@ -9,5 +9,6 @@
     LCTRL LALT LSHFT LGUI
     RCTRL RALT       RGUI
     TAB
+    SPC
     >;
 };
