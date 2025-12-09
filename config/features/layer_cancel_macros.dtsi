@@ -58,6 +58,6 @@ num_spc: num_spc {
     wait-ms = <0>;
     tap-ms = <0>;
     bindings = 
-        <&macro_tap &to DEF>,
+        <&macro_tap &kp K_CANCEL>,
         <&macro_tap &kp SPC>;
 };

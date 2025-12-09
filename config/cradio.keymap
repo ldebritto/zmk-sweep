@@ -20,6 +20,7 @@
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
 
+#include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
 / {
     combos { 
         #include "features/combos.dtsi"
@@ -69,7 +70,7 @@
   &kp TAB         &swapper  &kp LC(LS(TAB)) &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP   &kp HOME  &kp UP    &kp END   &kp BSPC
   &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
   &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL
-                                            &tc NAV     &kp SPC         &trans      &lc SYM
+                                            &kp SPC     &tc NAV         &trans      &trans 
             >;
         };
 
@@ -78,7 +79,7 @@
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT          &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR         &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT             &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                          &lc NAV   &mt RSHFT UNDER    &trans    &lc SYM
+                                          &trans    &mt RSHFT UNDER    &trans    &trans 
             >;
         };
 
@@ -87,7 +88,7 @@
   &kp N1    &kp N2    &kp N3     &kp N4    &kp N5       &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
   &sk LCTRL &sk LALT  &sk LSHFT  &sk LGUI  &kp F11      &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &kp F1    &kp F2    &kp F3     &kp F4    &kp F5       &kp F6    &kp F7    &kp F8     &kp F9    &kp F10
-                                 &lc NAV   &kp C_POWER  &kp CAPS  &lc SYM
+                                 &trans    &kp C_POWER  &kp CAPS  &trans
             >;
         };
 
@@ -96,7 +97,7 @@
   &desktop_quit   &expose_close &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL       &kp LALT      &kp LSHFT       &kp LGUI      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
   &mt GLOBE LG(Z) &kp LG(X)     &kp LG(C)       &kp LG(V)     &kp F18       &kp LG(LS(N4))  &mkp MCLK       &mkp MB4        &mkp MB5        &to DEF
-                                                &tc MOU       &mt LGUI SPC  &mkp LCLK       &mkp RCLK            
+                                                &mt LGUI SPC  &tc MOU       &mkp LCLK       &mkp RCLK            
             >;          
         };
 

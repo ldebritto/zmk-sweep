@@ -23,9 +23,7 @@ COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NU
 
 // Layer toggles and system functionality
 COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                          SHORT_COMBO_TIMEOUT) // home shift positions
-COMBO(tc_mou,               &kptcl HYPR MOU,            LM0 LM1 LM2 LM3,  DEF                 MOU,       LONG_COMBO_TIMEOUT) // handy for one-handed use with a mouse on the right hand
-COMBO(tc_num,               &tc NUM,                    RM2 RIT,          DEF NUM,                      SHORT_COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
-COMBO(tc_nav,               &tc NAV,                    LM2 LIT,          DEF     NAV,                  SHORT_COMBO_TIMEOUT) // useful for long edits
+COMBO(tc_num,               &num_word NUM,              RM2 RIT,          DEF NUM,                      SHORT_COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
 COMBO(sl_sym_left,          &sl SYM,                    LB4 LIT,          DEF         SYM,              SHORT_COMBO_TIMEOUT) // uses a sticky layer to make possible to type symbols with one hand
 COMBO(sl_sym_right,         &sl SYM,                    RB0 RIT,          DEF         SYM,              SHORT_COMBO_TIMEOUT) // uses a sticky layer to make possible to type symbols with one hand
 
