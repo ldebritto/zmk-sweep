@@ -19,8 +19,8 @@ Here's what's currently implemented:
 ## 2. Sticky mods with cancel-on-layer-change macros
 
 - Sticky keys (`&sk`) use a one-day release-after time with quick-release to mirror Callum's queue-friendly behavior.
-- Layer changes use the `&lc`/`&tc` macros that send a `K_CANCEL` tap when entering a layer, so queued sticky mods are cleared on entry but still released when leaving. See `config/features/layer_cancel_macros.dtsi`.
-- Helpers like `&defnav` (tap `DEF`, hold `NAV`) and `num_spc` (tap `SPACE` and return to `DEF`) smooth transitions out of modal layers.
+- Layer changes use the `&lc`/`&tc` macros that send a `K_CANCEL` tap when entering a layer, so queued sticky mods are cleared on entry but still released when leaving. See [config/features/layer_cancel_macros.dtsi](config/features/layer_cancel_macros.dtsi).
+- `num_spc` (tap `SPACE`) includes a `K_CANCEL` before the space to exit `&num_word` while keeping `NUM` alive if toggled via `&tc NUM`.
 
 ## 3. `SYM` layer tuned for BR-PT diacritics
 
@@ -29,11 +29,11 @@ Here's what's currently implemented:
 - Shifted prose punctuation (`"` and `:`) is here for single-hand access with `&lc SYM`.
 - Common Markdown symbols (`#`, `*`, `_`, `|`) stay near home. The thumb on `SYM` also offers `&tog NUM`.
 
-## 4. `NUM` layer for right-hand numpad work
+## 4. `NUM` layer for right-hand numpad work and `&num_word`
 
-- Accessible by holding `C` (`&ltl NUM C`), via the `&tc NUM` combo (`RM2 + RIT`), or by toggling from `SYM` (`&tog NUM` on the right thumb).
+- Accessible by holding `C` (`&ltl NUM C`) or via the `&num_word NUM` combo (`RM2 + RIT`) which auto-deactivates on `SPACE` or other keys not on the continue-list.
 - Right-hand numpad layout with math keys; the left half carries alt-modified number keys and a `reais` macro for `R$`.
-- `num_spc` taps `SPACE` then returns to `DEF`; holding the `0` key (`&lt SYM N0`) temporarily reaches `SYM` while on `NUM`. `defnav` on the left thumb lets me leave `NUM` straight into `NAV` for cursor movement.
+- `num_spc` taps `SPACE` with embedded `K_CANCEL` to exit `&num_word` while keeping `NUM` alive if toggled. Holding the `0` key (`&lt SYM N0`) temporarily reaches `SYM` while on `NUM`.
 
 ## 5. `NAV` and `FUN` layers, plus `&swapper`
 

@@ -43,6 +43,11 @@
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
         };
+
+        tri_layer_for_nav_from_num {
+            if-layers = <NAV NUM>;
+            then-layer = <NAV>;
+        };
     };
 
     keymap {
@@ -61,17 +66,17 @@
             bindings = <
   &kp LA(N9) &kp LA(N0) &none       &reais      &kp LA(N6)  &kp PLUS    &kp N7  &kp N8  &kp N9  &kp ASTRK
   &sk LCTRL  &sk LALT   &sk LSHFT   &sk LGUI    &sk LSHFT   &kp MINUS   &kp N4  &kp N5  &kp N6  &kp SLASH
-  &none      &none      &none       &comma00    &triple0    &kp COMMA   &kp N1  &kp N2  &kp N3  &kp DOT
+  &none      &none      &none       &triple0    &comma00    &kp COMMA   &kp N1  &kp N2  &kp N3  &kp DOT
                                     &trans      &tc NUM     &num_spc    &lt SYM N0
             >;
         };
 
         NAV {
             bindings = <
-  &kp TAB         &swapper  &kp LC(LS(TAB)) &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP   &kp HOME  &kp UP    &kp END   &kp BSPC
-  &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
-  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL
-                                            &kp SPC     &tc NAV         &trans      &trans 
+  &kp TAB         &swapper  &kp LC(LS(TAB)) &kp LC(TAB)     &kp LG(RBKT)    &kp PG_UP   &kp HOME  &kp UP    &kp END   &kp BSPC
+  &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI        &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
+  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &lt MOU LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL
+                                            &kp SPC         &tc NAV         &trans      &trans 
             >;
         };
 
