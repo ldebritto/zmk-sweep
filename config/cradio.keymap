@@ -44,10 +44,6 @@
             then-layer = <FUN>;
         };
 
-        tri_layer_for_nav_from_num {
-            if-layers = <NAV NUM>;
-            then-layer = <NAV>;
-        };
     };
 
     keymap {
