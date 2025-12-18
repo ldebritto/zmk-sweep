@@ -41,9 +41,9 @@ COMBO(num_paragraph,        &kp LA(N6),                 RM4 RB4,          NUM,  
 COMBO(num_space,            &kp SPACE,                  RHT RIT,          NUM,                          SHORT_COMBO_TIMEOUT) // SPACE for NUM
 
 // SYS combos to connect to BT devices from FUN layer
-COMBO(sys_connect_to_bt0,   &bt BT_OUT 0,               LT3 LT4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to MacBook
-COMBO(sys_connect_to_bt1,   &bt BT_OUT 1,               LM3 LM4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to iPad
-COMBO(sys_connect_to_bt2,   &bt BT_OUT 2,               LB3 LB4,                          FUN,          SHORT_COMBO_TIMEOUT) // Open to connect to any other device
+COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to MacBook
+COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               LM3 LM4,                          FUN,          SHORT_COMBO_TIMEOUT) // Currently paired to iPad
+COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               LB3 LB4,                          FUN,          SHORT_COMBO_TIMEOUT) // Open to connect to any other device
 COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                          FUN,          SHORT_COMBO_TIMEOUT) // Hard resets the left half only (see https://zmk.dev/docs/keymaps/combos#advanced-usage on why there's no way to combo for a right half hard reset)
 COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                          FUN,          SHORT_COMBO_TIMEOUT) // Unpairs from currently active bt profile
 
