@@ -213,8 +213,7 @@ btt: switch_to_bluetooth_and_force_output_to_bluetooth { // This makes it possib
     tap-ms = <0>;
     #binding-cells = <1>;
     bindings =
-        <&macro_tap>,
-        <&out OUT_BLE &macro_param_1to1>,
-        <&macro_tap>,
-        <&bt BT_SEL MACRO_PLACEHOLDER>;
+        <&macro_tap &out OUT_BLE>,
+        <&macro_param_1to1>,
+        <&macro_tap &bt BT_SEL MACRO_PLACEHOLDER>;
 };
