@@ -203,3 +203,18 @@
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
+
+// Bluetooth macros
+
+btt: switch_to_bluetooth_and_force_output_to_bluetooth { // This makes it possible to switch to another bluetooth device while connected to charge
+    compatible = "zmk,behavior-macro-one-param";
+    label = "tog_layer/cancel";
+    wait-ms = <0>;
+    tap-ms = <0>;
+    #binding-cells = <1>;
+    bindings =
+        <&macro_tap>,
+        <&out OUT_BLE &macro_param_1to1>,
+        <&macro_tap>,
+        <&bt BT_SEL MACRO_PLACEHOLDER>;
+};
