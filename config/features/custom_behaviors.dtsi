@@ -208,7 +208,7 @@
 
 btt: switch_to_bluetooth_and_force_output_to_bluetooth { // This makes it possible to switch to another bluetooth device while connected to charge
     compatible = "zmk,behavior-macro-one-param";
-    label = "tog_layer/cancel";
+    label = "btt";
     wait-ms = <0>;
     tap-ms = <0>;
     #binding-cells = <1>;
