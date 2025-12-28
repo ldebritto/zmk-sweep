@@ -203,3 +203,30 @@
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
+
+// Customized NUM hold-taps to cancel on tap
+    num_shift: num_shift { // &tc NUM on tap and &to DEF + &kp RSHIFT on hold so I can capitalize myself out of &num_word or &tc NUM (useful for starting a new field on a form)
+        compatible = "zmk,behavior-hold-tap";
+        label = "NUM_SHIFT";
+        bindings = <&num_shift_macro>, <&tc>;
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <HOLD_TAP_TERM>;
+        hold-trigger-on-release;
+        quick-tap-ms = <QUICK_TAP>;
+        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+    };
+    #define NUMSHIFT &num_shift 0 NUM
+
+    cl: tc_on_tap_lc_on_hold {
+      compatible = "zmk,behavior-hold-tap";
+        label = "CANCEL_LAYER";
+        bindings = <&lc>, <&tc>;
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <HOLD_TAP_TERM>;
+        hold-trigger-on-release;
+        quick-tap-ms = <QUICK_TAP>;
+        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+    };
+    #define NUMNAV &cl NAV NUM
