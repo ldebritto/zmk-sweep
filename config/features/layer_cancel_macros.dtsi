@@ -28,7 +28,7 @@ tc: to_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mo
         <&tog MACRO_PLACEHOLDER>;
 };
 
-num_spc: num_spc { // This workaroung adds a K_CANCEL before SPACE to cancel &num_word, but still keeps NUM alive if it's been toggled from &tc NUM
+num_spc: num_spc { // Adds a K_CANCEL before SPACE to exit NUM layer from &num_word, but keep NUM alive if it's been &tc'd or used a SPC macro like in &reais R$ 
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>; // Must be 0
     wait-ms = <0>;

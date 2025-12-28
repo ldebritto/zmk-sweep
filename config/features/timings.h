@@ -3,7 +3,7 @@
 // Hold-taps
     #define HOLD_TAP_TERM 280
     #define QUICK_TAP 200
-    #define REQUIRE_PRIOR_IDLE 250
+    #define HOLD_REQUIRE_PRIOR_IDLE 250
     
 // Tap Dance
     #define TAP_DANCE_TERM 300
