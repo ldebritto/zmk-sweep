@@ -78,10 +78,10 @@
 
         SYM {
             bindings = <
-  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT          &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR         &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-  &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT             &kp UNDER &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
-                                          &trans    &mt RSHFT UNDER    &kp PIPE  &trans 
+  &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR      &kp PRCNT          &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
+  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE     &kp DOLLAR         &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH      &kp AT             &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
+                                          &lt NAV UNDER &mt RSHFT UNDER    &trans    &trans
             >;
         };
 
@@ -98,7 +98,7 @@
             bindings = <
   &desktop_quit   &expose_close &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL       &kp LALT      &kp LSHFT       &kp LGUI      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &mt GLOBE LG(Z) &kp LG(X)     &kp LG(C)       &kp LG(V)     &kp F18       &kp LG(LS(N4))  &mkp MCLK       &mkp MB4        &mkp MB5        &to DEF
+  &mt GLOBE LG(Z) &kp LG(X)     &kp LG(C)       &kp LG(V)     &kp F18       &tc MOU         &mkp MCLK       &mkp MB4        &mkp MB5        &to DEF
                                                 &tc MOU       &tc MOU       &mkp LCLK       &mkp RCLK            
             >;          
         };
