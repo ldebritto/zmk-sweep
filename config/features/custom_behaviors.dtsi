@@ -230,3 +230,12 @@
         require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
     };
     #define NUMNAV &cl NAV DEF
+
+    btbt: bluetooth_toggles {
+      compatible = "zmk,behavior-hold-tap";
+        label = "BLUETOOTH_TOGGLES";
+        bindings = <&bt>, <&bt>;
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <3000>; // 3 seconds to avoid accidental long-presses
+    };
