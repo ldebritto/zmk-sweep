@@ -2,7 +2,7 @@ This 34-key keymap was heavily inspired by @Callum's [QMK keymap](https://github
 
 # My use case and layer design choices
 
-Its main use is writing prose, in both English and Portuguese, using both macOS and iPadOS. I'm a lawyer and a professor who likes to pretend I can code as well.
+Its main use is writing prose, in both English and Portuguese, using both macOS and iPadOS. I'm a lawyer and a professor who likes to pretend I can code as well. It also includes dedicated layers for gaming (Age of Empires 2) with one-handed controls.
 
 I use it on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano) and also on a Totem (I simply don't use the extra 4 keys there, here's that [repo](https://github.com/ldebritto/zmk-config-totem)).
 
@@ -27,7 +27,7 @@ Here's what's currently implemented:
 - `^`, `` ` ``, and `~` sit on home row for comfortable accented vowels.
 - Braces/parentheses are mirrored (open on the left, close on the right), and both slashes are mirrored too.
 - Shifted prose punctuation (`"` and `:`) is here for single-hand access with `&lc SYM`.
-- Common Markdown symbols (`#`, `*`, `_`, `|`) stay near home. The thumb on `SYM` also offers `&tog NUM`.
+- Common Markdown symbols (`#`, `*`, `|`) stay near home, with `_` (underscore) positioned on the left thumb for easy access with layer-tap to `NAV`.
 
 ## 4. `NUM` layer for right-hand numpad work and `&num_word`
 
@@ -55,7 +55,16 @@ Here's what's currently implemented:
 - Toggles: `LM2 + LIT` for `NAV`, `RM2 + RIT` for `NUM`, `LM0 + LM1 + LM2 + LM3` for `MOU`, and `LM2 + RM2` for `caps_word`. A four-finger right-hand chord powers down the board.
 - On `FUN`, combos handle Bluetooth profile selection (0–2), bootloader, and clearing the active profile.
 
-## 8. ZMK modules required
+## 8. Age of Empires 2 layers
 
-- [tri-state](https://github.com/urob/zmk-tri-state) (used by `&swapper`) as referenced in `config/west.yml`.
-- Everything else runs on core ZMK; no auto-layer module is needed. Mouse support is enabled via `CONFIG_ZMK_POINTING` in `config/cradio.conf`.
+- Three dedicated layers (`AOE`, `AGS`, `ABS`) for gaming, accessible via combos from the default layer.
+- `AOE` layer provides left-hand gaming layout with standard QWERTY positioning and mod-taps optimized for RTS gameplay.
+- `AGS` layer (Army Group Select) offers quick number access (1-0) for control groups and additional shortcuts, accessible by holding `H` on the `AOE` layer.
+- `ABS` layer (Army Build Select) provides quick access to unit building hotkeys (`Ctrl+Shift+[letter]`) commonly used in Age of Empires 2, accessible by holding `B` or `.` on the `AOE` layer.
+- Volume controls, delete, and media keys are available on the `AGS` layer for in-game adjustments without leaving the gaming position.
+
+## 9. ZMK modules required
+
+- [tri-state](https://github.com/urob/zmk-tri-state) (used by `&swapper`) as referenced in [config/west.yml](config/west.yml).
+- [zmk-auto-layer](https://github.com/urob/zmk-auto-layer) module is included in [config/west.yml](config/west.yml) for `&num_word`.
+- Everything else runs on core ZMK. Mouse support is enabled via `CONFIG_ZMK_POINTING` in [config/cradio.conf](config/cradio.conf).
