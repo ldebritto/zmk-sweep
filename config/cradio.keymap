@@ -26,7 +26,7 @@
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
 
-#include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
+// #include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
 
 / {
     combos { 
