@@ -55,7 +55,7 @@ sd_tilde: shift_dead_tilde {
 sd_circ: shift_dead_circ {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
-        bindings = <&kp CIRC>, <&shifted_punctuation CIRC>;
+        bindings = <&kp CARET>, <&shifted_punctuation CARET>;
 
         mods = <(MOD_LSFT)>;
     };
