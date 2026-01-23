@@ -30,3 +30,39 @@ triple0: triple0 {
         <&macro_tap &kp N0>,
         <&macro_tap &kp N0>;
 };
+
+shifted_punctuation: shifted_punctuation { // Adds a &sk shift after the corresponding dead key
+    compatible = "zmk,behavior-macro-one-param";
+    label = "shifted_punctuation";
+    wait-ms = <0>;
+    tap-ms = <0>;
+    #binding-cells = <1>;
+    bindings =
+        <&macro_tap>,
+        <&macro_param_1to1>,
+        <&kp MACRO_PLACEHOLDER>,
+        <&sk LSHFT>;
+};
+
+sd_tilde: shift_dead_tilde {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp TILDE>, <&shifted_punctuation TILDE>;
+
+        mods = <(MOD_LSHFT)>;
+    };
+
+sd_circ: shift_dead_circ {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp CIRC>, <&shifted_punctuation CIRC>;
+
+        mods = <(MOD_LSHFT)>;
+    };
+sd_grave: shift_dead_grave {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp GRAVE>, <&shifted_punctuation GRAVE>;
+
+        mods = <(MOD_LSHFT)>;
+    };
