@@ -75,9 +75,9 @@
 
         NAV {
             bindings = <
-  &kp TAB         &swapper  &kp LC(LS(TAB)) &kp LC(TAB)     &kp LG(RBKT)    &kp PG_UP   &kp HOME  &kp UP    &kp END   &kp BSPC
-  &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI        &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
-  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &lt MOU LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL
+  &kp TAB         &swapper  &kp LC(LS(TAB)) &kp LC(TAB)     &kp LG(RBKT)    &kp PG_UP   &kp BSPC  &kp UP    &kp DEL   &kp HOME
+  &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI        &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp END
+  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &lt MOU LG(V)   &kp F18         &playnp     &kp RET
                                             &tc NAV         &tc NAV         &trans      &trans 
             >;
         };
