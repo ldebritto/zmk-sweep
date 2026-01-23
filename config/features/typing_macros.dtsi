@@ -49,7 +49,7 @@ sd_tilde: shift_dead_tilde {
         #binding-cells = <0>;
         bindings = <&kp TILDE>, <&shifted_punctuation TILDE>;
 
-        mods = <(MOD_LSHFT)>;
+        mods = <(MOD_LSFT)>;
     };
 
 sd_circ: shift_dead_circ {
@@ -57,12 +57,12 @@ sd_circ: shift_dead_circ {
         #binding-cells = <0>;
         bindings = <&kp CIRC>, <&shifted_punctuation CIRC>;
 
-        mods = <(MOD_LSHFT)>;
+        mods = <(MOD_LSFT)>;
     };
 sd_grave: shift_dead_grave {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp GRAVE>, <&shifted_punctuation GRAVE>;
 
-        mods = <(MOD_LSHFT)>;
+        mods = <(MOD_LSFT)>;
     };
