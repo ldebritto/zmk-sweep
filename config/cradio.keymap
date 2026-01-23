@@ -26,7 +26,7 @@
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
 
-// #include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
+#include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
 
 / {
     combos { 
@@ -85,7 +85,7 @@
         SYM {
             bindings = <
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR      &kp PRCNT          &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-  &kp MINUS         &sd_circ   &sd_grave  &sd_tilde     &kp DOLLAR         &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp MINUS         &sd_caret   &sd_grave  &sd_tilde     &kp DOLLAR         &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH      &kp AT             &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON
                                           &lt NAV UNDER &mt RSHFT UNDER    &trans    &trans
             >;
