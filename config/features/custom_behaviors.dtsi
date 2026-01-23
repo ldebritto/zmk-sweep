@@ -136,6 +136,16 @@
         quick-tap-ms = <QUICK_TAP>;
     };
 
+    tht: thumb_hold_tap { // trying to get this to work with a thumb shift with space
+        compatible = "zmk,behavior-hold-tap";
+        label = "SHIFT_THT";
+        bindings = <&kp>, <&kp>;
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <HOLD_TAP_TERM>;
+        quick-tap-ms = <QUICK_TAP>;
+    };
+
 // Customized balanced layer-tap
 
     ltl: better_layer_tap_left { // urob's logic but for a layer-tap on left hand
@@ -166,7 +176,7 @@
         require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
     };
 
-    blt: better_layer_tap { // urob's logic but for a layer-tap on right hand
+    blt: better_layer_tap { // trying to get this to work with a thumb shift
         compatible = "zmk,behavior-hold-tap";
         label = "BLT";
         bindings = <&lc>, <&kp>;
@@ -176,7 +186,7 @@
         quick-tap-ms = <QUICK_TAP>;
     };
 
-// Customized hold-tap for toggling layers on tap and holding on hold, used on home row mods for HYPR on hold
+    // Customized hold-tap for toggling layers on tap and holding on hold, used on home row mods for HYPR on hold
     kptcl: toggle_layer_on_tap_left { // urob's logic but for a layer-tap on left hand
         compatible = "zmk,behavior-hold-tap";
         label = "KPTC_L";
