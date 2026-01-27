@@ -83,8 +83,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HRML";
         bindings = <&kp>, <&kp>;
-
         #binding-cells = <2>;
+        // here's the magic
         hold-trigger-key-positions = <RIGHT_SIDE_KEYS THUMB_KEYS>;
         flavor = "balanced";
         tapping-term-ms = <HOLD_TAP_TERM>;
@@ -97,8 +97,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HRMR";
         bindings = <&kp>, <&kp>;
-
         #binding-cells = <2>;
+        // here's the magic
         flavor = "balanced";
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
