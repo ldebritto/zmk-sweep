@@ -3,12 +3,10 @@
 // Hold-taps
     #define HOLD_TAP_TERM 280
     #define QUICK_TAP 200
-    #define HOLD_REQUIRE_PRIOR_IDLE 250
+    #define REQUIRE_PRIOR_IDLE 250 // Also used for combos
     
 // Tap Dance
     #define TAP_DANCE_TERM 300
 
 // Combos
     #define SHORT_COMBO_TIMEOUT 60  // Default timeout for combos in ms
-    #define LONG_COMBO_TIMEOUT 150  // Long timeout for four-finger combos in ms
-    #define COMBO_REQUIRE_PRIOR_IDLE 250

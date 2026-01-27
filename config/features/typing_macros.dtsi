@@ -31,6 +31,8 @@ triple0: triple0 {
         <&macro_tap &kp N0>;
 };
 
+// sd_ macros make it possible to make dead keys that, when shifted, apply shift to the next key making it far more convenient to type capital accented letters with a sticky shift
+
 shifted_punctuation: shifted_punctuation { // Adds a &sk shift after the corresponding dead key
     compatible = "zmk,behavior-macro-one-param";
     label = "shifted_punctuation";

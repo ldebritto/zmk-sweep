@@ -90,7 +90,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     hrmr: hrmr { // urob's home row mods right
@@ -104,7 +104,7 @@
         hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
 
@@ -159,7 +159,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     ltr: better_layer_tap_right { // urob's logic but for a layer-tap on right hand
@@ -173,7 +173,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     blt: better_layer_tap { // trying to get this to work with a thumb shift
@@ -198,7 +198,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     kptcr: toggle_layer_on_tap_right { // urob's logic but for a layer-tap on right hand
@@ -212,7 +212,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     num_shift: num_shift { // &tc NUM on tap and &to DEF + &kp RSHIFT on hold so I can capitalize myself out of &num_word or &tc NUM (useful for starting a new field on a form)
@@ -224,7 +224,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
     #define NUMSHIFT &num_shift 0 NUM
 
@@ -237,6 +237,6 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
     #define NUMNAV &cl NAV DEF
