@@ -9,4 +9,4 @@
     #define TAP_DANCE_TERM 300
 
 // Combos
-    #define SHORT_COMBO_TIMEOUT 60  // Default timeout for combos in ms
+    #define COMBO_TIMEOUT 60  // Default timeout for combos in ms
