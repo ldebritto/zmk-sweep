@@ -32,12 +32,12 @@
   delay-ms = <0>;                       // 0
 };
 
-// &mmv_input_listener {
-//     precision {
-//         layers = <SYM>;
-//         input-processors = <&zip_xy_scaler 1 3>;
-//     };
-// };
+&mmv_input_listener {
+    precision {
+        layers = <NAV>;
+        input-processors = <&zip_xy_scaler 1 3>;
+    };
+};
 
 // &msc_input_listener {
 //     turbo {
