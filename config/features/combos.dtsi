@@ -29,8 +29,8 @@ COMBO(num_word,             &num_word NUM,              RM2 RIT,          DEF NU
 COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,              NAV         MOU,      COMBO_TIMEOUT) // Useful for panning in some programs with the right hand on the mouse
 
 // SYS combos to connect to BT devices from FUN layer
-COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,                          FUN,          COMBO_TIMEOUT) // Currently paired to MacBook
-COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               LM3 LM4,                          FUN,          COMBO_TIMEOUT) // Currently paired to iPad
+COMBO(sys_connect_to_bt0,   &mac,                       LT3 LT4,                          FUN,          COMBO_TIMEOUT) // Currently paired to MacBook
+COMBO(sys_connect_to_bt1,   &ipad,                      LM3 LM4,                          FUN,          COMBO_TIMEOUT) // Currently paired to iPad
 COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               LB3 LB4,                          FUN,          COMBO_TIMEOUT) // Open to connect to any other device
 COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                          FUN,          COMBO_TIMEOUT) // Hard resets the left half only (see https://zmk.dev/docs/keymaps/combos#advanced-usage on why there's no way to combo for a right half hard reset)
 COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                          FUN,          COMBO_TIMEOUT) // Unpairs from currently active bt profile
