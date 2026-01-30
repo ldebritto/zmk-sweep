@@ -30,7 +30,7 @@ tc: to_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mo
 
 fnmod: fn_globe_as_a_mod_for_ipad_usage {
     compatible = "zmk,behavior-macro-one-param";
-    label = "tog_layer/cancel";
+    label = "fn_globe_as_a_mod";
     wait-ms = <10>;
     tap-ms = <20>;
     #binding-cells = <1>;
