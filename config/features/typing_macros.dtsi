@@ -71,16 +71,6 @@ sd_grave: shift_dead_grave {
 
 // ipad mac DEF layer switches
 
-ipad: to_ipad { // switches to the IPAD layer and connects to BT1 (iPad)
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>; // Must be 0
-    wait-ms = <20>;
-    tap-ms = <15>;
-    bindings = 
-        <&macro_tap &to IPAD>,
-        <&macro_tap &bt BT1>;
-};
-
 mac: to_mac { // switches to the MAC layer and connects to BT2 (Mac)
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>; // Must be 0
@@ -88,5 +78,15 @@ mac: to_mac { // switches to the MAC layer and connects to BT2 (Mac)
     tap-ms = <15>;
     bindings = 
         <&macro_tap &to DEF>,
-        <&macro_tap &bt BT0>;
+        <&macro_tap &bt BT_SEL 0>;
+};
+
+ipad: to_ipad { // switches to the IPAD layer and connects to BT1 (iPad)
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>; // Must be 0
+    wait-ms = <20>;
+    tap-ms = <15>;
+    bindings = 
+        <&macro_tap &to IPAD>,
+        <&macro_tap &bt BT_SEL 1>;
 };
