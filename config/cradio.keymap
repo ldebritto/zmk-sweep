@@ -100,10 +100,10 @@
         
         INAV { // Same as NAV but with useful iPad navigation keys for shortctus wiigh GLOBE
             bindings = <
-  &trans &trans &trans &trans &trans    &trans &trans   &trans &trans &trans
-  &trans &trans &trans &trans &trans    &trans &trans   &trans &trans &trans
-  &trans &trans &trans &trans &fngrvsw  &trans &kp BSLH &trans &trans &trans
-                       &trans &trans    &trans &trans
+  &trans &trans &trans &trans &trans        &trans &trans   &trans &trans &trans
+  &trans &trans &trans &trans &trans        &trans &trans   &trans &trans &trans
+  &trans &trans &trans &trans &fnmod GRAVE  &trans &kp BSLH &trans &trans &trans
+                       &trans &trans        &trans &trans
             >;
         };
 
