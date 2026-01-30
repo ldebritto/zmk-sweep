@@ -3,19 +3,21 @@
 #include <dt-bindings/zmk/keys.h>
 
 // Layer and key defines to improve readability
-#define DEF 0
-#define NUM 1
-#define NAV 2 
-#define SYM 3
-#define FUN 4
-#define MOU 5 // also great for one-handed use with a mouse on the right hand
+#define DEF  0
+#define IPAD 1 // iPad optimized layer switch
+#define NUM  2
+#define NAV  3
+#define INAV 4 // iPad optimized keys for F18 and F19 positions
+#define SYM  5
+#define FUN  6
+#define MOU  7 // also great for one-handed use with a mouse on the right hand
 
 #define HYPR LG(LS(LC(LALT))) // shorthand for HYPER key hold-tap on G and H keys
 
 // AOE layers
-#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 7
-#define ABS 8
+#define AOE 8 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 9
+#define ABS 10
 
 
 // These includes allow for easier maintenance and readability between different keymaps
@@ -50,6 +52,11 @@
             then-layer = <FUN>;
         };
 
+        ipad_nav {
+            if-layers = <IPAD NAV>;
+            then-layer = <INAV>;
+        };
+
     };
 
     keymap {
@@ -61,6 +68,15 @@
   &hrml LCTRL A  &hrml LALT S   &shrml LSHFT D &hrml LGUI F &hrml HYPR G    &hrmr HYPR H    &hrmr RGUI J   &shrmr LSHFT K  &hrmr RALT L    &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X          &ltl NUM C    &ltl MOU V    &kp B           &kp N           &kp M          &kp COMMA       &kp DOT         &kp SEMI
                                               &lc NAV       &kp RSHFT       &kp SPC         &lc SYM
+            >;
+        };
+
+        IPAD_DEF { // Same as DEF but used for tri-layer on iPad
+            bindings = <
+  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                       &trans &trans &trans &trans
             >;
         };
 
@@ -79,6 +95,15 @@
   &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI        &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
   &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &lt MOU LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL
                                             &trans          &tc NAV         &trans      &trans 
+            >;
+        };
+        
+        INAV { // Same as NAV but with useful iPad navigation keys for shortctus wiigh GLOBE
+            bindings = <
+  &trans &trans &trans &trans &trans    &trans &trans   &trans &trans &trans
+  &trans &trans &trans &trans &trans    &trans &trans   &trans &trans &trans
+  &trans &trans &trans &trans &fngrvsw  &trans &kp BSLH &trans &trans &trans
+                       &trans &trans    &trans &trans
             >;
         };
 

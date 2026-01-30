@@ -10,6 +10,24 @@
     // Keys ignored by the swapper for CMD+TAB behavior
     #define SWAPPER_IGNORED_KEYS RT2 RM1 RM2 RM3 RT4 RM4 RB4 // Arrows, BSPC, ENTER and DEL for alt-tab movement and window/app controls
 
+// Swapper for Apple's CMD+TAB behavior
+
+    swapper: swapper_for_apple_cmd_tab {
+        compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
+        #binding-cells = <0>;
+        bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
+
+        ignored-key-positions = <SWAPPER_IGNORED_KEYS>;
+    };
+    
+    fngrvsw: swapper_for_ipad_fn_grave_switch { // this switches between windows opened on the same stage on Mission Control
+        compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
+        #binding-cells = <0>;
+        bindings = <&kt GLOBE>, <&kp GRAVE>, <&kt GLOBE>;
+
+        ignored-key-positions = <>;            // no need for these in this command
+    };
+
 // Media controls
 
     playnp: play_next_previous_media_key { 
@@ -36,16 +54,6 @@
         bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
 
         mods = <(MOD_LCTL)>;
-    };
-
-// Swapper for Apple's CMD+TAB behavior
-
-    swapper: swapper_for_apple_cmd_tab {
-        compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
-        #binding-cells = <0>;
-        bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
-
-        ignored-key-positions = <SWAPPER_IGNORED_KEYS>;
     };
 
 // mou mod-morphs to allow closing windows and quitting apps from MOU
