@@ -11,29 +11,29 @@ combo_##NAME { \
 };
 
 // These make the keyboard more accessible for one-handed use and to avoid the need to hold layer keys for very long
-COMBO(left_esc,             &kp ESCAPE,                 LT1 LT2 LT3,      DEF     NAV         MOU,      COMBO_TIMEOUT) // ESC is the only combo that moves to NAV since there's no ESC key there
-COMBO(left_tab,             &kp TAB,                    LT1     LT3,      DEF                 MOU,      COMBO_TIMEOUT) // MOU gets this since its TAB key position untoggles the layer
-COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,      DEF                 MOU,      COMBO_TIMEOUT) // MOU gets this since there's no ENTER key assigned in the left hand
-COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1     LM3,      DEF                 MOU,      COMBO_TIMEOUT) // MOU gets this since there's no BSPC key assigned in the left hand
+COMBO(left_esc,             &kp ESCAPE,                 LT1 LT2 LT3,      DEF IPAD NAV         MOU,      COMBO_TIMEOUT) // ESC is the only combo that moves to NAV since there's no ESC key there
+COMBO(left_tab,             &kp TAB,                    LT1     LT3,      DEF IPAD             MOU,      COMBO_TIMEOUT) // MOU gets this since its TAB key position untoggles the layer
+COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,      DEF IPAD             MOU,      COMBO_TIMEOUT) // MOU gets this since there's no ENTER key assigned in the left hand
+COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1     LM3,      DEF IPAD             MOU,      COMBO_TIMEOUT) // MOU gets this since there's no BSPC key assigned in the left hand
 
-COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,      DEF NUM             MOU,      COMBO_TIMEOUT) // NUM also gets these to make it possible to use with only the right hand
-COMBO(right_tab,            &kp TAB,                    RT1     RT3,      DEF NUM             MOU,      COMBO_TIMEOUT) // Having ESC and TAB in MOU is also a good thing for one-handed use
-COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF NUM                ,      COMBO_TIMEOUT) // These are already available in MOU through specific keys
-COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NUM                ,      COMBO_TIMEOUT)
+COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,      DEF IPAD NUM         MOU,      COMBO_TIMEOUT) // NUM also gets these to make it possible to use with only the right hand
+COMBO(right_tab,            &kp TAB,                    RT1     RT3,      DEF IPAD NUM         MOU,      COMBO_TIMEOUT) // Having ESC and TAB in MOU is also a good thing for one-handed use
+COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,      DEF IPAD NUM            ,      COMBO_TIMEOUT) // These are already available in MOU through specific keys
+COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF IPAD NUM            ,      COMBO_TIMEOUT)
 
 // Layer toggles and 
-COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                          COMBO_TIMEOUT) // home shift positions
-COMBO(num_word,             &num_word NUM,              RM2 RIT,          DEF NUM,                      COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
+COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF IPAD,                     COMBO_TIMEOUT) // home shift positions
+COMBO(num_word,             &num_word NUM,              RM2 RIT,          DEF IPAD NUM,                 COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
  
 // SPACE for NAV and NUM
-COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,              NAV         MOU,      COMBO_TIMEOUT) // Useful for panning in some programs with the right hand on the mouse
+COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,               NAV         MOU,      COMBO_TIMEOUT) // Useful for panning in some programs with the right hand on the mouse
 
 // SYS combos to connect to BT devices from FUN layer
-COMBO(sys_connect_to_bt0,   &mac,                       LT3 LT4,                          FUN,          COMBO_TIMEOUT) // Currently paired to MacBook
-COMBO(sys_connect_to_bt1,   &ipad,                      LM3 LM4,                          FUN,          COMBO_TIMEOUT) // Currently paired to iPad
-COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               LB3 LB4,                          FUN,          COMBO_TIMEOUT) // Open to connect to any other device
-COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                          FUN,          COMBO_TIMEOUT) // Hard resets the left half only (see https://zmk.dev/docs/keymaps/combos#advanced-usage on why there's no way to combo for a right half hard reset)
-COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                          FUN,          COMBO_TIMEOUT) // Unpairs from currently active bt profile
+COMBO(sys_connect_to_bt0,   &mac,                       LT3 LT4,                               FUN,          COMBO_TIMEOUT) // Currently paired to MacBook
+COMBO(sys_connect_to_bt1,   &ipad,                      LM3 LM4,                               FUN,          COMBO_TIMEOUT) // Currently paired to iPad
+COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               LB3 LB4,                               FUN,          COMBO_TIMEOUT) // Open to connect to any other device
+COMBO(sys_bootloader,       &bootloader,                LB0 LB1,                               FUN,          COMBO_TIMEOUT) // Hard resets the left half only (see https://zmk.dev/docs/keymaps/combos#advanced-usage on why there's no way to combo for a right half hard reset)
+COMBO(sys_clear_br_profile, &bt BT_CLR,                 RB3 RB4,                               FUN,          COMBO_TIMEOUT) // Unpairs from currently active bt profile
 
 // OS features
 COMBO(power,               &kp C_POWER,                 RT1 RT2 RT3 RT4,  DEF,                          COMBO_TIMEOUT) // shutting down

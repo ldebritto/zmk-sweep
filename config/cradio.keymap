@@ -4,10 +4,10 @@
 
 // Layer and key defines to improve readability
 #define DEF  0
-#define IPAD 1 // iPad optimized layer switch
+#define IPAD 1 // fully transparent so it's DEV but signals to the firmware that the iPad is connected so it should trigger the iPad optimized layer when NAV is active
 #define NUM  2
 #define NAV  3
-#define INAV 4 // iPad optimized keys for F18 and F19 positions
+#define INAV 4 // iPad optimized layer that uses ` and \ keys for F18 and F19 positions making it easier to trigger shortcuts window management hotkeys on iPadOS
 #define SYM  5
 #define FUN  6
 #define MOU  7 // also great for one-handed use with a mouse on the right hand
