@@ -130,7 +130,7 @@
   &desktop_quit   &expose_close &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   &kp LCTRL       &kp LALT      &kp LSHFT       &kp LGUI      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
   &mt GLOBE LG(Z) &kp LG(X)     &kp LG(C)       &kp LG(V)     &kp F18       &tc MOU         &mkp MCLK       &mkp MB4        &mkp MB5        &to DEF
-                                                &trans        &tc MOU       &mkp LCLK       &mkp RCLK            
+                                                NAV_DEF       &tc MOU       &mkp LCLK       &mkp RCLK            
             >;          
         };
 

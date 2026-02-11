@@ -72,7 +72,6 @@
         mods = <(MOD_LGUI)>;
     };
 
-
 // Layer-tap to escape from any layer to DEF on tap but still be able to reach the NAV layer on hold, useful for cancelling toggles
 
     moto: mo_to_layer {
@@ -81,9 +80,9 @@
         bindings = <&lc>, <&tc>;
         #binding-cells = <2>;
         flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
-        tapping-term-ms = <HOLD_TAP_TERM>; 
+        tapping-term-ms = <100>;  // A short tapping term makes it harder to cancel MOU by accidentally tapping the key
     };
-    #define NAV_DEF &moto NAV DEF
+    #define NAV_DEF &moto NAV DEF // activates NAV on hold and DEF on tap, can be used in place of MO(NAV) in keymap for better access to DEF when trying to cancel toggles or just for ease of access to DEF layer
 
 // Customized hold-tap definitions
 
