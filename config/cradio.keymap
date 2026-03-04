@@ -40,7 +40,7 @@
     };
 
     macros { 
-        #include "features/layer_cancel_macros.dtsi"
+        #include "features/layer_cancel_macros.dtsi" // Insert a K_CANCEL tap to disengage queued mods from layers 
         #include "features/typing_macros.dtsi"       // Typing macros for common words and phrases
     };
 
