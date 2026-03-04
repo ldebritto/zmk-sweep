@@ -22,5 +22,5 @@ include:
     shield: cradio_left
   - board: nice_nano//zmk
     shield: cradio_right
-  - board: nice_nano//zmk
-    shield: settings_reset
+  # - board: nice_nano//zmk 
+  #   shield: settings_reset # should be used for reseting both the nice_nanos before flashing a new pair
