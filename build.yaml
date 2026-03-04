@@ -24,8 +24,3 @@ include:
     shield: cradio_right
   - board: nice_nano//zmk
     shield: settings_reset
-  # Debug build: flash apenas na metade esquerda (conectada via USB) para capturar logs
-  - board: nice_nano//zmk
-    shield: cradio_left
-    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000
-    artifact-name: cradio_left_debug_logging
