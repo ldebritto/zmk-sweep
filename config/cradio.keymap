@@ -113,7 +113,7 @@
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT    &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &sd_caret  &sd_grave  &sd_tilde  &kp DOLLAR   &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH   &kp AT       &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &mt GLOBE COLON
-                                          &trans     &kp UNDER    &sl SYM   &trans
+                                          NAV_DEF    &kp UNDER    &sl SYM   SYM_DEF
             >;
         };
 

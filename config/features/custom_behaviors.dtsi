@@ -83,6 +83,7 @@
         tapping-term-ms = <100>;  // A short tapping term makes it harder to cancel the layer by accidentally tapping the key
     };
     #define NAV_DEF &moto NAV DEF // activates NAV on hold and DEF on tap, can be used in place of MO(NAV) in keymap for better access to DEF when trying to cancel toggles or just for ease of access to DEF layer
+    #define SYM_DEF &moto SYM DEF // activates SYM on hold and DEF on tap, can be used in place of MO(SYM) in keymap for better access to DEF when trying to cancel toggles or just for ease of access to DEF layer
 
 // Customized hold-tap definitions
 
