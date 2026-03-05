@@ -95,7 +95,7 @@
   &kp TAB         &swapper  &kp LC(LS(TAB)) &kp LC(TAB)     &kp LG(RBKT)    &kp PG_UP   &kp HOME  &kp UP    &kp END   &kp BSPC
   &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI        &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
   &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &lt MOU LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL 
-                                            &trans          &tog NAV        &trans      &trans 
+                                            NAV_DEF         &tog NAV        &trans      &trans 
             >; // F18 and F19 are here for triggering macros and shortcuts on macOS without interfering with normal usage on other keys
         };
         
