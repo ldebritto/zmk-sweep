@@ -2,7 +2,7 @@ This 34-key keymap was heavily inspired by @Callum's [QMK keymap](https://github
 
 # My use case and layer design choices
 
-Its main use is writing prose, in both English and Portuguese, using both macOS and iPadOS. I'm a lawyer and a professor who likes to pretend I can code as well. It also includes dedicated layers for gaming (Age of Empires 2) with one-handed controls.
+Its main use is writing prose, in both English and Portuguese, using both macOS and OS. I'm a lawyer and a professor who likes to pretend I can code as well. It also includes dedicated layers for gaming (Age of Empires 2) with one-handed controls.
 
 I use it on a [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) with [nice!nanos v2](https://nicekeyboards.com/nice-nano) and also on a Totem (I simply don't use the extra 4 keys there, here's that [repo](https://github.com/ldebritto/zmk-config-totem)).
 

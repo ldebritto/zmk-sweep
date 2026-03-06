@@ -28,7 +28,7 @@ tc: to_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mo
         <&to MACRO_PLACEHOLDER>; // uses to, instad of toggle as the only use I have for this is to get a back to DEF layer on tap from MOU and NAV
 };
 
-fnmod: fn_globe_as_a_mod_for_ipad_usage {
+fnmod: fn_globe_as_a_mod_for__usage {
     compatible = "zmk,behavior-macro-one-param";
     label = "fn_globe_as_a_mod";
     wait-ms = <10>;

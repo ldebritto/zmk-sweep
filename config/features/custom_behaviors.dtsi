@@ -1,5 +1,3 @@
-// Variables for easier tweak of timeouts and behaviors
-
 // Key references for custom behaviors using x_keypos.dtsi naming scheme
 
     // Key groups for home row mods and layer-taps
@@ -18,14 +16,6 @@
         bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
 
         ignored-key-positions = <SWAPPER_IGNORED_KEYS>;
-    };
-    
-    fngrvsw: swapper_for_ipad_fn_grave_switch { // this switches between windows opened on the same stage on Mission Control
-        compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
-        #binding-cells = <0>;
-        bindings = <&kt GLOBE>, <&kp GRAVE>, <&kt GLOBE>;
-
-        ignored-key-positions = <>;            // no need for these in this command
     };
 
 // Media controls
@@ -71,19 +61,6 @@
         bindings = <&kp F11>, <&kp LG(Q)>;
         mods = <(MOD_LGUI)>;
     };
-
-// Layer-tap to escape from any layer to DEF on tap but still be able to reach the NAV layer on hold, useful for cancelling toggles
-
-    moto: lc_tc_layer {
-        compatible = "zmk,behavior-hold-tap";
-        label = "MTL";
-        bindings = <&lc>, <&tc>;
-        #binding-cells = <2>;
-        flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
-        tapping-term-ms = <100>;  // A short tapping term makes it harder to cancel the layer by accidentally tapping the key
-    };
-    #define NAV_DEF &moto NAV DEF // activates NAV on hold and DEF on tap, can be used in place of MO(NAV) in keymap for better access to DEF when trying to cancel toggles or just for ease of access to DEF layer
-    #define SYM_DEF &moto SYM DEF // activates SYM on hold and DEF on tap, can be used in place of MO(SYM) in keymap for better access to DEF when trying to cancel toggles or just for ease of access to DEF layer
 
 // Customized hold-tap definitions
 
@@ -144,16 +121,6 @@
         quick-tap-ms = <QUICK_TAP>;
     };
 
-    tht: thumb_hold_tap { // trying to get this to work with a thumb shift with space
-        compatible = "zmk,behavior-hold-tap";
-        label = "SHIFT_THT";
-        bindings = <&kp>, <&kp>;
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-        quick-tap-ms = <QUICK_TAP>;
-    };
-
 // Customized balanced layer-tap
 
     ltl: better_layer_tap_left { // urob's logic but for a layer-tap on left hand
@@ -163,59 +130,6 @@
 
         #binding-cells = <2>;
         hold-trigger-key-positions = <RIGHT_SIDE_KEYS THUMB_KEYS>;
-        flavor = "balanced";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-        hold-trigger-on-release;
-        quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
-    };
-
-    ltr: better_layer_tap_right { // urob's logic but for a layer-tap on right hand
-        compatible = "zmk,behavior-hold-tap";
-        label = "LTR";
-        bindings = <&lc>, <&kp>;
-
-        #binding-cells = <2>;
-        hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
-        flavor = "balanced";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-        hold-trigger-on-release;
-        quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
-    };
-
-    blt: better_layer_tap { // trying to get this to work with a thumb shift
-        compatible = "zmk,behavior-hold-tap";
-        label = "BLT";
-        bindings = <&lc>, <&kp>;
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-        quick-tap-ms = <QUICK_TAP>;
-    };
-
-    // Customized hold-tap for toggling layers on tap and holding on hold, used on home row mods for HYPR on hold
-    kptcl: toggle_layer_on_tap_left { // urob's logic but for a layer-tap on left hand
-        compatible = "zmk,behavior-hold-tap";
-        label = "KPTC_L";
-        bindings = <&kp>, <&tc>;
-
-        #binding-cells = <2>;
-        hold-trigger-key-positions = <RIGHT_SIDE_KEYS THUMB_KEYS>;
-        flavor = "balanced";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-        hold-trigger-on-release;
-        quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
-    };
-
-    kptcr: toggle_layer_on_tap_right { // urob's logic but for a layer-tap on right hand
-        compatible = "zmk,behavior-hold-tap";
-        label = "KPTC_R";
-        bindings = <&kp>, <&tc>;
-
-        #binding-cells = <2>;
-        hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
         flavor = "balanced";
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
