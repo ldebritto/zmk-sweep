@@ -50,11 +50,6 @@
             then-layer = <FUN>;
         };
 
-        _nav {
-            if-layers = < NAV>;
-            then-layer = <INAV>;
-        };
-
     };
 
     keymap {
@@ -90,7 +85,7 @@
         SYM {
             bindings = <
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT    &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
-  &kp MINUS         &sd_caret  &sd_grave  &sd_tilde  &kp DOLLAR   &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+  &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR   &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH   &kp AT       &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &mt GLOBE COLON
                                           &trans     &kp UNDER    &sl SYM   &trans
             >;
@@ -114,7 +109,6 @@
             >;          
         };
 
-
         AOE {
             bindings = <
   &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
@@ -126,22 +120,20 @@
 
         AGS {
             bindings = <
-&kp N1        &kp N2       &kp N3       &kp N4        &kp N5     &trans     &trans  &trans  &trans  &kp BSPC
-&mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp N0     &trans     &trans  &trans  &trans  &kp ENTER
-&kp DEL       &none        &none        &kp DOT       &kp COMMA  &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3
+  &kp N1        &kp N2       &kp N3       &kp N4        &kp N5     &trans     &trans  &trans  &trans  &kp BSPC
+  &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp N0     &trans     &trans  &trans  &trans  &kp ENTER
+  &kp DEL       &none        &none        &kp DOT       &kp COMMA  &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3
                                         &trans        &kp DEL    &trans     &trans 
             >;
         };
 
         ABS {
             bindings = <
-&kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-&kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-&kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
+  &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
                                                 &kp LC(LS(H))   &trans           &trans  &trans
             >;
         };
-
-
     };
 };
