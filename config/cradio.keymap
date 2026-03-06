@@ -22,10 +22,9 @@
 #include "features/sweep_keypos.h"                  // Key positions naming scheme for 34 keys keymaps (useful to make combos and behaviors code interoperable between different keyboards)
 
 // Features and customizations (all these .dtsi files are shared with Totem repo)
-#include "features/timings.h"                       // Timing definitions for hold-tap and combos
+#include "features/timings.h"                       // Timing definitions for hold-taps and combos
 #include "features/core_behaviors_overrides.dtsi"   // Overriding defaults from core behaviors
 #include "features/mouse.dtsi"                      // Requires layer defines above since it uses NAV as input processor
-
 #include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
 
 / {
@@ -102,10 +101,10 @@
 
         MOU {
             bindings = <
-  &desktop_quit   &expose_close &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  &kp LCTRL       &kp LALT      &kp LSHFT       &kp LGUI      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-  &mt GLOBE LG(Z) &kp LG(X)     &kp LG(C)       &kp LG(V)     &kp F18       &playnp         &mkp MCLK       &mkp MB4        &mkp MB5        &to DEF
-                                                &tog MOU      &tog MOU      &mkp LCLK       &mkp RCLK            
+  &kp F11         &kp LC(UP) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+  &kp LCTRL       &kp LALT   &kp LSHFT       &kp LGUI      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &mt GLOBE LG(Z) &kp LG(X)  &kp LG(C)       &kp LG(V)     &kp F18       &playnp         &mkp MCLK       &mkp MB4        &mkp MB5        &to DEF
+                                             &tog MOU      &tog MOU      &mkp LCLK       &mkp RCLK            
             >;          
         };
 
