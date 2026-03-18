@@ -19,14 +19,6 @@
         ignored-key-positions = <SWAPPER_IGNORED_KEYS>;
     };
 
-    // swapper: swapper_for_aerospace_navswapper_mode {
-    //     compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
-    //     #binding-cells = <0>;
-    //     bindings = <&canc_f17>, <&none>, <&canc_f17>;
-
-    //     ignored-key-positions = <AEROSPACE_IGNORED_KEYS>;
-    // };
-
 // Media controls
 
     playnp: play_next_previous_media_key { 

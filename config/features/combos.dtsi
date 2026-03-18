@@ -23,6 +23,7 @@ COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1 RM3,           DEF N
 
 COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,           DEF,                 COMBO_TIMEOUT)
 COMBO(num_word,             &num_word NUM,              RM2 RIT,           DEF NUM,             COMBO_TIMEOUT)
+COMBO(mouse_on_thumbs,      &lc MOU,                    LIT LHT,           DEF,                 COMBO_TIMEOUT)
 
 COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,       NAV MOU,             COMBO_TIMEOUT)
 
