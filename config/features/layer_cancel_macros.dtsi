@@ -15,19 +15,6 @@ lc: mo_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mo
         <&mo MACRO_PLACEHOLDER>;
 };
 
-tc: to_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mods_on_layer_activation {
-    compatible = "zmk,behavior-macro-one-param";
-    label = "tog_layer/cancel";
-    wait-ms = <0>;
-    tap-ms = <0>;
-    #binding-cells = <1>;
-    bindings =
-        <&macro_tap>,
-        <&kp K_CANCEL &macro_param_1to1>,
-        <&macro_press>,
-        <&to MACRO_PLACEHOLDER>; // uses to, instad of toggle as the only use I have for this is to get a back to DEF layer on tap from MOU and NAV
-};
-
 num_spc: num_spc { // Adds a K_CANCEL before SPACE to exit NUM layer from &num_word, but keep NUM alive if it's been &tc'd or used a SPC macro like in &reais R$ 
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>; // Must be 0
@@ -36,14 +23,4 @@ num_spc: num_spc { // Adds a K_CANCEL before SPACE to exit NUM layer from &num_w
     bindings = 
         <&macro_tap &kp K_CANCEL>,
         <&macro_tap &kp SPC>;
-};
-
-canc_f17: canc_f17 { // Adds a K_CANCEL before F17 to help cancelling queued mods before activating aerospace navswapper mode
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>; // Must be 0
-    wait-ms = <0>;
-    tap-ms = <0>;
-    bindings = 
-        <&macro_tap &kp K_CANCEL>,
-        <&macro_tap &kp F17>;
 };
