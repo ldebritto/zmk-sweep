@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// Layer and key defines to improve readability
+// Layer and key defines to improve readability on the keymap
 #define DEF  0
 #define NUM  1
 #define NAV  2
@@ -29,22 +29,22 @@
 
 / {
     combos { 
-        #include "features/combos.dtsi"
+        #include "features/combos.dtsi"             // Using a separate file for repurposing it to other keyboards
     };
     
     behaviors { 
-        #include "features/custom_behaviors.dtsi"
+        #include "features/custom_behaviors.dtsi"   // Custom behaviors for hold-taps, swapper and other gimmickry
     };
 
     macros { 
-        #include "features/layer_cancel_macros.dtsi" // Insert a K_CANCEL tap to disengage queued mods from layers 
+        #include "features/layer_cancel_macros.dtsi" // Inserts a K_CANCEL tap to disengage queued mods from layers 
         #include "features/typing_macros.dtsi"       // Typing macros for common words and phrases
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
         
-        tri_layer_for_function_and_number_row_keys {
+        tri_layer_for_function_and_number_row_keys {  // Tri-layer allows to make these keys unsensible to the order of layer key release, so I can trigger NUM from NAV and, on relase of NAV, get to SYM
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
         };
@@ -86,7 +86,7 @@
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT    &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR   &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH   &kp AT       &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &mt GLOBE COLON
-                                          &trans     &kp UNDER    &sl SYM   &trans
+                                          &trans     &kp UNDER    &kp UNDER &trans
             >;
         };
 

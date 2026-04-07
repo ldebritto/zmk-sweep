@@ -50,7 +50,6 @@
 
     hrml: hrml { // urob's home row mods left
         compatible = "zmk,behavior-hold-tap";
-        label = "HRML";
         bindings = <&kp>, <&kp>;
         #binding-cells = <2>;
         // here's the magic
@@ -64,7 +63,6 @@
 
     hrmr: hrmr { // urob's home row mods right
         compatible = "zmk,behavior-hold-tap";
-        label = "HRMR";
         bindings = <&kp>, <&kp>;
         #binding-cells = <2>;
         // here's the magic
@@ -81,7 +79,6 @@
 
     shrml: shrml { // urob's home row mods left
         compatible = "zmk,behavior-hold-tap";
-        label = "SHIFT_HRML";
         bindings = <&kp>, <&kp>;
 
         #binding-cells = <2>;
@@ -94,7 +91,6 @@
 
     shrmr: shrmr { // urob's home row mods right
         compatible = "zmk,behavior-hold-tap";
-        label = "SHIFT_HRMR";
         bindings = <&kp>, <&kp>;
 
         #binding-cells = <2>;
@@ -109,7 +105,6 @@
 
     ltl: better_layer_tap_left { // urob's logic but for a layer-tap on left hand
         compatible = "zmk,behavior-hold-tap";
-        label = "LTL";
         bindings = <&lc>, <&kp>;
 
         #binding-cells = <2>;
