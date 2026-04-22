@@ -25,6 +25,10 @@ COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,           DEF)
 COMBO(num_word,             &num_word NUM,              RM2 RIT,           DEF NUM)
 COMBO(mouse_on_thumbs,      &lc MOU,                    LIT LHT,           DEF)
 
+COMBO(nav_lock,             &tog NAV,                   RIT RHT,           NAV)
+COMBO(num_lock,             &tog NUM,                   RIT RHT,           NUM)
+COMBO(mou_lock,             &tog MOU,                   RIT RHT,           MOU)
+
 COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,       DEF NAV MOU)
 
 COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,           FUN)

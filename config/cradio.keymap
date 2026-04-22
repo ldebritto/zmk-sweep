@@ -77,7 +77,7 @@
   &kp TAB         &swapper  &kp LC(LS(TAB)) &kp LC(TAB)     &kp LG(RBKT)    &kp PG_UP   &kp HOME  &kp UP    &kp END   &kp BSPC
   &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI        &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
   &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &lt MOU LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL 
-                                            &tog NAV        &tog NAV        &trans      &trans 
+                                            &trans          &tog NAV        &trans      &trans 
             >; // F18 and F19 are here for triggering macros and shortcuts on macOS without interfering with normal usage on other keys
         };
 
@@ -104,7 +104,7 @@
   &kp F11         &kp LC(UP) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
   SK(LCTRL)       SK(LALT)   SK(LSHFT)       SK(LGUI)      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
   &mt GLOBE LG(Z) &kp LG(X)  &kp LG(C)       &kp LG(V)     &kp F18       &playnp         &mkp MCLK       &mkp MB4        &mkp MB5        &to DEF
-                                             &tog MOU      &tog MOU      &mkp LCLK       &mkp RCLK            
+                                             &trans        &tog MOU      &mkp LCLK       &mkp RCLK            
             >;          
         };
 
@@ -122,7 +122,7 @@
   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5     &trans     &trans  &trans  &trans  &kp BSPC
   &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp N0     &trans     &trans  &trans  &trans  &kp ENTER
   &kp DEL       &none        &none        &kp DOT       &kp COMMA  &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3
-                                        &trans        &kp DEL    &trans     &trans 
+                                          &trans        &kp DEL    &trans     &trans 
             >;
         };
 
