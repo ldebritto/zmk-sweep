@@ -29,6 +29,13 @@
             <&kp C_NEXT>,
             <&kp C_PREVIOUS>;
     };
+
+    caps: caps_word_lock {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&caps_word>, <&kp CAPS>;
+    };
     
     vb_up: volume_brightness_up_on_control {
         compatible = "zmk,behavior-mod-morph";
