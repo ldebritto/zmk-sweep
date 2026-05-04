@@ -6,15 +6,16 @@
 // Layer and key defines to improve readability on the keymap
 #define DEF  0
 #define NUM  1
-#define NAV  2
-#define SYM  3
-#define FUN  4
-#define MOU  5 // also great for one-handed use with a mouse on the right hand
+#define NUM_L 2 // experimenting with numpad on left hand for mouse usage on the right
+#define NAV  3
+#define SYM  4
+#define FUN  5
+#define MOU  6 // also great for one-handed use with a mouse on the right hand
 
 // AOE layers
-#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 7
-#define ABS 8
+#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 8
+#define ABS 9
 
 #define HYPR LG(LS(LC(LALT))) // shorthand for HYPER key hold-tap on G and H keys
 
@@ -63,12 +64,21 @@
             >;
         };
 
-        NUM {
+        NUM_R {
             bindings = <
   &kp LA(N9) &kp LA(N0) &none       &reais      &kp LA(N6)  &kp PLUS    &kp N7  &kp N8  &kp N9  &kp ASTRK
   &sk LCTRL  &sk LALT   &sk LSHFT   &sk LGUI    &sk LSHFT   &kp MINUS   &kp N4  &kp N5  &kp N6  &kp SLASH
   &none      &none      &none       &triple0    &comma00    &kp COMMA   &kp N1  &kp N2  &kp N3  &kp DOT
                                     &trans      &tog NUM    &num_spc    &lt SYM N0
+            >;
+        };
+
+        NUM_L {
+            bindings = <
+  &kp PLUS    &kp N7  &kp N8  &kp N9        &kp ASTRK   &kp LA(N6) &reais   &none       &kp LA(N9)  &kp LA(N0) 
+  &kp MINUS   &kp N4  &kp N5  &kp N6        &kp SLASH   &none      &sk LGUI &sk LSHFT   &sk LALT    &sk LCTRL  
+  &kp COMMA   &kp N1  &kp N2  &kp N3        &kp DOT     &none      &none    &none       &triple0    &comma00    
+                              &lt NAV N0    &tog NUM    &num_spc   &trans
             >;
         };
 
