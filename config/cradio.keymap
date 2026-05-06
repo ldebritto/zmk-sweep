@@ -60,7 +60,7 @@
   &kp Q          &kp W          &kp E         &kp R         &kp T           &kp Y           &kp U          &kp I           &kp O           &kp P
   &hrml LCTRL A  &hrml LALT S   &shrml LSHFT D &hrml LGUI F &hrml HYPR G    &hrmr HYPR H    &hrmr RGUI J   &shrmr LSHFT K  &hrmr RALT L    &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X          &ltl NUM C    &ltl MOU V    &kp B           &kp N           &kp M          &kp COMMA       &kp DOT         &kp SEMI
-                                              &lc NAV       &kp RSHFT       &spc_hypr       &lc SYM
+                                              &lc NAV       &kp RSHFT       &kp SPC         &lc SYM
             >;
         };
 
@@ -112,7 +112,7 @@
         MOU {
             bindings = <
   &kp F11         &kp LC(UP) &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-  SK(LCTRL)       SK(LALT)   SK(LSHFT)       SK(LGUI)      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+  &kp LCTRL       &kp LALT   &kp LSHFT       &kp LGUI      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
   &mt GLOBE LG(Z) &kp LG(X)  &kp LG(C)       &kp LG(V)     &kp F18       &none           &mkp MCLK       &mkp MB4        &mkp MB5        &to DEF
                                              &trans        &tog MOU      &mkp LCLK       &mkp RCLK            
             >;          

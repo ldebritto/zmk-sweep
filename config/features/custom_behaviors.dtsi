@@ -122,24 +122,3 @@
         quick-tap-ms = <QUICK_TAP>;
         require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
-
-// Customized sticky keys from https://github.com/dxmh/zmk-config/blob/main/config/34keys.keymap
-
-    spc_hypr: space_hyper_hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <0>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-        quick-tap-ms = <QUICK_TAP>;
-        bindings = <&kp HYPR>, <&kp SPC>;
-    };
-
-    nk: not_so_sticky_key {
-      compatible = "zmk,behavior-hold-tap";
-      label = "NOT_SO_STICKY_KEY";
-      #binding-cells = <2>;
-      tapping_term_ms = <HOLD_TAP_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&sk>;
-    };
-    #define SK(key) &nk key key
