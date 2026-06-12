@@ -33,7 +33,7 @@ COMBO(mou_lock,             &tog MOU,                   RIT RHT,           MOU)
 
 COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,       DEF NAV MOU)
 
-COMBO(play_mute_next_prev,  &playnp,                    RB2 RB3,           NAV)
+COMBO(play_mute_next_prev,  &kp C_MUTE,                 RB2 RB3,           NAV)
 
 COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,               LT3 LT4,           FUN)
 COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               LM3 LM4,           FUN)
