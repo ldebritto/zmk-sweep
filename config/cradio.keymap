@@ -32,7 +32,7 @@
     combos { 
         #include "features/combos.dtsi"             // Using a separate file for repurposing it to other keyboards
     };
-    
+ 
     behaviors { 
         #include "features/custom_behaviors.dtsi"   // Custom behaviors for hold-taps, swapper and other gimmickry
     };
@@ -44,7 +44,7 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        
+
         tri_layer_for_function_and_number_row_keys {  // Tri-layer allows to make these keys unsensible to the order of layer key release, so I can trigger NUM from NAV and, on relase of NAV, get to SYM
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
