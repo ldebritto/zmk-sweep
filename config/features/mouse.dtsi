@@ -10,7 +10,7 @@
   // It also requires a layer define for NAV on the .keymap file
 
 // Settings tuned up to deal with 3840 x 2160 display resolution
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // 10
 
 #include <dt-bindings/zmk/mouse.h>
@@ -20,7 +20,7 @@
 // Based on @caksoylar's config, defaults in comments
 &mmv {
   acceleration-exponent = <1>;          // 1
-  time-to-max-speed-ms = <700>;         // 300
+  time-to-max-speed-ms = <500>;         // 300
   delay-ms = <0>;                       // 0
 };
 
