@@ -26,6 +26,7 @@ COMBO(num_word,             &num_word NUM,              RM2 RIT,           DEF N
 COMBO(num_word_l,           &num_word NUM_L,            LM2 LIT,           DEF NUM_L)
 COMBO(mouse_on_thumbs,      &lc MOU,                    LIT LHT,           DEF)
 
+COMBO(nav_right,            &lc NAV,                    RIT RHT,           DEF)
 COMBO(nav_lock,             &tog NAV,                   RIT RHT,           NAV)
 COMBO(num_lock,             &tog NUM,                   RIT RHT,           NUM)
 COMBO(num_l_lock,           &tog NUM_L,                 RIT RHT,           NUM_L)
