@@ -75,10 +75,10 @@
 
         NUM_L {
             bindings = <
-  &lt SYM PLUS &kp N7  &kp N8  &kp N9        &kp ASTRK   &kp LA(N6) &reais   &none       &kp LA(N9)  &kp LA(N0) 
-  &kp MINUS    &kp N4  &kp N5  &kp N6        &kp SLASH   &none      &sk LGUI &sk LSHFT   &sk LALT    &sk LCTRL  
-  &kp COMMA    &kp N1  &kp N2  &kp N3        &kp DOT     &none      &none    &none       &triple0    &comma00    
-                               &lt NAV N0    &tog NUM_L  &num_spc   &trans
+  &lt SYM PLUS &kp N7  &kp N8       &kp N9      &kp ASTRK   &kp LA(N6) &reais   &none       &kp LA(N9)  &kp LA(N0) 
+  &kp MINUS    &kp N4  &kp N5       &kp N6      &kp SLASH   &none      &sk LGUI &sk LSHFT   &sk LALT    &sk LCTRL  
+  &kp COMMA    &kp N1  &mt NUM_R N2 &mt MOU N3  &kp DOT     &none      &none    &none       &triple0    &comma00    
+                                    &lt NAV N0  &tog NUM_L  &num_spc   &trans
             >;
         };
 
