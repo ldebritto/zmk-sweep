@@ -11,10 +11,10 @@ combo_##NAME { \
 };
 
 // These make the keyboard more accessible for one-handed use and to avoid the need to hold layer keys for very long
-COMBO(left_esc,             &kp ESCAPE,                 LT1 LT2 LT3,       DEF NAV MOU)
-COMBO(left_tab,             &kp TAB,                    LT1 LT3,           DEF MOU)
-COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,       DEF MOU)
-COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1 LM3,           DEF MOU)
+COMBO(left_esc,             &kp ESCAPE,                 LT1 LT2 LT3,       DEF NAV MOU NUM_L)
+COMBO(left_tab,             &kp TAB,                    LT1 LT3,           DEF MOU NUM_L)
+COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,       DEF MOU NUM_L)
+COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1 LM3,           DEF MOU NUM_L)
 
 COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,       DEF NUM MOU)
 COMBO(right_tab,            &kp TAB,                    RT1 RT3,           DEF NUM MOU)
