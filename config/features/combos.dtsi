@@ -32,7 +32,7 @@ COMBO(num_lock,             &tog NUM,                   RIT RHT,           NUM)
 COMBO(num_l_lock,           &tog NUM_L,                 RIT RHT,           NUM_L)
 COMBO(mou_lock,             &tog MOU,                   RIT RHT,           MOU)
 
-COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,       DEF NAV MOU)
+COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,       DEF NAV MOU NUM_L)
 
 COMBO(play_mute_next_prev,  &kp C_MUTE,                 RB2 RB3,           NAV)
 
