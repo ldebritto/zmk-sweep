@@ -6,7 +6,10 @@
     #define THUMB_KEYS LIT LHT RHT RIT
 
     // Keys ignored by the swapper for CMD+TAB behavior
-    #define SWAPPER_IGNORED_KEYS LM2 RT2 RM1 RM2 RM3 RT4 RM4 RB4 LIT // Shift, Arrows, BSPC, ENTER and DEL for alt-tab movement and window/app controls
+    #define SWAPPER_IGNORED_KEYS LM2 RT2 RM1 RM2 RM3 RT4 RM4 RB4 // Shift, Arrows, BSPC, ENTER and DEL for alt-tab movement and window/app controls
+    // LIT (the &lc NAV thumb) used to be in this list, which is what kept CMD held after leaving NAV:
+    // the tri-state ends on any *non-ignored* position event, press or release, so the release of the
+    // layer thumb is exactly the event that should tear it down. See &swapper below.
 
 // Swapper for Apple's CMD+TAB behavior
 
@@ -16,6 +19,9 @@
         bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
 
         ignored-key-positions = <SWAPPER_IGNORED_KEYS>;
+        end-on-layer-deactivation = <NAV>; // safety net: the module only ends on layer *activation* by default,
+                                           // so a NAV drop with no accompanying key event would otherwise hold RGUI forever
+                                           // (timeout-ms defaults to -1, i.e. no timeout at all)
     };
 
 // Media controls
