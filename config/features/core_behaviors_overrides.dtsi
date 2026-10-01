@@ -5,10 +5,10 @@
     release-after-ms = <86400000>;      // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
-&caps_word { 
-    /delete-property/ ignore-modifiers; // This voids pressing command+shift+s instead of a simple command+s - sadly not working at the moment…
-    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT LALT RALT SQT CARET TILDE GRAVE SLASH>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on '^`~" keys, ALT is needed to enter alt characters
-}; 
+// &caps_word is no longer used - see &caps_al in custom_behaviors.dtsi and the CAPSW layer.
+// Two reasons it could never be fixed here: ZMK dropped the ignore-modifiers property from
+// zmk,behavior-caps-word.yaml (so /delete-property/ was a no-op), and its listener short-circuits
+// on is_mod(), which is hardcoded - a modifier press can never deactivate it.
 
 &mt { flavor = "balanced"; };
 &lt { flavor = "balanced"; };

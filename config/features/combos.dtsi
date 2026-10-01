@@ -21,7 +21,7 @@ COMBO(right_tab,            &kp TAB,                    RT1 RT3,           DEF N
 COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,       DEF NUM)
 COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1 RM3,           DEF NUM)
 
-COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,           DEF)
+COMBO(tog_caps_word,        &caps_al CAPSW,             LM2 RM2,           DEF)
 COMBO(num_word,             &num_word NUM,              RM2 RIT,           DEF NUM)
 COMBO(num_word_l,           &num_word NUM_L,            LM2 LIT,           DEF NUM_L)
 COMBO(mouse_on_thumbs,      &lc MOU,                    LIT LHT,           DEF)

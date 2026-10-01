@@ -30,11 +30,30 @@
             <&kp C_PREVIOUS>;
     };
 
-    caps: caps_word_lock {
+// Caps word rebuilt on top of urob's auto-layer
+//
+// ZMK's stock &caps_word hardcodes is_mod() in its deactivation check, so *no* modifier can ever
+// cancel it, and it blindly OR's LSHFT into every alpha - which is how CMD+C became CMD+SHIFT+C.
+// &auto_layer makes ignore-modifiers opt-in, so leaving it out means every modifier cancels CAPSW
+// except the ones explicitly whitelisted below. The shifting itself comes from the CAPSW layer.
+
+    caps_al: caps_word_auto_layer {
+        compatible = "zmk,behavior-auto-layer"; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+        #binding-cells = <1>;
+        ignore-alphas;      // letters are the whole point of the layer
+        ignore-numbers;     // matches stock &caps_word, which never broke on digits either
+        continue-list = <
+            LSHFT                                       // only the home row shift survives; RSHFT is left out on purpose so the LHT thumb doubles as a CAPSW cancel
+            UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL  // K_CANCEL is for the &lc macro
+            SQT CARET TILDE GRAVE SLASH                 // PT-BR diacriticals: these carry an *implicit* shift, no modifier keycode is emitted
+            >;                                          // LALT/RALT/LGUI/RGUI/LCTRL/RCTRL are deliberately absent, so alt/option and command cancel CAPSW
+    };
+
+    caps: caps_word_lock { // currently unbound, kept as a one-key alternative to the LM2+RM2 combo
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&caps_word>, <&kp CAPS>;
+            bindings = <&caps_al CAPSW>, <&kp CAPS>;
     };
     
     vb_up: volume_brightness_up_on_control {
