@@ -5,18 +5,17 @@
 
 // Layer and key defines to improve readability on the keymap
 #define DEF  0
-#define CAPSW 1 // Shifted mirror of DEF driven by &caps_al. Must sit directly above DEF so every other layer still outranks it. Named CAPSW because CAPS is already a keycode alias in keys.h
-#define NUM_L 2 // experimenting with numpad on left hand for mouse usage on the right
-#define NUM  3
-#define NAV  4
-#define SYM  5
-#define FUN  6
-#define MOU  7 // also great for one-handed use with a mouse on the right hand
+#define NUM_L 1 // experimenting with numpad on left hand for mouse usage on the right
+#define NUM  2
+#define NAV  3
+#define SYM  4
+#define FUN  5
+#define MOU  6 // also great for one-handed use with a mouse on the right hand
 
 // AOE layers
-#define AOE 8 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 9
-#define ABS 10
+#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 8
+#define ABS 9
 
 #define HYPR LG(LS(LC(LALT))) // shorthand for HYPER key hold-tap on G and H keys
 
@@ -62,15 +61,6 @@
   &hrml LCTRL A  &hrml LALT S   &shrml LSHFT D &hrml LGUI F &hrml HYPR G    &hrmr HYPR H    &hrmr RGUI J   &shrmr LSHFT K  &hrmr RALT L    &hrmr RCTRL SQT
   &hrml GLOBE Z  &kp X          &ltl NUM C    &ltl MOU V    &kp B           &kp N           &kp M          &kp COMMA       &kp DOT         &lt MOU SEMI
                                               &lc NAV       &kp RSHFT       &kp SPC         &lc SYM
-            >;
-        };
-
-        CAPSW { // Shifted mirror of DEF. Entered/left via &caps_al, which drops the layer as soon as a non-shift modifier is pressed. Non-letters are &trans so they fall back to DEF
-            bindings = <
-  &kp LS(Q)         &kp LS(W)        &kp LS(E)          &kp LS(R)        &kp LS(T)          &kp LS(Y)        &kp LS(U)        &kp LS(I)           &kp LS(O)         &kp LS(P)
-  &hrml LCTRL LS(A) &hrml LALT LS(S) &shrml LSHFT LS(D) &hrml LGUI LS(F) &hrml HYPR LS(G)   &hrmr HYPR LS(H) &hrmr RGUI LS(J) &shrmr LSHFT LS(K)  &hrmr RALT LS(L)  &trans
-  &hrml GLOBE LS(Z) &kp LS(X)        &ltl NUM LS(C)     &ltl MOU LS(V)   &kp LS(B)          &kp LS(N)        &kp LS(M)        &trans              &trans            &trans
-                                                        &trans           &trans             &trans           &trans
             >;
         };
 
