@@ -103,7 +103,7 @@
   &kp TAB         &swapper  &kp LC(LS(TAB)) &kp LC(TAB)     &kp LG(RBKT)    &kp PG_UP   &kp HOME  &kp UP    &kp END   &kp BSPC
   &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI        &kp LG(LBKT)    &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT &kp RET
   &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &lt MOU LG(V)   &kp F18         &playnp     &kp F19   &vb_dn    &vb_up    &kp DEL 
-                                            &trans          &tog NAV        &trans      &trans 
+                                            &trans          &lc SYM         &trans      &trans 
             >; // F18 and F19 are here for triggering macros and shortcuts on macOS without interfering with normal usage on other keys
         };
 
@@ -112,7 +112,7 @@
   &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT    &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
   &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR   &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
   &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH   &kp AT       &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &mt GLOBE COLON
-                                          &trans     &kp UNDER    &kp UNDER &trans
+                                          &trans     &kp UNDER    &lt NAV UNDER &trans
             >;
         };
 
