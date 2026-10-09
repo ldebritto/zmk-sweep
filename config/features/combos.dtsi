@@ -24,8 +24,8 @@ COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1 RM3,           DEF N
 COMBO(tog_caps_word,        &caps_al CAPSW,             LM2 RM2,           DEF)
 COMBO(num_word,             &num_word NUM,              RM2 RIT,           DEF NUM)
 COMBO(num_word_l,           &num_word NUM_L,            LM2 LIT,           DEF NUM_L)
-COMBO(mouse_on_left_thumb,  &lc FUNT,                   LIT LHT,           DEF NAV)
-COMBO(mouse_on_right_thumb, &tog MOU,                   RIT RHT,           DEF SYM)
+COMBO(mouse_on_left_thumb,  &lc FUNT,                   LIT LHT,           DEF)
+COMBO(mouse_on_right_thumb, &lc FUNT,                   RIT RHT,           DEF)
 
 COMBO(nav_right,            &lc NAV,                    RIT RHT,           DEF)
 COMBO(nav_lock,             &tog NAV,                   RIT RHT,           NAV)
