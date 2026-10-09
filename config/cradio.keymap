@@ -12,11 +12,12 @@
 #define SYM  5
 #define FUN  6
 #define MOU  7 // also great for one-handed use with a mouse on the right hand
+#define FUNT 8 // A second conditional layer to allow for one handed FUN activation on thumb combo
 
 // AOE layers
-#define AOE 8 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 9
-#define ABS 10
+#define AOE 9 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 10
+#define ABS 11
 
 #define HYPR LG(LS(LC(LALT))) // shorthand for HYPER key hold-tap on G and H keys
 
@@ -48,6 +49,11 @@
 
         tri_layer_for_function_and_number_row_keys {  // Tri-layer allows to make these keys unsensible to the order of layer key release, so I can trigger NUM from NAV and, on relase of NAV, get to SYM
             if-layers = <NAV SYM>;
+            then-layer = <FUN>;
+        };
+
+        fun_on_thumb {  // Needed for thumb combos to activate FUN 
+            if-layers = <FUNT>;
             then-layer = <FUN>;
         };
 
@@ -127,6 +133,13 @@
                                              &trans        &kp LGUI      &mkp LCLK       &mkp RCLK            
             >;          
         };
+        
+        FUNT {
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+          &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
+                               &trans &trans &trans &trans
+        }
 
         AOE {
             bindings = <

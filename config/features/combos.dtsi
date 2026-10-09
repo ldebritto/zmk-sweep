@@ -24,15 +24,15 @@ COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1 RM3,           DEF N
 COMBO(tog_caps_word,        &caps_al CAPSW,             LM2 RM2,           DEF)
 COMBO(num_word,             &num_word NUM,              RM2 RIT,           DEF NUM)
 COMBO(num_word_l,           &num_word NUM_L,            LM2 LIT,           DEF NUM_L)
-COMBO(mouse_on_thumbs,      &lc MOU,                    LIT LHT,           DEF)
+COMBO(mouse_on_right_thumb, &lc FUNT,                   LIT LHT,           DEF NAV)
+COMBO(mouse_on_right_thumb, &tog MOU,                   RIT RHT,           DEF SYM)
 
 COMBO(nav_right,            &lc NAV,                    RIT RHT,           DEF)
 COMBO(nav_lock,             &tog NAV,                   RIT RHT,           NAV)
 COMBO(num_lock,             &tog NUM,                   RIT RHT,           NUM)
 COMBO(num_l_lock,           &tog NUM_L,                 RIT RHT,           NUM_L)
-COMBO(mou_lock,             &tog MOU,                   RIT RHT,           MOU)
 
-COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,       DEF NAV MOU NUM_L)
+COMBO(space_for_nav,        &kp SPC,                    LB1 LB2 LB3,       DEF NAV MOU NUM)
 
 COMBO(play_mute_next_prev,  &kp C_MUTE,                 RB2 RB3,           NAV)
 
