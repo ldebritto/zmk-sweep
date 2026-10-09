@@ -135,11 +135,13 @@
         };
         
         FUNT {
+          bindings = <
           &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
           &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
           &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans 
                                &trans &trans &trans &trans
-        }
+          >;
+        };
 
         AOE {
             bindings = <
