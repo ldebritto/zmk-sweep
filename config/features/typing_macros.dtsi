@@ -23,3 +23,11 @@ triple0: triple0 {
     tap-ms = <15>;
     bindings = <&macro_tap &kp N0 &kp N0 &kp N0>;
 };
+
+dottriple0: dottriple0 {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>; // Must be 0
+    wait-ms = <20>;
+    tap-ms = <15>;
+    bindings = <&macro_tap &kp DOT &kp N0 &kp N0 &kp N0>;
+};
