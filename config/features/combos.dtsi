@@ -17,15 +17,15 @@ COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   LM1 LM2 LM3,       DEF M
 COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        LM1 LM3,           DEF MOU NUM_L)
 
 COMBO(right_esc,            &kp ESCAPE,                 RT1 RT2 RT3,       DEF NUM MOU)
-COMBO(right_tab,            &kp TAB,                    RT1 RT3,           DEF NUM MOU)
+//COMBO(right_tab,            &kp TAB,                    RT1 RT3,           DEF NUM MOU) // Turns out OU is way too common to use as combo decently
 COMBO(right_enter,          &hrmr RA(LS(RGUI)) ENTER,   RM1 RM2 RM3,       DEF NUM)
 COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1 RM3,           DEF NUM)
 
-COMBO(triple_0,             &triple0,                   RT2 RT3 RT4,       FUN)
-COMBO(comma_00,             &comma00,                   RT3 RT4,           FUN)
-COMBO(dot_triple_0,         &dottriple0,                RT1 RT2 RT3 RT4,   FUN)
-COMBO(fun_comma,            &kp COMMA,                  RM2 RB2,           FUN)
-COMBO(fun_dot,              &kp DOT,                    RM3 RB3,           FUN)
+//COMBO(triple_0,             &triple0,                   RT2 RT3 RT4,       FUN) // Commented as I was getting too many false negatives here
+//COMBO(comma_00,             &comma00,                   RT3 RT4,           FUN)
+//COMBO(dot_triple_0,         &dottriple0,                RT1 RT2 RT3 RT4,   FUN)
+//COMBO(fun_comma,            &kp COMMA,                  RM2 RB2,           FUN)
+//COMBO(fun_dot,              &kp DOT,                    RM3 RB3,           FUN)
 
 COMBO(tog_caps_word,        &caps_al CAPSW,             LM2 RM2,           DEF)
 COMBO(num_word,             &num_word NUM,              RM2 RIT,           DEF NUM)
